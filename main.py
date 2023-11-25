@@ -50,63 +50,39 @@ def wm(a:tuple, b:tuple):
 def wd(a:tuple, b:int):
     return (a[0]/b, a[1]/b)
 class Generator:
-    def __init__(self, player) -> None:
+    def __init__(self, player, wall_0) -> None:
+        self.wall_0 = wall_0
+        self.last_wall = [wall_0.rect.x, wall_0.rect.y, wall_0.rect.width]
         self.player = player
-        self.real_player_y = player.rect.center[1]
-        self.player_rec_height = 200*50
-        self.last_coord = self.generate(200, (self.real_player_y-100, self.player.rect.x, 200))
-        self.hardness = 0
-        self.last_wight = 200
-    def cnvrt():
-        pass
-    def record_h(self, y_vel):
-        self.real_player_y += y_vel
-        print("REAL Y:", self.real_player_y)
-        if math.ceil((self.real_player_y - self.player_rec_height)/BASE_HEIGHT) >= 1:
-            print("togen")
-            self.player_rec_height = self.real_player_y
-            self.last_coord = self.generate(self.hardness, self.last_coord)
-    def check_is_wall_in_reach(self, w_current, modifier_x, hardnes, space_x, space_y, jump_y, h_next):
-        # x check 
-        if (w_current*modifier_x / 15) * hardnes > space_x:
-            if jump_y > (space_y + h_next) * hardnes:
-                return True
-        return False
-    def center_to_top_l(self,size, cent):
-        return wm(cent,wd(size,2))
-    def generate(self,count, last_coord):
-        x = 0
-        self.hardness =1
-        walls_to_add  = []
+        self.count = 1
+        self.hardness = 1
+    def generate(self):
+        y = self.wall_0.rect.y
+        c = y // 150
 
-        for i in range(int(math.ceil(last_coord[1]/BASE_HEIGHT)), int(count+1)):
-            
-            
-            prv = None
-            startingpoints = [(20,last_coord[1]-10,last_coord[2])]
-            # LAST_CORD FORM = TOP_LX, CENTER_LY, WIDGHT
-            for j in range(random.randint(1,4)):
-                while True:
-                    chosen_sp = random.choice(startingpoints)
-                    space_y = random.randint(-30,30)
-                    space_x = random.randint(10, 120)
-                    h_next = 50
+        for i in range(self.count, c + 1):
+            j = random.randint(1,2)
+            while j > 0:
+                x=random.randint(0, WIDTH-100)
+                
+                while abs(x-self.last_wall[0]) < round(40*self.hardness):
+                    # print(abs(x-self.last_wall.rect.x), 30*self.hardness)
+                    x=random.randint(0, WIDTH-100)
+                
+                new_wall = Wall((x, (self.last_wall[1] - random.randint(120, sum(range(self.player.jumper + 1))-50))), (random.choice([150, 200]), 50))
 
-                    w_next = random.randint(200//(self.hardness), 200)
-
-                    if self.check_is_wall_in_reach(chosen_sp[2], 1, self.hardness,space_x, space_y, player.jumper, h_next):
-                        print("SUCCESSS")
-                        # Successs
-                        topl = self.center_to_top_l((w_next, h_next), (chosen_sp[0],chosen_sp[1]))
-                        new_wall = Wall(topl,(w_next, h_next))
-                        walls_to_add.append(new_wall)
-                        startingpoints.append((topl[0], topl[1]+h_next/2,w_next))
-                        last_coord = (topl[0], topl[1]+h_next/2,w_next)
-                        self.hardness+=0.03
-                        break
-        for added_walli in walls_to_add:
-            walls.add(added_walli)
-        return last_coord
+                if pygame.sprite.spritecollideany(new_wall, walls):
+                
+                    continue
+                j-=1  
+                print(j)  
+                walls.add(new_wall)
+                self.last_wall[2] =  new_wall.rect.width
+                self.last_wall[0] = new_wall.rect.x
+                self.hardness+=0.02
+            # last wall format: last_x, last_y_ last_w
+            self.last_wall[1] = new_wall.rect.y
+            self.count+=1
 class Classifier:
     def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r,cent_t):
         self.top_left = top_l
@@ -172,7 +148,7 @@ class Hitty(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
         self.rect.center = coords
         self.player = player
-        self.ii = 5
+        self.ii = 20
     def touching(self) -> bool:
         return pygame.sprite.spritecollideany(self,walls) != None
     def update(self, classi) -> None:
@@ -250,16 +226,18 @@ class Hitty(pygame.sprite.Sprite):
         #print("moved by", dist, val)
         return val
 class Wall(pygame.sprite.Sprite):
-    def __init__(self, coords, size):
+    def __init__(self, coords, size,mov=False):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface(size)
         self.image.fill(RED)
         self.rect = self.image.get_rect()
         self.rect.center = coords
         self.player = player
+        self.mov = mov
     def update(self) -> None:
-        self.rect.x -= player.x_vel
-        self.rect.y -= player.y_vel
+        #self.rect.x -= player.x_vel
+        if not self.mov:
+            self.rect.y -= player.y_vel
         
 class Player(pygame.sprite.Sprite):
     def __init__(self):
@@ -315,7 +293,7 @@ class Player(pygame.sprite.Sprite):
         if not self.move_up and self.y_vel < 0:
             self.y_vel = 0
         
-        if self.x_vel != 0 and not self.hitbox.suuper_check_x(self.x_vel) :
+        if self.x_vel != 0 and not self.hitbox.suuper_check_x(self.x_vel):
             
             self.x_vel = 0
         if self.y_vel != 0 and not self.hitbox.suuper_check_y(self.y_vel):
@@ -323,7 +301,7 @@ class Player(pygame.sprite.Sprite):
             # self.jump = False
 
         # self.rect.centery += self.y_vel
-        # self.rect.centerx += self.x_vel
+        self.rect.centerx += self.x_vel
         # self.rect.x += 5
         # if self.rect.left > WIDTH:
         #     self.rect.right = 0
@@ -411,13 +389,13 @@ all_sprites = pygame.sprite.Group()
 player = Player()
 all_sprites.add(player)
 walls = pygame.sprite.Group()
-wall = Wall((WIDTH / 2, HEIGHT / 2+200 +_HEIGHT_MODIFIER),(250, 50))
-walls.add(wall)
+wall_0 = Wall((WIDTH / 2, HEIGHT / 2+200 +_HEIGHT_MODIFIER),(250, 50))
+walls.add(wall_0)
 wall = Wall((WIDTH/2, HEIGHT + _HEIGHT_MODIFIER), (WIDTH, 50))
 walls.add(wall)
-wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER -500), (50, 1000))
+wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER ), (50, 1000), True)
 walls.add(wall)
-wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER -500), (50, 1000))
+wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER), (50, 1000), True)
 walls.add(wall)
 thrd = Informator(inf_q)
 thrd.start()
@@ -437,7 +415,7 @@ calib_center_top = None
 calib_center_left = None
 calib_center_right = None
 classi:Classifier = None
-gen = Generator(player)
+gen = Generator(player, wall_0)
 def blit_l(l, screen):
     for obj in l:
         screen.blit(obj.image, obj.rect)
@@ -470,7 +448,7 @@ while running:
         all_sprites.update((None,None))
 
     walls.update()
-    gen.record_h(player.y_vel)
+    gen.generate()
     screen.fill(BLACK)
     all_sprites.draw(screen)
     walls.draw(screen)
