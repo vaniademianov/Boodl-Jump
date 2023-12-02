@@ -52,37 +52,38 @@ def wd(a:tuple, b:int):
 class Generator:
     def __init__(self, player, wall_0) -> None:
         self.wall_0 = wall_0
-        self.last_wall = [wall_0.rect.x, wall_0.rect.y, wall_0.rect.width]
+        self.last_wall = wall_0
         self.player = player
         self.count = 1
         self.hardness = 1
+
     def generate(self):
         y = self.wall_0.rect.y
         c = y // 150
 
         for i in range(self.count, c + 1):
-            j = random.randint(1,2)
+            j = random.randint(1, 2)
             while j > 0:
-                x=random.randint(0, WIDTH-100)
-                
-                while abs(x-self.last_wall[0]) < round(40*self.hardness):
-                    # print(abs(x-self.last_wall.rect.x), 30*self.hardness)
-                    x=random.randint(0, WIDTH-100)
-                
-                new_wall = Wall((x, (self.last_wall[1] - random.randint(120, sum(range(self.player.jumper + 1))-50))), (random.choice([150, 200]), 50))
+                w = random.choice([150, 200])
+                x = random.randint(0, WIDTH-w)
+                print(sum(range(self.player.jumper + 1))-50)
+                y = self.last_wall.rect.y - random.randint(120, sum(range(self.player.jumper + 1))-50)
 
-                if pygame.sprite.spritecollideany(new_wall, walls):
-                
-                    continue
-                j-=1  
-                print(j)  
+                new_wall = Wall((x-50, y), (w+50, 50))
+                # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
+
+                while pygame.sprite.spritecollideany(new_wall, walls):
+                    x = random.randint(0, WIDTH-100)
+                    new_wall = Wall((x-50, y), (w+50, 50))
+                    # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
+
+                j -= 1
+                new_wall = Wall((x, y), (w, 50))
                 walls.add(new_wall)
-                self.last_wall[2] =  new_wall.rect.width
-                self.last_wall[0] = new_wall.rect.x
-                self.hardness+=0.02
+            self.hardness += 0.02
             # last wall format: last_x, last_y_ last_w
-            self.last_wall[1] = new_wall.rect.y
-            self.count+=1
+            self.last_wall = new_wall
+            self.count += 1
 class Classifier:
     def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r,cent_t):
         self.top_left = top_l
