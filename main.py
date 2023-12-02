@@ -235,11 +235,25 @@ class Wall(pygame.sprite.Sprite):
         self.rect.center = coords
         self.player = player
         self.mov = mov
+        self.mov2 = True
+        self.riz = 0
+        
     def update(self) -> None:
         #self.rect.x -= player.x_vel
-        if not self.mov:
+        # if self.mov == True:
+        #     print(self.mov2)
+        if self.mov2 == True:
+            
             self.rect.y -= player.y_vel
-        
+        if self.mov == True:
+            self.riz += player.y_vel
+        if self.riz <= -400:
+            self.mov2 = False
+
+        else:
+            
+            self.mov2 = True
+            
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
@@ -394,9 +408,9 @@ wall_0 = Wall((WIDTH / 2, HEIGHT / 2+200 +_HEIGHT_MODIFIER),(250, 50))
 walls.add(wall_0)
 wall = Wall((WIDTH/2, HEIGHT + _HEIGHT_MODIFIER), (WIDTH, 50))
 walls.add(wall)
-wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER ), (50, 1000), True)
+wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
-wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER), (50, 1000), True)
+wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
 thrd = Informator(inf_q)
 thrd.start()
