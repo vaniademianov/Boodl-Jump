@@ -9,13 +9,16 @@ import os
 import math
 import pickle
 from pathlib import Path
+from res.resource_manager import ResourceManager
+rm = ResourceManager()
+playerz = rm.get_players()
 try:
     serial = sm.Serial("COM6")
 except Exception as e:
     print(e)
     serial = sm.Serial("COM9")
-WIDTH = 800
-HEIGHT = 650
+WIDTH = 1000
+HEIGHT = 800
 FPS = 30
 print_lock = threading.Lock()
 inf_q = queue.Queue()
@@ -27,6 +30,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 BASE_HEIGHT = 200
 _HEIGHT_MODIFIER = -200
+lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]
 class Informator(threading.Thread):
     def __init__(self, queue, args=(), kwargs=None):
         threading.Thread.__init__(self, args=(), kwargs=None)
@@ -49,38 +53,73 @@ def wm(a:tuple, b:tuple):
     return (a[0]-b[0], a[1]-b[1])
 def wd(a:tuple, b:int):
     return (a[0]/b, a[1]/b)
+def rect_group_collide(r:pygame.Rect, g:pygame.sprite.Group):
+    for sprite in g.sprites():
+        if r.colliderect(sprite.rect):
+            return True
+    return False
+def the_one(a,b):
+    return (True in [a,b])
+def i_fals(v):
+    return v != None
 class Generator:
     def __init__(self, player, wall_0) -> None:
         self.wall_0 = wall_0
         self.last_wall = wall_0
         self.player = player
         self.count = 1
-        self.hardness = 1
-
+        self.hardness = 100
+        self.color_n = 1
     def generate(self):
         y = self.wall_0.rect.y
-        c = y // 150
+        c = y // 120
 
         for i in range(self.count, c + 1):
-            j = random.randint(1, 2)
+            j = random.randint(2, 3)
+            self.last_y = walls.sprites()[-1].rect.y
+            print(self.last_y)
+            walls_to_add = []
             while j > 0:
+                
                 w = random.choice([150, 200])
                 x = random.randint(0, WIDTH-w)
-                print(sum(range(self.player.jumper + 1))-50)
-                y = self.last_wall.rect.y - random.randint(120, sum(range(self.player.jumper + 1))-50)
+                y = self.last_wall.rect.y - random.randint(70, sum(range(self.player.jumper + 1))-player.rect.h-25)
 
                 new_wall = Wall((x-50, y), (w+50, 50))
                 # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
+                tries = 0
+                while the_one(i_fals(pygame.sprite.spritecollideany(new_wall, walls)), rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls)):
+                    if tries > 25:
+                        print("25")
+                        # left or right side:
+                        if x < WIDTH/2: # left
+                            x -= 75
+                        else:
+                            x += 75
+                    else:
+                        x = random.randint(0, WIDTH-100)
+                    
+                    if tries == 70:
+                        while rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
+                            print("Randed")
+                            x = random.randint(0, WIDTH-100)
+                        new_wall = Wall((x, y), (w, 50))
+                        break
+                    
 
-                while pygame.sprite.spritecollideany(new_wall, walls):
-                    x = random.randint(0, WIDTH-100)
-                    new_wall = Wall((x-50, y), (w+50, 50))
+                    tries += 1
+                    # 0,06 
+                    new_wall = Wall((x-50, y), (w+50, 50), color= lst[self.color_n])
                     # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
-
                 j -= 1
-                new_wall = Wall((x, y), (w, 50))
+                new_wall = Wall((x, y), (w, 50),color=lst[self.color_n])
+                # walls_to_add.append(new_wall)
                 walls.add(new_wall)
-            self.hardness += 0.02
+            self.hardness += 2
+            self.color_n += 1
+
+            for walli in walls_to_add:
+                walls.add(walli)
             # last wall format: last_x, last_y_ last_w
             self.last_wall = new_wall
             self.count += 1
@@ -139,20 +178,30 @@ class Cub(pygame.sprite.Sprite):
         return pygame.sprite.spritecollideany(self,walls) != None
         # list > True
     
-def the_one(a,b):
-    return (True in [a,b])
+
 class Hitty(pygame.sprite.Sprite):
     def __init__(self, size, coords,player):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface(size)
         self.image.fill(RED)
+        self.og_surf = self.image
         self.rect = self.image.get_rect()
         self.rect.center = coords
         self.player = player
         self.ii = 20
+        self.angle = 0
+        self.change_angle = 0
+    # def rot(self):
+    #     self.image = pygame.transform.rotate(self.og_surf, self.angle)
+    #     self.angle += self.change_angle
+    #     self.angle = self.angle % 360
+    #     self.rect = self.image.get_rect(center=self.rect.center)
     def touching(self) -> bool:
         return pygame.sprite.spritecollideany(self,walls) != None
+        
     def update(self, classi) -> None:
+        self.change_angle = -player.x_vel
+        # self.rot()
         self.rect.x = player.rect.x
         self.rect.y = player.rect.y
         
@@ -227,10 +276,10 @@ class Hitty(pygame.sprite.Sprite):
         #print("moved by", dist, val)
         return val
 class Wall(pygame.sprite.Sprite):
-    def __init__(self, coords, size,mov=False):
+    def __init__(self, coords, size,mov=False,color=RED):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface(size)
-        self.image.fill(RED)
+        self.image.fill(color)
         self.rect = self.image.get_rect()
         self.rect.center = coords
         self.player = player
@@ -247,18 +296,24 @@ class Wall(pygame.sprite.Sprite):
             self.rect.y -= player.y_vel
         if self.mov == True:
             self.riz += player.y_vel
-        if self.riz <= -400:
+        if self.riz <= -300:
             self.mov2 = False
 
-        else:
+        # else:
             
-            self.mov2 = True
-            
+        #     self.mov2 = True
+def rot_center(image, rect, angle):
+    """rotate an image while keeping its center"""
+    rot_image = pygame.transform.rotate(image, angle)
+    rot_rect = rot_image.get_rect(center=rect.center)
+    return rot_image,rot_rect
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         pygame.sprite.Sprite.__init__(self)
-        self.image = pygame.Surface((50, 50))
-        self.image.fill(GREEN)
+        # self.image = pygame.Surface((50, 50))
+        # self.image.fill(GREEN)
+        self.og_surf = rm.get_player()
+        self.image = self.og_surf
         self.rect = self.image.get_rect()
         self.rect.center = (WIDTH / 2, HEIGHT-self.rect.height+_HEIGHT_MODIFIER-15)
         self.y_vel = 0
@@ -269,9 +324,24 @@ class Player(pygame.sprite.Sprite):
         self.move_left = True
         self.move_right = True
         self.hitbox = Hitty((50,50), self.rect.center,self)
-        all_sprites.add(self.hitbox)
+        self.angle = 0
+        self.change_angle = 0
         self.jumper = 20
+    def rot(self):
+        # self.change_angle = self.change_angle
+        self.angle += self.change_angle
+        self.image = playerz[round((self.angle)/36)]
+
+        # self.image = pygame.transform.rotate(self.og_surf, self.angle)
+        # self.angle += self.change_angle
+        # self.angle = self.angle % 360
+        # self.rect = self.image.get_rect(center=self.rect.center)
     def update(self,classified):
+        self.change_angle = -(self.x_vel*2)
+        self.rot()
+        self.hitbox.update(classified)
+        
+        
         # or not touching anything
         self.move_down = self.hitbox.check_down()
         self.move_up = self.hitbox.check_up()
@@ -284,8 +354,8 @@ class Player(pygame.sprite.Sprite):
         else:
             # touchedd the gras
             self.y_vel = 0
-            self.jump = False
-        
+            self.jump = False     
+
         # if self.y_vel > 0:
         #     self.y_vel -= 1
         # elif self.y_vel < 0:
@@ -317,6 +387,8 @@ class Player(pygame.sprite.Sprite):
 
         # self.rect.centery += self.y_vel
         self.rect.centerx += self.x_vel
+
+
         # self.rect.x += 5
         # if self.rect.left > WIDTH:
         #     self.rect.right = 0
@@ -412,6 +484,7 @@ wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
 wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
+# all_sprites.add(player.hitbox)
 thrd = Informator(inf_q)
 thrd.start()
 # Цикл игры
@@ -434,6 +507,7 @@ gen = Generator(player, wall_0)
 def blit_l(l, screen):
     for obj in l:
         screen.blit(obj.image, obj.rect)
+
 while running:
     #print(last_val)
     if cd > 0:

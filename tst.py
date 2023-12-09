@@ -1,1 +1,1 @@
-print(sum(range(21)))
+import PIL
