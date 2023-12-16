@@ -60,15 +60,109 @@ def rect_group_collide(r:pygame.Rect, g:pygame.sprite.Group):
     return False
 def the_one(a,b):
     return (True in [a,b])
+print(the_one(False, False), False or False)
 def i_fals(v):
     return v != None
+class Slot:
+    def __init__(self,item, act=False) -> None:
+        self.item = item
+        self.image_act = rm.get_active_slot()
+        self.image_unact = rm.get_unactive_slot()
+        self.is_active = act
+        
+        if item != None:
+            rect:pygame.rect.Rect = item.minimized.get_rect()
+            rect.center = self.image_act.get_rect().center
+
+            self.image_act.blit(item.minimized, rect)
+            self.image_unact.blit(item.minimized, rect)
+        self.image = self.image_act if self.is_active else self.image_unact
+    def update_activity(self,item, act):
+        self.item = item
+        self.is_active = act
+        print(act)
+        if item != None:
+            rect:pygame.rect.Rect = item.minimized.get_rect()
+            rect.center = self.image_act.get_rect().center
+
+            self.image_act.blit(item.minimized, rect)
+            self.image_unact.blit(item.minimized, rect)
+        if self.is_active:
+            print("ok")
+        self.image = self.image_act if self.is_active else self.image_unact
+    def get_item(self):
+        return self.item
+    def draw(self, surf:pygame.Surface, top_left):
+        return (self.image, pygame.Rect(top_left,self.image.get_rect().size))
+
+class Inventory:
+    def __init__(self) -> None:
+        self.SLOT_NUMBER = 9
+
+        self.hotbar = [Slot(None, True), *[Slot(None) for i in range(self.SLOT_NUMBER-1)]]
+        
+        self.selected = self.hotbar[0]
+        self.selected_n = 0
+        self.change_cd = 0.5*FPS
+        self.cd = 0
+    def f_all(self, active_currently):
+        for item in self.hotbar:
+            # None | class<Item>
+            if item is not active_currently:
+                item.update_activity(item.get_item(), False)
+            else:
+                item.update_activity(item.get_item(), True)
+    def tick(self, info, screen):
+        # COOLDOWN
+        if self.cd > 0:
+            self.cd -= 1
+        else:
+            self.cd = 0
+            self.scroll(info)
+        self.act_s()
+        x = (WIDTH-(70*(len(self.hotbar)+2)))/2
+        slotz = []
+        for slot in self.hotbar:
+            x +=70
+            slotz.append(slot.draw(screen,(x,HEIGHT-70)))
+        return slotz
+    def classify_np(self,info):
+        if len(info) > 1:
+            if info[4] == "0":
+                # left
+                return "l"
+            elif info[6] == "0":
+                return "r"
+        return ""
+        # ['516', '514', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '\n']
+    def act_s(self):
+        self.selected.is_active = True
+    def scroll(self, info):
+        
+
+        np = self.classify_np(info)
+        if np == "l":
+            print("SCROLLED L", self.selected_n-1)
+            self.selected_n -= 1
+            self.cd = self.change_cd
+        if np == "r":
+            print("SCROLLED R", self.selected_n+1)
+            self.selected_n += 1
+            self.cd = self.change_cd
+        if self.selected_n < 0:
+            self.selected_n = self.SLOT_NUMBER - 1
+        elif self.selected_n > self.SLOT_NUMBER - 1:
+            self.selected_n = 0
+        self.selected = self.hotbar[self.selected_n]
+        self.f_all(self.selected)
+
 class Generator:
     def __init__(self, player, wall_0) -> None:
         self.wall_0 = wall_0
         self.last_wall = wall_0
         self.player = player
         self.count = 1
-        self.hardness = 100
+        self.hardness = 0
         self.color_n = 1
     def generate(self):
         y = self.wall_0.rect.y
@@ -78,18 +172,19 @@ class Generator:
             j = random.randint(2, 3)
             self.last_y = walls.sprites()[-1].rect.y
             print(self.last_y)
-            walls_to_add = []
+
+            jump_h = sum(range(self.player.jumper + 1))-player.rect.h-25
+            y = self.last_wall.rect.y - jump_h
+            pw=list(range(250, 100-1, -25))
             while j > 0:
                 
-                w = random.choice([150, 200])
-                x = random.randint(0, WIDTH-w)
-                y = self.last_wall.rect.y - random.randint(70, sum(range(self.player.jumper + 1))-player.rect.h-25)
+                w = random.choice(pw[min(int(self.hardness/5), len(pw)-2):min(int(self.hardness/5), len(pw)-2)+3])
+                x = random.choice([ii for ii in range(0, WIDTH-w, 50)])
 
-                new_wall = Wall((x-50, y), (w+50, 50))
-                # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
+                new_wall = Wall((x-26, y), (w+52, 50))
                 tries = 0
-                while the_one(i_fals(pygame.sprite.spritecollideany(new_wall, walls)), rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls)):
-                    if tries > 25:
+                while pygame.sprite.spritecollideany(new_wall, colliders) is not None: # or rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
+                    if tries > 50:
                         print("25")
                         # left or right side:
                         if x < WIDTH/2: # left
@@ -97,29 +192,30 @@ class Generator:
                         else:
                             x += 75
                     else:
-                        x = random.randint(0, WIDTH-100)
+                        x = random.choice([ii for ii in range(0, WIDTH-w, 50)])
                     
                     if tries == 70:
-                        while rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
-                            print("Randed")
-                            x = random.randint(0, WIDTH-100)
-                        new_wall = Wall((x, y), (w, 50))
+                        # while rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
+                        #     print("Randed")
+                        #     x = random.choice([ii for ii in range(0, WIDTH-w, 50)])
+                        new_wall = Wall((x-26, y), (w+52, 50))
                         break
                     
 
                     tries += 1
                     # 0,06 
-                    new_wall = Wall((x-50, y), (w+50, 50), color= lst[self.color_n])
+                    new_wall = Wall((x-26, y), (w+52, 50), color= lst[self.color_n])
                     # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
                 j -= 1
                 new_wall = Wall((x, y), (w, 50),color=lst[self.color_n])
+                print("gen")
                 # walls_to_add.append(new_wall)
                 walls.add(new_wall)
-            self.hardness += 2
+                colliders.add(new_wall)
+            self.hardness += 1
             self.color_n += 1
 
-            for walli in walls_to_add:
-                walls.add(walli)
+
             # last wall format: last_x, last_y_ last_w
             self.last_wall = new_wall
             self.count += 1
@@ -175,7 +271,7 @@ class Cub(pygame.sprite.Sprite):
     def sync(self, *args: Any, **kwargs: Any) -> None:
         self.rect.topleft = w(self.hitty.rect.topleft, self.ofs)
     def touching(self) -> bool:
-        return pygame.sprite.spritecollideany(self,walls) != None
+        return pygame.sprite.spritecollideany(self,colliders) != None
         # list > True
     
 
@@ -484,6 +580,11 @@ wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
 wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
+
+colliders = pygame.sprite.Group()
+for wall in walls.sprites():
+    colliders.add(wall)
+
 # all_sprites.add(player.hitbox)
 thrd = Informator(inf_q)
 thrd.start()
@@ -504,6 +605,7 @@ calib_center_left = None
 calib_center_right = None
 classi:Classifier = None
 gen = Generator(player, wall_0)
+inventory = Inventory()
 def blit_l(l, screen):
     for obj in l:
         screen.blit(obj.image, obj.rect)
@@ -523,8 +625,9 @@ while running:
     if not inf_q.empty():
         last_val=  inf_q.get(False)
     splt_val = last_val.split(" ")
+
     if calib != -1:
-        run_calibration(splt_val, last_val)
+        run_calibration(splt_val, last_val) # ['516', '514', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '\n']
     #print(last_val)
     # else:
     #     print(classi.classify((int(splt_val[0]), int(splt_val[1]))))
@@ -535,13 +638,16 @@ while running:
         all_sprites.update(classi.classify((int(splt_val[0]), int(splt_val[1]))))
     else:
         all_sprites.update((None,None))
+    slotz = inventory.tick(splt_val,screen)
 
     walls.update()
     gen.generate()
     screen.fill(BLACK)
     all_sprites.draw(screen)
     walls.draw(screen)
-    
+    for slot in slotz:
+
+        screen.blit(slot[0], slot[1])
     # blit_l([player.hitbox.topl, player.hitbox.topr, player.hitbox.btml, player.hitbox.btml], screen)
     pygame.display.flip()
 
