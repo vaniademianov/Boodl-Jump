@@ -42,7 +42,7 @@ class MiniCraftingTable(pygame.sprite.Sprite):
         self.delay = 0
     def update(self, player, colliders:pygame.sprite.Group):
         if not pygame.sprite.spritecollideany(self, colliders):
-            self.rect.centery -= 2
+            self.rect.centery += 2
         # check is player near and give block to them
         dist = Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centery)
         if dist < 100:
