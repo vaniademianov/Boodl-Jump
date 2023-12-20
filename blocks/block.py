@@ -5,9 +5,11 @@ rm  = ResourceManager()
 
 class IBlock(pygame.sprite.Sprite):
     def __init__(self, position, image, durability) -> None:
-        self.rect = position
+        super().__init__()
         self.or_image:pygame.Surface = image
         self.image:pygame.Surface = image
+        self.rect = self.image.get_rect()
+        self.rect.topleft = position
         # how long to break block in ticks
         self.dur = durability
         self.tiki = 0
@@ -19,28 +21,35 @@ class IBlock(pygame.sprite.Sprite):
         return self.rect.center
 
 
-    def tick(self,is_holding_l_button, player):
+    def update(self,is_holding_l_button, player,gui_coordinates):
                 
         self.rect.y -= player.y_vel
-        if not is_holding_l_button:
+        if not is_holding_l_button or not self.rect.colliderect(gui_coordinates[0], gui_coordinates[1], 1, 1):
             # reset
             self.state = 0
             self.tiki = 0
             self.image = self.or_image
+
+            
             return
-        else:
-            tiki += 1
-            if tiki > self.dur/len(self.STATES):
-                if self.state + 1 > len(self.STATES):
+ 
+        #interaction distance TODO
+        elif Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centerx) < 230:
+            self.tiki += 1
+            
+            if self.tiki > self.dur/len(self.STATES):
+                if self.state+1 > len(self.STATES):
                     # over
                     self.on_break()
                     self.kill()
-                self.tiki = 0
-                
-                self.state+= 1
-                self.image = self.or_image
-                #update image
-                self.image = self.image.blit(self.STATES[self.state-1],pygame.Rect(0, 0, self.rect.width, self.rect.height))
+                else:
+                    self.tiki = 0
+                    
+                    self.state+= 1
+                    self.image = self.or_image.copy()
+                    #update image
+                    print(len(self.STATES),self.state)
+                    self.image.blit(self.STATES[self.state-1],pygame.Rect(0, 0, self.rect.width, self.rect.height))
     def on_right_click(self,*args,**kwargs):
         raise Exception("NotImplemented error")
     def on_left_click(self):
