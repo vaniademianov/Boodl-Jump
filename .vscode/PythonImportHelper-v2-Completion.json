@@ -1,0 +1,1081 @@
+[
+    {
+        "label": "pygame",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pygame",
+        "description": "pygame",
+        "detail": "pygame",
+        "documentation": {}
+    },
+    {
+        "label": "resource_manager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "isExtraImport": true,
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "ResourceManager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "isExtraImport": true,
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "resource_manager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "isExtraImport": true,
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SIZE",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "IBlock",
+        "importPath": "blocks.block",
+        "description": "blocks.block",
+        "isExtraImport": true,
+        "detail": "blocks.block",
+        "documentation": {}
+    },
+    {
+        "label": "IItem",
+        "importPath": "items.item",
+        "description": "items.item",
+        "isExtraImport": true,
+        "detail": "items.item",
+        "documentation": {}
+    },
+    {
+        "label": "IIMiniItem",
+        "importPath": "items.mini_item",
+        "description": "items.mini_item",
+        "isExtraImport": true,
+        "detail": "items.mini_item",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "serial",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "serial",
+        "description": "serial",
+        "detail": "serial",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "queue",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "queue",
+        "description": "queue",
+        "detail": "queue",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "math",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
+        "documentation": {}
+    },
+    {
+        "label": "pickle",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pickle",
+        "description": "pickle",
+        "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "subprocess",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "subprocess",
+        "description": "subprocess",
+        "detail": "subprocess",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingTable",
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "isExtraImport": true,
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "serial,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "serial.",
+        "description": "serial.",
+        "detail": "serial.",
+        "documentation": {}
+    },
+    {
+        "label": "keyboard,",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "keyboard.",
+        "description": "keyboard.",
+        "detail": "keyboard.",
+        "documentation": {}
+    },
+    {
+        "label": "IBlock",
+        "kind": 6,
+        "importPath": "blocks.block",
+        "description": "blocks.block",
+        "peekOfCode": "class IBlock(pygame.sprite.Sprite):\n    def __init__(self, position, image, durability) -> None:\n        super().__init__()\n        self.or_image:pygame.Surface = image\n        self.image:pygame.Surface = image\n        self.rect = self.image.get_rect()\n        self.rect.topleft = position\n        # how long to break block in ticks\n        self.dur = durability\n        self.tiki = 0",
+        "detail": "blocks.block",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingTable_block",
+        "kind": 6,
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "peekOfCode": "class CraftingTable_block(IBlock):\n    def __init__(self, pos, breaked_group) -> None:\n        self.img = rm.get_crafting_table((50,50))\n        self.breaked = breaked_group\n        # fps * 3\n        super().__init__(pos,self.img, FPS*2)\n    def on_right_click(self,):\n        # open gui\n        pass\n    def on_break(self):",
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "MiniCraftingTable",
+        "kind": 6,
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "peekOfCode": "class MiniCraftingTable(IIMiniItem):\n    def __init__(self,cords) -> None:\n        self.parent = CraftingTable\n        self.image = rm.get_crafting_table((16,16))\n        super().__init__(cords, self.image, self.parent)\nclass CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.minimized_for_inv = rm.get_crafting_table((32,32))",
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingTable",
+        "kind": 6,
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "peekOfCode": "class CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.minimized_for_inv = rm.get_crafting_table((32,32))\n        self.player = None\n        self.title = \"Crafting Table\"\n    def get_slot(self):\n        return self.parent\n    def on_move(self,player):",
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "rm",
+        "kind": 5,
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "peekOfCode": "rm = ResourceManager()\nclass CraftingTable_block(IBlock):\n    def __init__(self, pos, breaked_group) -> None:\n        self.img = rm.get_crafting_table((50,50))\n        self.breaked = breaked_group\n        # fps * 3\n        super().__init__(pos,self.img, FPS*2)\n    def on_right_click(self,):\n        # open gui\n        pass",
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "IItem",
+        "kind": 6,
+        "importPath": "items.item",
+        "description": "items.item",
+        "peekOfCode": "class IItem:\n    def __init__(self) -> None:\n        self.title = \"undefined\"\n    def get_slot(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_move(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_right_click(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_left_click(self,*args,**kwargs):",
+        "detail": "items.item",
+        "documentation": {}
+    },
+    {
+        "label": "IIMiniItem",
+        "kind": 6,
+        "importPath": "items.mini_item",
+        "description": "items.mini_item",
+        "peekOfCode": "class IIMiniItem(pygame.sprite.Sprite):\n    def __init__(self,cords,image,parent) -> None:\n        super().__init__()\n        self.rect = image.get_rect()\n        self.rect.center = cords \n        self.or_rect_center = cords\n        self.delay = 0\n        self.parent = parent\n        self.pickup_time =  0.60\n        self.path = None",
+        "detail": "items.mini_item",
+        "documentation": {}
+    },
+    {
+        "label": "ResourceManager",
+        "kind": 6,
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "peekOfCode": "class ResourceManager:\n    def __init__(self, res_name = \"\") -> None:\n        self.player = pygame.image.load(\"res/player.png\")\n        self.player = pygame.transform.scale(self.player, PLAYER_SIZE)\n        self.slot_active = pygame.image.load(\"res/active.png\")\n        self.slot_active = pygame.transform.scale(self.slot_active, (70,70))\n        self.slot_unactive = pygame.image.load(\"res/unactive.png\")\n        self.slot_unactive = pygame.transform.scale(self.slot_unactive, (70,70))\n        # load breaking states\n        filenames = [f for f in os.listdir(\"res/destroy_stages\")]",
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "resource_manager",
+        "kind": 5,
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "peekOfCode": "resource_manager = ResourceManager()",
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "INTERACTION_DISTANCE",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "GREEN",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLUE",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "BLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "GRAY",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "GRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_HEIGHT",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT_MODIFIER",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "WIDTH",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_BLOCK_SIZE",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SIZE",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "GUI_SENSA",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "INTERACTION_DISTANCE",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "INTERACTION_DISTANCE = 230",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "Informator",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()\n    def do_thing(self):\n        while True:\n            with print_lock:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Slot",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Slot:\n    def __init__(self, item, act=False) -> None:\n        self.item = item\n        self.image_act = rm.get_active_slot().copy()\n        self.image_unact = rm.get_unactive_slot().copy()\n        self.og_image_act = rm.get_active_slot().copy()\n        self.og_image_unact = rm.get_unactive_slot().copy()\n        self.is_active = act\n        self.count = 1\n        # TODO blit name",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Inventory",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Inventory:\n    def __init__(self) -> None:\n        self.SLOT_NUMBER = 9\n        self.INV_NUMBER = 27\n        self.hotbar = [\n            Slot(None, True),\n            *[Slot(None) for i in range(self.SLOT_NUMBER - 1)],\n        ]\n        self.inventory = [Slot(None) for i in range(self.INV_NUMBER - 1)]\n        self.selected = self.hotbar[0]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Generator:\n    def __init__(self, player, wall_0) -> None:\n        self.wall_0 = wall_0\n        self.last_wall = wall_0\n        self.player = player\n        self.count = 1\n        self.hardness = 0\n        self.color_n = 1\n    def generate(self):\n        y = self.wall_0.rect.y",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Classifier",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Classifier:\n    def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r, cent_t):\n        self.top_left = top_l\n        self.top_right = top_r\n        self.bottom_left = btm_l\n        self.bottom_right = btm_r\n        self.center = cent\n        self.center_left = cent_l\n        self.center_right = cent_r\n        self.center_top = cent_t",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Cub",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Cub(pygame.sprite.Sprite):\n    def __init__(self, size, ofs, hitty):\n        pygame.sprite.Sprite.__init__(self)\n        self.image = pygame.Surface(size)\n        self.image.fill(random.choice([RED, WHITE, BLUE, GREEN]))\n        self.rect = self.image.get_rect()\n        self.rect.topleft = w(hitty.rect.topleft, ofs)\n        self.hitty = hitty\n        self.ofs = ofs\n    def update(self, *args: Any, **kwargs: Any) -> None:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Hitty",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Hitty(pygame.sprite.Sprite):\n    def __init__(self, size, coords, player):\n        pygame.sprite.Sprite.__init__(self)\n        self.image = pygame.Surface(size)\n        self.image.fill(RED)\n        self.og_surf = self.image\n        self.rect = self.image.get_rect()\n        self.rect.center = coords\n        self.player = player\n        self.ii = 20",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Wall",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Wall(pygame.sprite.Sprite):\n    def __init__(self, coords, size, mov=False, color=RED,topik = None):\n        pygame.sprite.Sprite.__init__(self)\n        self.image = pygame.Surface(size)\n        self.image.fill(color)\n        self.rect = self.image.get_rect()\n        self.rect.center = coords\n        self.player = player\n        if topik != None:\n            self.rect.top = topik",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "Player",
+        "kind": 6,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "class Player(pygame.sprite.Sprite):\n    def __init__(self, inv):\n        pygame.sprite.Sprite.__init__(self)\n        self.og_surf = rm.get_player()\n        self.image = self.og_surf\n        self.rect = self.image.get_rect()\n        self.rect.center = (\n            WIDTH / 2,\n            HEIGHT - self.rect.height + HEIGHT_MODIFIER - 15,\n        )",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "w",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def w(a: tuple, b: tuple):\n    return (a[0] + b[0], a[1] + b[1])\ndef wm(a: tuple, b: tuple):\n    return (a[0] - b[0], a[1] - b[1])\ndef wd(a: tuple, b: int):\n    return (a[0] / b, a[1] / b)\ndef rect_group_collide(r: pygame.Rect, g: pygame.sprite.Group):\n    for sprite in g.sprites():\n        if r.colliderect(sprite.rect):\n            return True",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "wm",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def wm(a: tuple, b: tuple):\n    return (a[0] - b[0], a[1] - b[1])\ndef wd(a: tuple, b: int):\n    return (a[0] / b, a[1] / b)\ndef rect_group_collide(r: pygame.Rect, g: pygame.sprite.Group):\n    for sprite in g.sprites():\n        if r.colliderect(sprite.rect):\n            return True\n    return False\ndef the_one(a, b):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "wd",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def wd(a: tuple, b: int):\n    return (a[0] / b, a[1] / b)\ndef rect_group_collide(r: pygame.Rect, g: pygame.sprite.Group):\n    for sprite in g.sprites():\n        if r.colliderect(sprite.rect):\n            return True\n    return False\ndef the_one(a, b):\n    return True in [a, b]\ndef i_fals(v):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "rect_group_collide",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def rect_group_collide(r: pygame.Rect, g: pygame.sprite.Group):\n    for sprite in g.sprites():\n        if r.colliderect(sprite.rect):\n            return True\n    return False\ndef the_one(a, b):\n    return True in [a, b]\ndef i_fals(v):\n    return v != None\nclass Slot:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "the_one",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def the_one(a, b):\n    return True in [a, b]\ndef i_fals(v):\n    return v != None\nclass Slot:\n    def __init__(self, item, act=False) -> None:\n        self.item = item\n        self.image_act = rm.get_active_slot().copy()\n        self.image_unact = rm.get_unactive_slot().copy()\n        self.og_image_act = rm.get_active_slot().copy()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "i_fals",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def i_fals(v):\n    return v != None\nclass Slot:\n    def __init__(self, item, act=False) -> None:\n        self.item = item\n        self.image_act = rm.get_active_slot().copy()\n        self.image_unact = rm.get_unactive_slot().copy()\n        self.og_image_act = rm.get_active_slot().copy()\n        self.og_image_unact = rm.get_unactive_slot().copy()\n        self.is_active = act",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "convert_top_left_to_center",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def convert_top_left_to_center(top_left_x, top_left_y, width, height):\n    center_x = top_left_x + width / 2\n    center_y = top_left_y + height / 2\n    return center_x, center_y\nclass Classifier:\n    def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r, cent_t):\n        self.top_left = top_l\n        self.top_right = top_r\n        self.bottom_left = btm_l\n        self.bottom_right = btm_r",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "run_calibration",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def run_calibration(splt_val, last_val):\n    global cd, ticky, calib, classi, calib_top_j_left, calib_top_j_right, calib_bottom_j_left, calib_bottom_j_right, calib_j_center, calib_center_left, calib_center_right, calib_center_top\n    if calib == 0 and last_val != \"\":\n        print(\"Hi! It's me, Calibrator. Now, we will calibrate your joystick!\")\n        calib = 1\n    elif calib == 1:\n        print(\"Press the joystick button to continue!\")\n        ticky = 1\n        calib = 3\n    elif ticky > (FPS * 3):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "blit_l",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    # print(last_val)\n    if cd > 0:\n        cd -= 1\n    clock.tick(FPS)\n    if ticky != 0:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "playerz",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "playerz = rm.get_players()\nscope = rm.get_scope()\nproc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"sim.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "scope",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "scope = rm.get_scope()\nproc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"sim.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()\ninf_q = queue.Queue()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "proc",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "proc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"sim.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()\ninf_q = queue.Queue()\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "print_lock",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "print_lock = threading.Lock()\ninf_q = queue.Queue()\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\npygame.font.init()\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "inf_q",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "inf_q = queue.Queue()\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\npygame.font.init()\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "lst",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\npygame.font.init()\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "font_txt",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "font_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()\n    def do_thing(self):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "COUNT_COLOR",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "COUNT_COLOR = (244, 230, 15)\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()\n    def do_thing(self):\n        while True:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(os.getcwd().split(\"\\\\\")[-1] + \" - By RNT Development\")\nclock = pygame.time.Clock()\nall_sprites = pygame.sprite.Group()\nplayer = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "clock = pygame.time.Clock()\nall_sprites = pygame.sprite.Group()\nplayer = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)\nwall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))\nprint(wall.rect.top, wall.rect.center)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "all_sprites",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "all_sprites = pygame.sprite.Group()\nplayer = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)\nwall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))\nprint(wall.rect.top, wall.rect.center)\nwalls.add(wall)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)\nwall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))\nprint(wall.rect.top, wall.rect.center)\nwalls.add(wall)\nwall = Wall((25, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "walls",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "walls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)\nwall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))\nprint(wall.rect.top, wall.rect.center)\nwalls.add(wall)\nwall = Wall((25, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\nwall = Wall((WIDTH, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "wall_0",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "wall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)\nwall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))\nprint(wall.rect.top, wall.rect.center)\nwalls.add(wall)\nwall = Wall((25, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\nwall = Wall((WIDTH, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "wall",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "wall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))\nprint(wall.rect.top, wall.rect.center)\nwalls.add(wall)\nwall = Wall((25, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\nwall = Wall((WIDTH, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\ncolliders = pygame.sprite.Group()\nfor wall in walls.sprites():\n    colliders.add(wall)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "wall",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "wall = Wall((25, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\nwall = Wall((WIDTH, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\ncolliders = pygame.sprite.Group()\nfor wall in walls.sprites():\n    colliders.add(wall)\n# all_sprites.add(player.hitbox)\nthrd = Informator(inf_q)\nthrd.start()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "wall",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "wall = Wall((WIDTH, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)\nwalls.add(wall)\ncolliders = pygame.sprite.Group()\nfor wall in walls.sprites():\n    colliders.add(wall)\n# all_sprites.add(player.hitbox)\nthrd = Informator(inf_q)\nthrd.start()\n# Цикл игры\nrunning = True",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "colliders",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "colliders = pygame.sprite.Group()\nfor wall in walls.sprites():\n    colliders.add(wall)\n# all_sprites.add(player.hitbox)\nthrd = Informator(inf_q)\nthrd.start()\n# Цикл игры\nrunning = True\ncalib = 0\nlast_val = \"\"",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "thrd",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "thrd = Informator(inf_q)\nthrd.start()\n# Цикл игры\nrunning = True\ncalib = 0\nlast_val = \"\"\nticky = 0\ncd = 0\ncalib_top_j_left = None\ncalib_top_j_right = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "running",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "running = True\ncalib = 0\nlast_val = \"\"\nticky = 0\ncd = 0\ncalib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib = 0\nlast_val = \"\"\nticky = 0\ncd = 0\ncalib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "last_val",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "last_val = \"\"\nticky = 0\ncd = 0\ncalib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "ticky",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "ticky = 0\ncd = 0\ncalib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "cd",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "cd = 0\ncalib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_top_j_left",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_top_j_right",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_bottom_j_left",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_bottom_j_right",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_j_center",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_center_top",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_center_left",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "calib_center_right",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "inventory",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "inventory = Inventory()\nplayer.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "player.inv",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "player.inv = inventory\nall_sprites.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "gen",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    # print(last_val)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "gui_coordinates",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "gui_coordinates = [0, 0]\nblocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    # print(last_val)\n    if cd > 0:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "blocks",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "blocks = pygame.sprite.Group()\nbreaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    # print(last_val)\n    if cd > 0:\n        cd -= 1",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "breaked_stuff",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "breaked_stuff = pygame.sprite.Group()\ndef blit_l(l, screen):\n    for obj in l:\n        screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    # print(last_val)\n    if cd > 0:\n        cd -= 1\n    clock.tick(FPS)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "arduino_map",
+        "kind": 2,
+        "importPath": "sim",
+        "description": "sim",
+        "peekOfCode": "def arduino_map(x, in_min, in_max, out_min, out_max):\n    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min\ndef setter(cords, jb, b1, b2,b3,b4,b5,b6):\n    ser.write(bytes(f\"{cords[0]} {cords[1]} {jb} 1: {b1} 2: {b2} 3: {b3} 4: {b4} 5: {b5} 6: {b6}\\n\", encoding=\"utf-8\"))\ndef cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))",
+        "detail": "sim",
+        "documentation": {}
+    },
+    {
+        "label": "setter",
+        "kind": 2,
+        "importPath": "sim",
+        "description": "sim",
+        "peekOfCode": "def setter(cords, jb, b1, b2,b3,b4,b5,b6):\n    ser.write(bytes(f\"{cords[0]} {cords[1]} {jb} 1: {b1} 2: {b2} 3: {b3} 4: {b4} 5: {b5} 6: {b6}\\n\", encoding=\"utf-8\"))\ndef cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))",
+        "detail": "sim",
+        "documentation": {}
+    },
+    {
+        "label": "cp",
+        "kind": 2,
+        "importPath": "sim",
+        "description": "sim",
+        "peekOfCode": "def cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))\n    print(\"sent\")\n    time.sleep(0.2)",
+        "detail": "sim",
+        "documentation": {}
+    },
+    {
+        "label": "ser",
+        "kind": 5,
+        "importPath": "sim",
+        "description": "sim",
+        "peekOfCode": "ser = serial.Serial(\"COM8\")\ndef arduino_map(x, in_min, in_max, out_min, out_max):\n    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min\ndef setter(cords, jb, b1, b2,b3,b4,b5,b6):\n    ser.write(bytes(f\"{cords[0]} {cords[1]} {jb} 1: {b1} 2: {b2} 3: {b3} 4: {b4} 5: {b5} 6: {b6}\\n\", encoding=\"utf-8\"))\ndef cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()",
+        "detail": "sim",
+        "documentation": {}
+    },
+    {
+        "label": "res",
+        "kind": 5,
+        "importPath": "sim",
+        "description": "sim",
+        "peekOfCode": "res = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))\n    print(\"sent\")\n    time.sleep(0.2)",
+        "detail": "sim",
+        "documentation": {}
+    },
+    {
+        "label": "rc",
+        "kind": 6,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "class rc:\n    def __init__(self,rect) -> None:\n        self.rect = rect\nclass Holder:\n    def __init__(self, w, h, rct_size=50) -> None:\n        self.rizz = 0\n        self.grid = [[pygame.Rect(x, y, rct_size, rct_size) for x in range(0, w, rct_size)] for y in range(-10025, h, rct_size)]\n    def get_nearest(self, coordinates):\n        min_distance = float('inf')  # Start with a large distance\n        nearest_rect = None",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Holder",
+        "kind": 6,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "class Holder:\n    def __init__(self, w, h, rct_size=50) -> None:\n        self.rizz = 0\n        self.grid = [[pygame.Rect(x, y, rct_size, rct_size) for x in range(0, w, rct_size)] for y in range(-10025, h, rct_size)]\n    def get_nearest(self, coordinates):\n        min_distance = float('inf')  # Start with a large distance\n        nearest_rect = None\n        for row in self.grid:\n            for rect in row:\n                distance = pygame.math.Vector2(coordinates) - pygame.math.Vector2(rect.topleft)",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "kind": 6,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "class Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = pygame.Rect(cords, BASE_BLOCK_SIZE)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False\n        rect_2 = pygame.Rect((0,0), PLAYER_SIZE)",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "DataClass_Transporter",
+        "kind": 6,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "class DataClass_Transporter:\n    def __init__(self,val) -> None:\n        self.val = val\n    def get_val(self):\n        return self.val\n    def set_val(self, val):\n        self.val = val",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "grd",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "grd = Holder(WIDTH, HEIGHT)\nclass Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = pygame.Rect(cords, BASE_BLOCK_SIZE)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False",
+        "detail": "utils",
+        "documentation": {}
+    }
+]

@@ -12,7 +12,8 @@ import subprocess
 from blocks.crafting_table import CraftingTable as crafting_table_item
 from pathlib import Path
 from res.resource_manager import resource_manager as rm
-
+from utils import *
+from cons import *
 playerz = rm.get_players()
 scope = rm.get_scope()
 proc = None
@@ -22,25 +23,17 @@ except Exception as e:
     proc = subprocess.Popen(["python", "sim.py"])
     time.sleep(1)
     serial = sm.Serial("COM9")
-WIDTH = 1000
-HEIGHT = 800
-GUI_SENSA = 5
-FPS = 30
-INTERACTION_DISTANCE = 230
+
 print_lock = threading.Lock()
 inf_q = queue.Queue()
-# Задаем цвета
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-BASE_HEIGHT = 200
-_HEIGHT_MODIFIER = -200
+
+
 lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]
-pygame.font.init() 
-font_txt = pygame.font.SysFont('Comic Sans MS', 25)
+pygame.font.init()
+font_txt = pygame.font.SysFont("Comic Sans MS", 25)
 COUNT_COLOR = (244, 230, 15)
+
+
 class Informator(threading.Thread):
     def __init__(self, queue, args=(), kwargs=None):
         threading.Thread.__init__(self, args=(), kwargs=None)
@@ -82,8 +75,6 @@ def the_one(a, b):
     return True in [a, b]
 
 
-
-
 def i_fals(v):
     return v != None
 
@@ -100,33 +91,47 @@ class Slot:
         self.count = 1
         # TODO blit name
 
-        if item != None:
-            rect: pygame.rect.Rect = item.minimized_for_inv.get_rect()
+        if item is not None:
+            rect = item.minimized_for_inv.get_rect()
             rect.center = self.image_act.get_rect().center
 
             self.image_act.blit(item.minimized_for_inv, rect)
             self.image_unact.blit(item.minimized_for_inv, rect)
+
         else:
-            self.image_act = self.og_image_act
-            self.image_unact = self.og_image_unact
-        self.image = self.image_act if self.is_active else self.image_unact
+            self.image_act = self.og_image_act.copy()
+            self.image_unact = self.og_image_unact.copy()
+        self.image = (
+            self.image_act.copy() if self.is_active else self.image_unact.copy()
+        )
 
     def update_activity(self, item, act=None):
-        if act == None:
+        if act is None:
             act = self.is_active
+
         self.item = item
         self.is_active = act
-        
-        if item != None:
-            rect: pygame.rect.Rect = item.minimized_for_inv.get_rect()
+
+        if item is not None:
+            self.item.parent = self
+            rect = item.minimized_for_inv.get_rect()
             rect.center = self.image_act.get_rect().center
 
             self.image_act.blit(item.minimized_for_inv, rect)
             self.image_unact.blit(item.minimized_for_inv, rect)
+            if self.is_active:
+                self.image = self.image_act.copy()
+
+            else:
+                self.image = self.image_unact.copy()
         else:
-            self.image_act = self.og_image_act
-            self.image_unact = self.og_image_unact
-        self.image = self.image_act if self.is_active else self.image_unact 
+            self.image_act = self.og_image_act.copy()
+            self.image_unact = self.og_image_unact.copy()
+            if self.is_active:
+                self.image = self.og_image_act
+
+            else:
+                self.image = self.og_image_unact
 
     def get_item(self):
         return self.item
@@ -147,24 +152,32 @@ class Inventory:
         self.selected = self.hotbar[0]
         self.selected_n = 0
         self.change_cd = 0.5 * FPS
-        self.interaction_cd_const = 0.4*FPS
+        self.interaction_cd_const = 0.4 * FPS
         self.interaction_cd = 0
         self.cd = 0
+        self.animation_active = False
+        self.animation_progress = 0
+        self.item_name = None
         self.developer_items()
         # Active slot events
-    
+
     def add_to_inventory(self, item, count):
         slot = None
         i = 0
         all_inv = self.hotbar + self.inventory
         while i < len(all_inv):
             slot = all_inv[i]
-            if slot.get_item() == item and slot.count+count <= 64:
+            if (
+                slot.get_item() != None
+                and slot.get_item().title == item.title
+                and slot.count + count <= 64
+            ):
                 # found avalible slot
                 slot.count += count
+
                 item.parent = slot
                 return True
-            i+=1
+            i += 1
 
         slot = None
         i = 0
@@ -178,12 +191,14 @@ class Inventory:
             i += 1
 
         return False
-    # REMOVE ON PUSH  
+
+    # REMOVE ON PUSH
     def developer_items(self):
         # do not cheat or ill eat you
 
         self.hotbar[0].update_activity(crafting_table_item(self.hotbar[-1]), False)
         self.hotbar[0].count = 3
+
     def f_all(self, active_currently):
         for item in self.hotbar:
             # None | class<Item>
@@ -191,19 +206,24 @@ class Inventory:
                 item.update_activity(item.get_item(), False)
             else:
                 item.update_activity(item.get_item(), True)
-    def check_info(self,info):
 
+    def check_info(self, info):
         if len(info) > 3:
-            if info[8] == "0": # right
-                self.selected.get_item().on_right_click(tuple(gui_coordinates), walls,breaked_stuff, blocks, colliders)
+            if info[8] == "0":  # right
+                self.selected.get_item().on_right_click(
+                    tuple(gui_coordinates), walls, breaked_stuff, blocks, colliders
+                )
                 self.interaction_cd = self.interaction_cd_const
             if info[10] == "0":
-                self.selected.get_item().on_left_click(tuple(gui_coordinates), walls,breaked_stuff, blocks, colliders)
+                self.selected.get_item().on_left_click(
+                    tuple(gui_coordinates), walls, breaked_stuff, blocks, colliders
+                )
                 self.interaction_cd = self.interaction_cd_const
+
     def tick(self, info, screen):
         # COOLDOWN
         if self.interaction_cd > 0:
-            self.interaction_cd -=1
+            self.interaction_cd -= 1
         else:
             self.interaction_cd = 0
             if self.selected.item != None:
@@ -214,17 +234,18 @@ class Inventory:
             self.cd = 0
             self.scroll(info)
         # 8, 10
-        
+        for item in self.hotbar:
+            if item.item != None:
 
+                item.item.on_move(player)
         self.act_s()
         x = (WIDTH - (70 * (len(self.hotbar) + 2))) / 2
         for slot in self.hotbar:
             x += 70
             slot.draw(screen, (x, HEIGHT - 70))
             if slot.count > 1:
-
                 text_surf = font_txt.render(str(slot.count), False, COUNT_COLOR)
-                screen.blit(text_surf, (x+55, HEIGHT-30))
+                screen.blit(text_surf, (x + 55, HEIGHT - 30))
 
     def classify_np(self, info):
         if len(info) > 1:
@@ -241,18 +262,49 @@ class Inventory:
 
     def scroll(self, info):
         np = self.classify_np(info)
+
         if np == "l":
             self.selected_n -= 1
             self.cd = self.change_cd
+            self.animation_active = True
+            self.animation_progress = 0
+
         if np == "r":
             self.selected_n += 1
             self.cd = self.change_cd
+            self.animation_active = True
+            self.animation_progress = 0
+
         if self.selected_n < 0:
             self.selected_n = self.SLOT_NUMBER - 1
         elif self.selected_n > self.SLOT_NUMBER - 1:
             self.selected_n = 0
+
         self.selected = self.hotbar[self.selected_n]
         self.f_all(self.selected)
+
+        if self.animation_active and self.selected.item is not None:
+            self.animation_progress += 3
+
+            if self.animation_progress == 3:
+                self.item_name = font_txt.render(
+                    self.selected.item.title, True, (255, 255, 255)
+                )
+
+                self.item_name2 = font_txt.render(
+                    self.selected.item.title, True, (255, 255, 255)
+                )
+                self.item_name.set_alpha(28)
+
+            if self.animation_progress >= 100:
+                self.animation_active = False
+                self.item_name = self.item_name2
+            if self.item_name is not None:
+                alpha_value = min(255, self.animation_progress + 28)
+                self.item_name.set_alpha(alpha_value)
+        if self.item_name is not None and self.selected.item is not None:
+            text_x = WIDTH // -self.item_name.get_width() // 2
+            screen.blit(self.item_name, (text_x, HEIGHT - 110))
 
 
 class Generator:
@@ -272,9 +324,11 @@ class Generator:
             j = random.randint(2, 3)
             self.last_y = walls.sprites()[-1].rect.y
 
-
             jump_h = sum(range(self.player.jumper + 1)) - player.rect.h - 25
-            y = self.last_wall.rect.y - jump_h
+            jump_h -= 35
+            y = (self.last_wall.rect.top - round(jump_h* 1.5)) 
+
+
             pw = list(range(250, 100 - 1, -25))
             while j > 0:
                 w = random.choice(
@@ -287,13 +341,12 @@ class Generator:
                 )
                 x = random.choice([ii for ii in range(0, WIDTH - w, 50)])
 
-                new_wall = Wall((x - 26, y), (w + 52, 50))
+                new_wall = Wall((x - 26, y), (w + 52, 50),topik=y)
                 tries = 0
                 while (
                     pygame.sprite.spritecollideany(new_wall, colliders) is not None
                 ):  # or rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
                     if tries > 50:
-
                         # left or right side:
                         if x < WIDTH / 2:  # left
                             x -= 75
@@ -306,15 +359,15 @@ class Generator:
                         # while rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
                         #     print("Randed")
                         #     x = random.choice([ii for ii in range(0, WIDTH-w, 50)])
-                        new_wall = Wall((x - 26, y), (w + 52, 50))
+                        new_wall = Wall((x - 26, y), (w + 52, 50),topik=y)
                         break
 
                     tries += 1
                     # 0,06
-                    new_wall = Wall((x - 26, y), (w + 52, 50), color=lst[self.color_n])
+                    new_wall = Wall((x - 26, y), (w + 52, 50), color=lst[self.color_n],topik=y)
                     # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
                 j -= 1
-                new_wall = Wall((x, y), (w, 50), color=lst[self.color_n])
+                new_wall = Wall((x, y), (w, 50), color=lst[self.color_n],topik=y)
                 # walls_to_add.append(new_wall)
                 walls.add(new_wall)
                 colliders.add(new_wall)
@@ -324,6 +377,8 @@ class Generator:
             # last wall format: last_x, last_y_ last_w
             self.last_wall = new_wall
             self.count += 1
+
+
 def convert_top_left_to_center(top_left_x, top_left_y, width, height):
     center_x = top_left_x + width / 2
     center_y = top_left_y + height / 2
@@ -468,40 +523,43 @@ class Hitty(pygame.sprite.Sprite):
 
 
 class Wall(pygame.sprite.Sprite):
-    def __init__(self, coords, size, mov=False, color=RED):
+    def __init__(self, coords, size, mov=False, color=RED,topik = None):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface(size)
         self.image.fill(color)
         self.rect = self.image.get_rect()
         self.rect.center = coords
         self.player = player
+        if topik != None:
+            self.rect.top = topik
         self.mov = mov
         self.mov2 = True
         self.riz = 0
 
     def update(self) -> None:
-
         if self.mov2 == True:
             self.rect.y -= player.y_vel
         if self.mov == True:
             self.riz += player.y_vel
         if self.riz <= -300:
             self.mov2 = False
-
+    
 
 class Player(pygame.sprite.Sprite):
-    def __init__(self,inv):
+    def __init__(self, inv):
         pygame.sprite.Sprite.__init__(self)
 
         self.og_surf = rm.get_player()
         self.image = self.og_surf
+    
         self.rect = self.image.get_rect()
         self.rect.center = (
             WIDTH / 2,
-            HEIGHT - self.rect.height + _HEIGHT_MODIFIER - 15,
+            HEIGHT - self.rect.height + HEIGHT_MODIFIER - 15,
         )
         self.y_vel = 0
         self.jump = False
+        self.Y_CHANGE = 0
         self.x_vel = 0
         self.move_down = True
         self.move_up = True
@@ -512,6 +570,7 @@ class Player(pygame.sprite.Sprite):
         self.change_angle = 0
         self.jumper = 20
         self.inv = inv
+
     def rot(self):
         self.angle += self.change_angle
         self.image = playerz[round((self.angle) / 36)]
@@ -535,7 +594,6 @@ class Player(pygame.sprite.Sprite):
             self.y_vel = 0
             self.jump = False
 
-
         if classified[0] == "TOP" and not self.jump and self.move_up:
             self.y_vel -= self.jumper
             self.jump = True
@@ -553,7 +611,8 @@ class Player(pygame.sprite.Sprite):
         if self.y_vel != 0 and not self.hitbox.suuper_check_y(self.y_vel):
             self.y_vel = 0
             # self.jump = False
-
+        self.Y_CHANGE += -self.y_vel
+ 
         # self.rect.centery += self.y_vel
         self.rect.centerx += self.x_vel
 
@@ -657,13 +716,15 @@ all_sprites = pygame.sprite.Group()
 player = Player(None)
 all_sprites.add(player)
 walls = pygame.sprite.Group()
-wall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + _HEIGHT_MODIFIER), (250, 50))
+wall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))
+print(wall_0.rect.top)
 walls.add(wall_0)
-wall = Wall((WIDTH / 2, HEIGHT + _HEIGHT_MODIFIER), (WIDTH, 50))
+wall = Wall((WIDTH / 2, HEIGHT + HEIGHT_MODIFIER), (WIDTH, 50))
+print(wall.rect.top, wall.rect.center)
 walls.add(wall)
-wall = Wall((25, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
+wall = Wall((25, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
-wall = Wall((WIDTH, HEIGHT + _HEIGHT_MODIFIER - 475), (50, 1000), True)
+wall = Wall((WIDTH, HEIGHT + HEIGHT_MODIFIER - 475), (50, 1000), True)
 walls.add(wall)
 
 colliders = pygame.sprite.Group()
@@ -693,13 +754,16 @@ inventory = Inventory()
 player.inv = inventory
 all_sprites.add(player)
 gen = Generator(player, wall_0)
-gui_coordinates = [0,0]
+gui_coordinates = [0, 0]
 blocks = pygame.sprite.Group()
 breaked_stuff = pygame.sprite.Group()
+
 
 def blit_l(l, screen):
     for obj in l:
         screen.blit(obj.image, obj.rect)
+
+
 pygame.mouse.set_visible(False)
 
 while running:
@@ -717,41 +781,84 @@ while running:
         last_val = inf_q.get(False)
     last_val = last_val.strip()
     splt_val = last_val.split(" ")
-
+    screen.fill(BLACK)
     if calib != -1:
         run_calibration(
             splt_val, last_val
         )  # ['516', '514', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '\n']
+    rim_added = None
     if classi != None:
         all_sprites.update(classi.classify((int(splt_val[0]), int(splt_val[1]))))
         # print(splt_val, splt_val[10])
-        blocks.update(splt_val[10] == "0", player,gui_coordinates)
-        second_joystick_classified = classi.classify((int(splt_val[-3]),int(splt_val[-2])))
-        if second_joystick_classified[0] == "TOP" and gui_coordinates[1]-GUI_SENSA > 0:
+        wrek = pygame.Rect(gui_coordinates[0], gui_coordinates[1], rm.get_scope().get_width(), rm.get_scope().get_height())
+        blocked = False
+        for block in blocks.sprites():
+
+            if block.rect.colliderect(wrek):
+                # got them
+                
+                rim_added =block.rect
+                srf = rm.get_scope_on_block()
+
+                blocked = True
+        if not blocked:
+            rim_added = grd.get_nearest(tuple(gui_coordinates))
+            if Utilz.good_location(rim_added.topleft, colliders, player.rect.center):
+                srf = rm.get_scope_on_good_loc()
+            else:
+                srf = rm.get_scope_on_bad_loc()
+      
+            
+            # TODO APPLY FUNCTIONALITY
+            blocked = True
+        updatik = DataClass_Transporter(splt_val[10] == "0")
+        blocks.update(updatik, player, gui_coordinates)
+        second_joystick_classified = classi.classify(
+            (int(splt_val[-3]), int(splt_val[-2]))
+        )
+        if (
+            second_joystick_classified[0] == "TOP"
+            and gui_coordinates[1] - GUI_SENSA > 0
+        ):
             gui_coordinates[1] -= GUI_SENSA
-        elif second_joystick_classified[0] == "BOTTOM" and gui_coordinates[1]-GUI_SENSA < HEIGHT:
+        elif (
+            second_joystick_classified[0] == "BOTTOM"
+            and gui_coordinates[1] - GUI_SENSA < HEIGHT
+        ):
             gui_coordinates[1] += GUI_SENSA
 
-        if second_joystick_classified[1] == "RIGHT" and gui_coordinates[0]-GUI_SENSA < WIDTH:
+        if (
+            second_joystick_classified[1] == "RIGHT"
+            and gui_coordinates[0] - GUI_SENSA < WIDTH
+        ):
             gui_coordinates[0] += GUI_SENSA
-        elif second_joystick_classified[1] == "LEFT" and gui_coordinates[0]-GUI_SENSA > 0:
+        elif (
+            second_joystick_classified[1] == "LEFT"
+            and gui_coordinates[0] - GUI_SENSA > 0
+        ):
             gui_coordinates[0] -= GUI_SENSA
 
     else:
         all_sprites.update((None, None))
-        blocks.update(False, player,gui_coordinates)
+        blocks.update(False, player, gui_coordinates)
 
     breaked_stuff.update(player, colliders)
     walls.update()
 
     gen.generate()
-    screen.fill(BLACK)
-    all_sprites.draw(screen)
+    grd.greedy(player)
     walls.draw(screen)
     blocks.draw(screen)
-    #screen.blit(scope, convert_top_left_to_center(gui_coordinates[0], gui_coordinates[1], scope.get_width(), scope.get_height()))
+    if rim_added != None:
+        screen.blit(srf, rim_added.topleft)
+
+    all_sprites.draw(screen)
+    
+
+    # screen.blit(scope, convert_top_left_to_center(gui_coordinates[0], gui_coordinates[1], scope.get_width(), scope.get_height()))
     screen.blit(scope, tuple(gui_coordinates))
     breaked_stuff.draw(screen)
+
     inventory.tick(splt_val, screen)
     # blit_l([player.hitbox.topl, player.hitbox.topr, player.hitbox.btml, player.hitbox.btml], screen)
     pygame.display.flip()

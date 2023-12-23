@@ -1,7 +1,7 @@
 import pygame
-from res.resource_manager import ResourceManager
-from utils import Utilz
-rm  = ResourceManager()
+from res.resource_manager import resource_manager as rm
+from utils import *
+from cons import *
 
 class IBlock(pygame.sprite.Sprite):
     def __init__(self, position, image, durability) -> None:
@@ -19,24 +19,35 @@ class IBlock(pygame.sprite.Sprite):
         scr.blit(self.image, self.rect)
     def get_pos(self,*args,**kwargs):
         return self.rect.center
+    @staticmethod
+    def spawn(daughter,cords,walls,player,breaked_group,blocks,colliders):
+        new_coordinates = Utilz.round_coordinates(cords,player.Y_CHANGE,colliders)
 
+        if Utilz.good_location( new_coordinates,walls,player.rect.center):
+            new_block = daughter(new_coordinates,breaked_group)
+            blocks.add(new_block)
 
-    def update(self,is_holding_l_button, player,gui_coordinates):
-                
+            colliders.add(new_block)
+
+            return new_block
+        return None
+
+    def update(self,updatik, player,gui_coordinates):
+        is_holding_l_button = updatik.val
         self.rect.y -= player.y_vel
-        if not is_holding_l_button or not self.rect.colliderect(gui_coordinates[0], gui_coordinates[1], 1, 1):
+        if not is_holding_l_button or not self.rect.colliderect(grd.get_nearest(gui_coordinates)):
             # reset
             self.state = 0
             self.tiki = 0
             self.image = self.or_image
-
+            
             
             return
  
         #interaction distance TODO
-        elif Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centerx) < 230:
+        elif Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centerx) < INTERACTION_DISTANCE:
             self.tiki += 1
-            
+            updatik.val = False
             if self.tiki > self.dur/len(self.STATES):
                 if self.state+1 > len(self.STATES):
                     # over
@@ -48,13 +59,12 @@ class IBlock(pygame.sprite.Sprite):
                     self.state+= 1
                     self.image = self.or_image.copy()
                     #update image
-                    print(len(self.STATES),self.state)
                     self.image.blit(self.STATES[self.state-1],pygame.Rect(0, 0, self.rect.width, self.rect.height))
     def on_right_click(self,*args,**kwargs):
         raise Exception("NotImplemented error")
     def on_left_click(self):
         # INITIATE BREAKIN
-        self.image = self.or_image
-        self.image.blit()
+        raise Exception("NotImplemented error")
     def on_break(self,*args,**kwargs):
         raise Exception("NotImplemented error")
+
