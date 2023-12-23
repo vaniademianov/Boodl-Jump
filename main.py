@@ -284,26 +284,24 @@ class Inventory:
         self.f_all(self.selected)
 
         if self.animation_active and self.selected.item is not None:
-            self.animation_progress += 3
+            self.animation_progress += 5
 
-            if self.animation_progress == 3:
+            if self.animation_progress == 5:
                 self.item_name = font_txt.render(
                     self.selected.item.title, True, (255, 255, 255)
                 )
 
-                self.item_name2 = font_txt.render(
-                    self.selected.item.title, True, (255, 255, 255)
-                )
                 self.item_name.set_alpha(28)
 
             if self.animation_progress >= 100:
                 self.animation_active = False
-                self.item_name = self.item_name2
+                self.item_name = self.item_name
             if self.item_name is not None:
                 alpha_value = min(255, self.animation_progress + 28)
                 self.item_name.set_alpha(alpha_value)
         if self.item_name is not None and self.selected.item is not None:
-            text_x = WIDTH // -self.item_name.get_width() // 2
+            text_x = WIDTH//2 - self.item_name.get_width() // 2
+            print(text_x)
             screen.blit(self.item_name, (text_x, HEIGHT - 110))
 
 

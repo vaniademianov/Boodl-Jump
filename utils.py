@@ -39,7 +39,7 @@ grd = Holder(WIDTH, HEIGHT)
 class Utilz:
     @staticmethod
     def good_location(cords,colliders:pygame.sprite.Group,player_loc):
-        rect = pygame.Rect(cords, BASE_BLOCK_SIZE)
+        rect = grd.get_nearest(cords)
  
         if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:
  
@@ -53,6 +53,7 @@ class Utilz:
         if pygame.sprite.collide_rect(rc(rect_2),rc(rect)):
   
             return False
+
         return True 
     @staticmethod
     def round_coordinates(inp_cords, pc, colliders):

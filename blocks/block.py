@@ -23,13 +23,13 @@ class IBlock(pygame.sprite.Sprite):
     def spawn(daughter,cords,walls,player,breaked_group,blocks,colliders):
         new_coordinates = Utilz.round_coordinates(cords,player.Y_CHANGE,colliders)
 
-        if Utilz.good_location( new_coordinates,walls,player.rect.center):
+        if Utilz.good_location( new_coordinates,colliders,player.rect.center):
             new_block = daughter(new_coordinates,breaked_group)
             blocks.add(new_block)
 
             colliders.add(new_block)
-
             return new_block
+            
         return None
 
     def update(self,updatik, player,gui_coordinates):

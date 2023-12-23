@@ -318,7 +318,7 @@
         "kind": 6,
         "importPath": "items.mini_item",
         "description": "items.mini_item",
-        "peekOfCode": "class IIMiniItem(pygame.sprite.Sprite):\n    def __init__(self,cords,image,parent) -> None:\n        super().__init__()\n        self.rect = image.get_rect()\n        self.rect.center = cords \n        self.or_rect_center = cords\n        self.delay = 0\n        self.parent = parent\n        self.pickup_time =  0.60\n        self.path = None",
+        "peekOfCode": "class IIMiniItem(pygame.sprite.Sprite):\n    def __init__(self,cords,image,parent) -> None:\n        super().__init__()\n        self.rect = image.get_rect()\n        self.rect.center = cords \n        self.or_rect_center = list(cords)\n        self.delay = 0\n        self.parent = parent\n        self.pickup_time =  0.60\n        self.path = None",
         "detail": "items.mini_item",
         "documentation": {}
     },
@@ -1056,7 +1056,7 @@
         "kind": 6,
         "importPath": "utils",
         "description": "utils",
-        "peekOfCode": "class Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = pygame.Rect(cords, BASE_BLOCK_SIZE)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False\n        rect_2 = pygame.Rect((0,0), PLAYER_SIZE)",
+        "peekOfCode": "class Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = grd.get_nearest(cords)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False\n        rect_2 = pygame.Rect((0,0), PLAYER_SIZE)",
         "detail": "utils",
         "documentation": {}
     },
@@ -1074,7 +1074,7 @@
         "kind": 5,
         "importPath": "utils",
         "description": "utils",
-        "peekOfCode": "grd = Holder(WIDTH, HEIGHT)\nclass Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = pygame.Rect(cords, BASE_BLOCK_SIZE)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False",
+        "peekOfCode": "grd = Holder(WIDTH, HEIGHT)\nclass Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = grd.get_nearest(cords)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False",
         "detail": "utils",
         "documentation": {}
     }

@@ -44,12 +44,12 @@ class CraftingTable(IItem):
         self.player = player
     def on_right_click(self,cordi, walls,breaked_group, blocks,colliders):
         # Place table
-        print(self.player)
-        CraftingTable_block.spawn(CraftingTable_block, cordi, walls,self.player,breaked_group,blocks,colliders)
-        self.parent.count -= 1
-        if self.parent.count <= 0:
-            # self, item, act
-            self.parent.update_activity(item=None,act=None)
+        new_block = CraftingTable_block.spawn(CraftingTable_block, cordi, walls,self.player,breaked_group,blocks,colliders)
+        if new_block != None:
+            self.parent.count -= 1
+            if self.parent.count <= 0:
+                # self, item, act
+                self.parent.update_activity(item=None,act=None)
 
 
 
