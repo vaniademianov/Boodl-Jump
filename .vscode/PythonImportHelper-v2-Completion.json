@@ -33,6 +33,22 @@
         "documentation": {}
     },
     {
+        "label": "resource_manager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "isExtraImport": true,
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "resource_manager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "isExtraImport": true,
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "utils",
         "description": "utils",
@@ -42,6 +58,22 @@
     },
     {
         "label": "*",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
         "importPath": "utils",
         "description": "utils",
         "isExtraImport": true,
@@ -129,7 +161,63 @@
         "documentation": {}
     },
     {
+        "label": "PLAYER_SIZE",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
         "label": "TRANSPARENCY_ANIMATION_SPEED",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "WIDTH",
         "importPath": "cons",
         "description": "cons",
         "isExtraImport": true,
@@ -193,43 +281,107 @@
         "documentation": {}
     },
     {
-        "label": "HOVER",
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "label": "Element",
+        "importPath": "gui.gui_module.element",
+        "description": "gui.gui_module.element",
         "isExtraImport": true,
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.element",
+        "documentation": {}
+    },
+    {
+        "label": "Element",
+        "importPath": "gui.gui_module.element",
+        "description": "gui.gui_module.element",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.element",
+        "documentation": {}
+    },
+    {
+        "label": "Element",
+        "importPath": "gui.gui_module.element",
+        "description": "gui.gui_module.element",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.element",
         "documentation": {}
     },
     {
         "label": "HOVER",
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
         "isExtraImport": true,
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.event_types",
         "documentation": {}
     },
     {
         "label": "LEFT_CLICK",
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
         "isExtraImport": true,
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.event_types",
         "documentation": {}
     },
     {
         "label": "RIGHT_CLICK",
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
         "isExtraImport": true,
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "RIGHT_CLICK",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.event_types",
         "documentation": {}
     },
     {
         "label": "Gui",
-        "importPath": "gui.gui",
-        "description": "gui.gui",
+        "importPath": "gui.gui_module.gui",
+        "description": "gui.gui_module.gui",
         "isExtraImport": true,
-        "detail": "gui.gui",
+        "detail": "gui.gui_module.gui",
+        "documentation": {}
+    },
+    {
+        "label": "Gui",
+        "importPath": "gui.gui_module.gui",
+        "description": "gui.gui_module.gui",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.gui",
+        "documentation": {}
+    },
+    {
+        "label": "Literal",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Frame",
+        "importPath": "gui.gui_module.frame",
+        "description": "gui.gui_module.frame",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.frame",
         "documentation": {}
     },
     {
@@ -239,14 +391,6 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "Any",
-        "importPath": "typing",
-        "description": "typing",
-        "isExtraImport": true,
-        "detail": "typing",
         "documentation": {}
     },
     {
@@ -338,6 +482,14 @@
         "documentation": {}
     },
     {
+        "label": "inventory",
+        "importPath": "gui",
+        "description": "gui",
+        "isExtraImport": true,
+        "detail": "gui",
+        "documentation": {}
+    },
+    {
         "label": "serial,",
         "kind": 6,
         "isExtraImport": true,
@@ -401,48 +553,111 @@
         "documentation": {}
     },
     {
+        "label": "Button",
+        "kind": 6,
+        "importPath": "gui.gui_module.button",
+        "description": "gui.gui_module.button",
+        "peekOfCode": "class Button(Element):\n    def __init__(self,color, borders, size, center: tuple, boh) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        super().__init__(srf, center, boh)",
+        "detail": "gui.gui_module.button",
+        "documentation": {}
+    },
+    {
         "label": "Element",
         "kind": 6,
-        "importPath": "gui.element",
-        "description": "gui.element",
+        "importPath": "gui.gui_module.element",
+        "description": "gui.gui_module.element",
         "peekOfCode": "class Element:\n    def __init__(self,srf, coordinates:tuple,boh) -> None:\n        # do studff\n        self.surface:pygame.Surface = srf\n        self.surface.convert_alpha()\n        self.or_surf = self.surface.copy()\n        self.x, self.y = coordinates\n        self.hover = False\n        self.hovering_animation_active = False\n        self.hovering_animation_progress = 0",
-        "detail": "gui.element",
+        "detail": "gui.gui_module.element",
         "documentation": {}
     },
     {
         "label": "HOVER",
         "kind": 6,
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
         "peekOfCode": "class HOVER:\n    def __init__(self,hld = []) -> None:\n        self.evt_type = HOVER\n        self.hold = hld\n    def call(self):\n        for holdi in self.hold:\n            holdi()\nclass RIGHT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =RIGHT_CLICK",
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.event_types",
         "documentation": {}
     },
     {
         "label": "RIGHT_CLICK",
         "kind": 6,
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
         "peekOfCode": "class RIGHT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =RIGHT_CLICK\n        self.hold = hld\n    def call(self):\n        for holdi in self.hold:\n            holdi()\nclass LEFT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =LEFT_CLICK",
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.event_types",
         "documentation": {}
     },
     {
         "label": "LEFT_CLICK",
         "kind": 6,
-        "importPath": "gui.event_types",
-        "description": "gui.event_types",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
         "peekOfCode": "class LEFT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =LEFT_CLICK\n        self.hold = hld\n    def call(self):\n        for holdi in self.hold:\n            holdi()",
-        "detail": "gui.event_types",
+        "detail": "gui.gui_module.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "Frame",
+        "kind": 6,
+        "importPath": "gui.gui_module.frame",
+        "description": "gui.gui_module.frame",
+        "peekOfCode": "class Frame(Element):\n    def __init__(self,color, borders, size, center: tuple, boh) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        super().__init__(srf, center, boh)",
+        "detail": "gui.gui_module.frame",
         "documentation": {}
     },
     {
         "label": "Gui",
         "kind": 6,
-        "importPath": "gui.gui",
-        "description": "gui.gui",
-        "peekOfCode": "class Gui: \n    def __init__(self) -> None:\n        # Requirements: set visible/invisible, is reacting to events, open, close, draw (calls element's draw), events, global hover & click events\n        self.is_visible = False\n        self.is_reacting = False\n        self.elements = []\n        self.global_events = [HOVER([]),RIGHT_CLICK([]),LEFT_CLICK([])]\n        self.transparency = 0\n        self.transparency_anim_progress = 0\n        self.tp_anim_active = False",
-        "detail": "gui.gui",
+        "importPath": "gui.gui_module.gui",
+        "description": "gui.gui_module.gui",
+        "peekOfCode": "class Gui: \n    def __init__(self, active=False) -> None:\n        # Requirements: set visible/invisible, is reacting to events, open, close, draw (calls element's draw), events, global hover & click events\n        self.is_visible = active\n        self.is_reacting = active\n        self.elements = []\n        self.global_events = [HOVER([]),RIGHT_CLICK([]),LEFT_CLICK([])]\n        self.transparency = 0\n        self.transparency_anim_progress = 0\n        self.tp_anim_active = False",
+        "detail": "gui.gui_module.gui",
+        "documentation": {}
+    },
+    {
+        "label": "Label",
+        "kind": 6,
+        "importPath": "gui.gui_module.label",
+        "description": "gui.gui_module.label",
+        "peekOfCode": "class Label(Element):\n    def __init__(self, text, color, font_size, font: Literal[\"Brownie\", \"Freedom\"], coordinates: tuple, boh) -> None:\n        if font == \"Brownie\":\n            self.font = resource_manager.get_brownie_s(font_size)\n        elif font == \"Freedom\":\n            self.font = resource_manager.get_freedom(font_size)\n        srf = self.font.render(text, False,color)\n        super().__init__(srf, coordinates, boh)",
+        "detail": "gui.gui_module.label",
+        "documentation": {}
+    },
+    {
+        "label": "tick",
+        "kind": 2,
+        "importPath": "gui.inventory",
+        "description": "gui.inventory",
+        "peekOfCode": "def tick(gui_coordinates, splt_val):\n    global delay\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"0\" and delay <= 0:\n        if gui.is_visible == False:\n            gui.open()\n            gui.transparency_anim()\n            gui.slide_in_anim()\n            delay = FPS*0.4",
+        "detail": "gui.inventory",
+        "documentation": {}
+    },
+    {
+        "label": "gui",
+        "kind": 5,
+        "importPath": "gui.inventory",
+        "description": "gui.inventory",
+        "peekOfCode": "gui = Gui(True)\nframe1 = Frame(WHITE, 5, (WIDTH/2, HEIGHT/2), (WIDTH/2, HEIGHT/2), True)\nframe1.pack(gui, 0)\ndelay = 0\ndef tick(gui_coordinates, splt_val):\n    global delay\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"0\" and delay <= 0:\n        if gui.is_visible == False:",
+        "detail": "gui.inventory",
+        "documentation": {}
+    },
+    {
+        "label": "frame1",
+        "kind": 5,
+        "importPath": "gui.inventory",
+        "description": "gui.inventory",
+        "peekOfCode": "frame1 = Frame(WHITE, 5, (WIDTH/2, HEIGHT/2), (WIDTH/2, HEIGHT/2), True)\nframe1.pack(gui, 0)\ndelay = 0\ndef tick(gui_coordinates, splt_val):\n    global delay\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"0\" and delay <= 0:\n        if gui.is_visible == False:\n            gui.open()",
+        "detail": "gui.inventory",
+        "documentation": {}
+    },
+    {
+        "label": "delay",
+        "kind": 5,
+        "importPath": "gui.inventory",
+        "description": "gui.inventory",
+        "peekOfCode": "delay = 0\ndef tick(gui_coordinates, splt_val):\n    global delay\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"0\" and delay <= 0:\n        if gui.is_visible == False:\n            gui.open()\n            gui.transparency_anim()\n            gui.slide_in_anim()",
+        "detail": "gui.inventory",
         "documentation": {}
     },
     {
@@ -567,7 +782,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -576,7 +791,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -585,7 +800,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -594,7 +809,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -603,7 +818,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -612,7 +827,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -621,7 +836,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -630,7 +845,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -639,7 +854,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "SLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "SLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -648,7 +863,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "HOVER_ANIMATION_SPEED = 0.3",
+        "peekOfCode": "HOVER_ANIMATION_SPEED = 0.2",
         "detail": "cons",
         "documentation": {}
     },
@@ -878,11 +1093,20 @@
         "documentation": {}
     },
     {
+        "label": "os.environ['SDL_VIDEO_CENTERED']",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "os.environ['SDL_VIDEO_CENTERED'] = '1'\npygame.init()\npygame.mixer.init()\nscreen = pygame.display.set_mode((WIDTH, HEIGHT),)\npygame.display.set_caption(os.getcwd().split(\"\\\\\")[-1] + \" - By RNT Development\")\nclock = pygame.time.Clock()\nall_sprites = pygame.sprite.Group()\nplayer = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
         "label": "screen",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT))\npygame.display.set_caption(os.getcwd().split(\"\\\\\")[-1] + \" - By RNT Development\")\nclock = pygame.time.Clock()\nall_sprites = pygame.sprite.Group()\nplayer = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)",
+        "peekOfCode": "screen = pygame.display.set_mode((WIDTH, HEIGHT),)\npygame.display.set_caption(os.getcwd().split(\"\\\\\")[-1] + \" - By RNT Development\")\nclock = pygame.time.Clock()\nall_sprites = pygame.sprite.Group()\nplayer = Player(None)\nall_sprites.add(player)\nwalls = pygame.sprite.Group()\nwall_0 = Wall((WIDTH / 2, HEIGHT / 2 + 200 + HEIGHT_MODIFIER ), (250, 50))\nprint(wall_0.rect.top)\nwalls.add(wall_0)",
         "detail": "main",
         "documentation": {}
     },

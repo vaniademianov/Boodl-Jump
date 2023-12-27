@@ -12,6 +12,7 @@ import subprocess
 from blocks.crafting_table import CraftingTable as crafting_table_item
 from pathlib import Path
 from res.resource_manager import resource_manager as rm
+from gui import inventory as inv
 from utils import *
 from cons import *
 playerz = rm.get_players()
@@ -701,9 +702,11 @@ def run_calibration(splt_val, last_val):
 
 
 # Создаем игру и окно
+os.environ['SDL_VIDEO_CENTERED'] = '1'
 pygame.init()
 pygame.mixer.init()
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
+screen = pygame.display.set_mode((WIDTH, HEIGHT),)
+
 pygame.display.set_caption(os.getcwd().split("\\")[-1] + " - By RNT Development")
 clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group()
@@ -806,6 +809,7 @@ while running:
             # TODO APPLY FUNCTIONALITY
             blocked = True
         updatik = DataClass_Transporter(splt_val[10] == "0")
+        inv.tick(gui_coordinates, splt_val)
         blocks.update(updatik, player, gui_coordinates)
         second_joystick_classified = classi.classify(
             (int(splt_val[-3]), int(splt_val[-2]))
@@ -838,22 +842,25 @@ while running:
 
     breaked_stuff.update(player, colliders)
     walls.update()
+    
 
     gen.generate()
     grd.greedy(player)
     walls.draw(screen)
     blocks.draw(screen)
+
+
+    all_sprites.draw(screen)
     if rim_added != None:
         screen.blit(srf, rim_added.topleft)
 
-    all_sprites.draw(screen)
-    
-
     # screen.blit(scope, convert_top_left_to_center(gui_coordinates[0], gui_coordinates[1], scope.get_width(), scope.get_height()))
-    screen.blit(scope, tuple(gui_coordinates))
-    breaked_stuff.draw(screen)
 
+    breaked_stuff.draw(screen)
+    inv.gui.draw(screen)
     inventory.tick(splt_val, screen)
+
+    screen.blit(scope, tuple(gui_coordinates))
     # blit_l([player.hitbox.topl, player.hitbox.topr, player.hitbox.btml, player.hitbox.btml], screen)
     pygame.display.flip()
 if proc != None:

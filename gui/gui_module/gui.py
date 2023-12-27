@@ -1,12 +1,13 @@
-from gui.event_types import HOVER, LEFT_CLICK, RIGHT_CLICK
-from cons import FPS, HEIGHT, TRANSPARENCY_ANIMATION_SPEED
+from gui.gui_module.event_types import HOVER, LEFT_CLICK, RIGHT_CLICK
+from cons import FPS, HEIGHT, PLAYER_SIZE, TRANSPARENCY_ANIMATION_SPEED
 import pygame
+from res.resource_manager import resource_manager
 
 class Gui: 
-    def __init__(self) -> None:
+    def __init__(self, active=False) -> None:
         # Requirements: set visible/invisible, is reacting to events, open, close, draw (calls element's draw), events, global hover & click events
-        self.is_visible = False
-        self.is_reacting = False
+        self.is_visible = active
+        self.is_reacting = active
         self.elements = []
         self.global_events = [HOVER([]),RIGHT_CLICK([]),LEFT_CLICK([])]
         self.transparency = 0
@@ -20,9 +21,10 @@ class Gui:
         self.slide_out_anim_active = False
         self.slide_out_anim_progress = 0
     def subscribe(self, element, typ):
-        for global_event in self.global_events:
-            if global_event.evt_type == typ:
-                global_event.hold.append(element)
+        for local_evt in self.subscribers:
+            if local_evt.evt_type == typ:
+
+                local_evt.hold.append(element)
     def add_listener(self, fnc, typ):
         for global_event in self.global_events:
             if global_event.evt_type == typ:
@@ -87,19 +89,56 @@ class Gui:
                 if self.slide_out_finish != None:
                     self.slide_out_finish()
 
-        # EVENTS # ['516', '514', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '\n']
+        # EVENTS # ['517', '516', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '522', '501', '1']
         # TODO
         # checkin hover
+        if self.is_reacting:
+            # print("im reacting")
+            rectik2 = pygame.Rect(gui_coordinates,resource_manager.get_scope().get_size())
+            any_hovered = False
+            for element in self.elements:
+                element.tick()
                 
-        for element in self.elements:
-            element.tick()
-            if element in self.subscribers[0]:
-                element.disable_hovers()
-                size = (element.surface.get_width(), element.surface.get_height())
-                rectik = pygame.Rect((0,0), size)
-                rectik.center = (element.x, element.y)
-                rectik2 = pygame.Rect()
-
+                if element in self.subscribers[0].hold:
+                    #print("IN HOLD")
+                    element.disable_hovers()
+                    size = element.surface.get_size()
+                    rectik = pygame.Rect((0,0), size)
+                    rectik.center = (element.x, element.y)
+                    
+                    if rectik.colliderect(rectik2):
+                        element.on_hover()
+                        any_hovered = True
+                    else:
+                        element.hovers_disabled()
+            if any_hovered:
+                self.global_events[0].call()
+            # CLICK
+            any_r_clicked = False
+            any_l_clicked = False
+            left_button = (splt_val[10] == "0")
+            right_button = (splt_val[8] == "0")
+            for element in self.elements:
+                if element in self.subscribers[1].hold and right_button:
+                    size = element.surface.get_size()
+                    rectik = pygame.Rect((0,0), size)
+                    rectik.center = (element.x, element.y)
+                
+                    if rectik.colliderect(rectik2):
+                        element.on_right_click()
+                        any_r_clicked = True
+                if element in self.subscribers[2].hold and left_button:
+                    size = element.surface.get_size()
+                    rectik = pygame.Rect((0,0), size)
+                    rectik.center = (element.x, element.y)
+                
+                    if rectik.colliderect(rectik2):
+                        element.on_left_click()
+                        any_l_clicked = True
+            if any_r_clicked: 
+                self.global_events[1].call()
+            if any_l_clicked:
+                self.global_events[2].call()
     def update_ys(self, value):
         for element in self.elements:
             element.y+= value

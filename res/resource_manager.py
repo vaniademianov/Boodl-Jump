@@ -27,10 +27,16 @@ class ResourceManager:
         self.scope_on_good_location = pygame.transform.scale(self.scope_on_good_location, (50,50))
 
 
+
         self.players = []
         for i in range(72):
             self.players.append(pygame.transform.rotate(self.player, 360/72*i))
-
+    def get_brownie_s(self, size):
+        self.brownie_stencil = pygame.font.Font("res/fonts/BrownieStencil.ttf",size)
+        return self.brownie_stencil
+    def get_freedom(self, size):
+        self.freedom = pygame.font.Font("res/fonts/Freedom.ttf",size)
+        return self.freedom
     def get_player(self):
         return self.player
     def get_players(self):
