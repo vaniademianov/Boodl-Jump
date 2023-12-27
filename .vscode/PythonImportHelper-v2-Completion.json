@@ -57,6 +57,14 @@
         "documentation": {}
     },
     {
+        "label": "Utilz",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "utils",
         "description": "utils",
@@ -74,6 +82,54 @@
     },
     {
         "label": "*",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER_ANIMATION_SPEED",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "importPath": "cons",
+        "description": "cons",
+        "isExtraImport": true,
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "TRANSPARENCY_ANIMATION_SPEED",
         "importPath": "cons",
         "description": "cons",
         "isExtraImport": true,
@@ -134,6 +190,46 @@
         "description": "items.mini_item",
         "isExtraImport": true,
         "detail": "items.mini_item",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER",
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "isExtraImport": true,
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER",
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "isExtraImport": true,
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "LEFT_CLICK",
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "isExtraImport": true,
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "RIGHT_CLICK",
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "isExtraImport": true,
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "Gui",
+        "importPath": "gui.gui",
+        "description": "gui.gui",
+        "isExtraImport": true,
+        "detail": "gui.gui",
         "documentation": {}
     },
     {
@@ -305,6 +401,51 @@
         "documentation": {}
     },
     {
+        "label": "Element",
+        "kind": 6,
+        "importPath": "gui.element",
+        "description": "gui.element",
+        "peekOfCode": "class Element:\n    def __init__(self,srf, coordinates:tuple,boh) -> None:\n        # do studff\n        self.surface:pygame.Surface = srf\n        self.surface.convert_alpha()\n        self.or_surf = self.surface.copy()\n        self.x, self.y = coordinates\n        self.hover = False\n        self.hovering_animation_active = False\n        self.hovering_animation_progress = 0",
+        "detail": "gui.element",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER",
+        "kind": 6,
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "peekOfCode": "class HOVER:\n    def __init__(self,hld = []) -> None:\n        self.evt_type = HOVER\n        self.hold = hld\n    def call(self):\n        for holdi in self.hold:\n            holdi()\nclass RIGHT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =RIGHT_CLICK",
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "RIGHT_CLICK",
+        "kind": 6,
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "peekOfCode": "class RIGHT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =RIGHT_CLICK\n        self.hold = hld\n    def call(self):\n        for holdi in self.hold:\n            holdi()\nclass LEFT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =LEFT_CLICK",
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "LEFT_CLICK",
+        "kind": 6,
+        "importPath": "gui.event_types",
+        "description": "gui.event_types",
+        "peekOfCode": "class LEFT_CLICK:\n    def __init__(self,hld = []) -> None:\n        self.evt_type =LEFT_CLICK\n        self.hold = hld\n    def call(self):\n        for holdi in self.hold:\n            holdi()",
+        "detail": "gui.event_types",
+        "documentation": {}
+    },
+    {
+        "label": "Gui",
+        "kind": 6,
+        "importPath": "gui.gui",
+        "description": "gui.gui",
+        "peekOfCode": "class Gui: \n    def __init__(self) -> None:\n        # Requirements: set visible/invisible, is reacting to events, open, close, draw (calls element's draw), events, global hover & click events\n        self.is_visible = False\n        self.is_reacting = False\n        self.elements = []\n        self.global_events = [HOVER([]),RIGHT_CLICK([]),LEFT_CLICK([])]\n        self.transparency = 0\n        self.transparency_anim_progress = 0\n        self.tp_anim_active = False",
+        "detail": "gui.gui",
+        "documentation": {}
+    },
+    {
         "label": "IItem",
         "kind": 6,
         "importPath": "items.item",
@@ -408,7 +549,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5",
         "detail": "cons",
         "documentation": {}
     },
@@ -417,7 +558,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5",
         "detail": "cons",
         "documentation": {}
     },
@@ -426,7 +567,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -435,7 +576,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -444,7 +585,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -453,7 +594,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -462,7 +603,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -471,7 +612,7 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -480,7 +621,34 @@
         "kind": 5,
         "importPath": "cons",
         "description": "cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "TRANSPARENCY_ANIMATION_SPEED",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "SLIDE_IN_ANIMATION_SPEED",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "SLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.3",
+        "detail": "cons",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER_ANIMATION_SPEED",
+        "kind": 5,
+        "importPath": "cons",
+        "description": "cons",
+        "peekOfCode": "HOVER_ANIMATION_SPEED = 0.3",
         "detail": "cons",
         "documentation": {}
     },
@@ -616,15 +784,6 @@
         "importPath": "main",
         "description": "main",
         "peekOfCode": "def i_fals(v):\n    return v != None\nclass Slot:\n    def __init__(self, item, act=False) -> None:\n        self.item = item\n        self.image_act = rm.get_active_slot().copy()\n        self.image_unact = rm.get_unactive_slot().copy()\n        self.og_image_act = rm.get_active_slot().copy()\n        self.og_image_unact = rm.get_unactive_slot().copy()\n        self.is_active = act",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "convert_top_left_to_center",
-        "kind": 2,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "def convert_top_left_to_center(top_left_x, top_left_y, width, height):\n    center_x = top_left_x + width / 2\n    center_y = top_left_y + height / 2\n    return center_x, center_y\nclass Classifier:\n    def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r, cent_t):\n        self.top_left = top_l\n        self.top_right = top_r\n        self.bottom_left = btm_l\n        self.bottom_right = btm_r",
         "detail": "main",
         "documentation": {}
     },
@@ -1031,6 +1190,15 @@
         "description": "sim",
         "peekOfCode": "res = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))\n    print(\"sent\")\n    time.sleep(0.2)",
         "detail": "sim",
+        "documentation": {}
+    },
+    {
+        "label": "lst",
+        "kind": 5,
+        "importPath": "test",
+        "description": "test",
+        "peekOfCode": "lst = [\"a\",\"b\",\"c\"]\nlst.insert(7,\"d\")\nprint(lst)",
+        "detail": "test",
         "documentation": {}
     },
     {

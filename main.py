@@ -293,7 +293,7 @@ class Inventory:
 
                 self.item_name.set_alpha(28)
 
-            if self.animation_progress >= 100:
+            if self.animation_progress >= 227:
                 self.animation_active = False
                 self.item_name = self.item_name
             if self.item_name is not None:
@@ -377,10 +377,6 @@ class Generator:
             self.count += 1
 
 
-def convert_top_left_to_center(top_left_x, top_left_y, width, height):
-    center_x = top_left_x + width / 2
-    center_y = top_left_y + height / 2
-    return center_x, center_y
 
 
 class Classifier:

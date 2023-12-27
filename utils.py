@@ -72,6 +72,17 @@ class Utilz:
     @staticmethod
     def calc_dist_cord(a, b):
         return pygame.math.Vector2(a[0], a[1]).distance_to(b)
+    @staticmethod
+    def convert_top_left_to_center(top_left_x, top_left_y, width, height):
+        center_x = top_left_x + width / 2
+        center_y = top_left_y + height / 2
+        return center_x, center_y
+    @staticmethod
+    def convert_center_to_top_left(top_left_x, top_left_y, width, height):
+        center_x = top_left_x - width / 2
+        center_y = top_left_y - height / 2
+        return center_x, center_y
+
     # @staticmethod
     # def draw_line_with_size(surface: pygame.Surface, start, end, size,color):
     #     angle = math.atan2(end[1] - start[1], end[0] - start[0])
