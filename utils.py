@@ -82,7 +82,32 @@ class Utilz:
         center_x = top_left_x - width / 2
         center_y = top_left_y - height / 2
         return center_x, center_y
+    @staticmethod
+    def w(a: tuple, b: tuple):
+        return (a[0] + b[0], a[1] + b[1])
 
+    @staticmethod
+    def wm(a: tuple, b: tuple):
+        return (a[0] - b[0], a[1] - b[1])
+
+    @staticmethod
+    def wd(a: tuple, b: int):
+        return (a[0] / b, a[1] / b)
+
+    @staticmethod
+    def rect_group_collide(r: pygame.Rect, g: pygame.sprite.Group):
+        for sprite in g.sprites():
+            if r.colliderect(sprite.rect):
+                return True
+        return False
+
+    @staticmethod
+    def the_one(a, b):
+        return True in [a, b]
+
+    @staticmethod
+    def i_fals(v):
+        return v != None
     # @staticmethod
     # def draw_line_with_size(surface: pygame.Surface, start, end, size,color):
     #     angle = math.atan2(end[1] - start[1], end[0] - start[0])

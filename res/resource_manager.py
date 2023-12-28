@@ -13,7 +13,7 @@ class ResourceManager:
         # load breaking states
         filenames = [f for f in os.listdir("res/destroy_stages")]
         self.breaking_states_og = [pygame.image.load("res/destroy_stages/"+surf) for surf in filenames]
-        print(self.breaking_states_og)    
+
         self.crafting_table = pygame.image.load("res/crafting_table.png")
         self.crafting_table = pygame.transform.scale(self.crafting_table, (25,25))
         self.scope = pygame.image.load("res/scope.png")

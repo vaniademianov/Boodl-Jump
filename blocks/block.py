@@ -44,7 +44,6 @@ class IBlock(pygame.sprite.Sprite):
             
             return
  
-        #interaction distance TODO
         elif Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centerx) < INTERACTION_DISTANCE:
             self.tiki += 1
             updatik.val = False

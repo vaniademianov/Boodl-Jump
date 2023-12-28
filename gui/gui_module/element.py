@@ -22,13 +22,13 @@ class Element:
     def pack(self,master:Gui,level):
         master.stick_element(self,level) 
         
-        # print("SUBBED")
+
         master.subscribe(self,HOVER)
         
     def alpha(self,value):
         self.surface.set_alpha(value)
     def on_hover(self):
-        # print("HOVERED")
+
         # activate animation
         if self.big_on_hover and not self.slod:
             self.hover = True
@@ -44,7 +44,7 @@ class Element:
             self.slod2 = True
     def hovers_disabled(self):
         if self.hover:
-            # print(self.slod)
+
             # run anim
 
             if self.slod2 and self.slod:
@@ -59,7 +59,7 @@ class Element:
         self.surface = self.resizik(self.surface,valuex, valuey)
         
     def resizik(self,surf:pygame.Surface, valx, valy):
-        # print((surf.get_width()+valx, surf.get_height()+valy))
+
         l = pygame.transform.smoothscale(surf, (surf.get_width()+valx, surf.get_height()+valy)).copy()
         return l
     def tick(self):
@@ -80,7 +80,7 @@ class Element:
             self.hovering_animation_progress+= self.hovering_animation_spd
             
             self.make_bigger((self.surface.get_height()/100*self.hovering_animation_spd),(self.surface.get_height()/100*self.hovering_animation_spd))
-            # print(FPS*HOVER_ANIMATION_SPEED, self.hovering_animation_progress, self.hovering_animation_spd)
+
             if self.hovering_animation_progress >= FPS*HOVER_ANIMATION_SPEED:
                 self.hovering_animation_active = False
 

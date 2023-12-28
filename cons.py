@@ -1,3 +1,5 @@
+import pygame
+pygame.font.init()
 INTERACTION_DISTANCE = 230
 
 WHITE = (255, 255, 255)
@@ -23,3 +25,6 @@ INTERACTION_DISTANCE = 230
 TRANSPARENCY_ANIMATION_SPEED = 0.5
 SLIDE_IN_ANIMATION_SPEED = 0.5
 HOVER_ANIMATION_SPEED = 0.2
+
+font_txt = pygame.font.SysFont("Comic Sans MS", 25)
+COUNT_COLOR = (244, 230, 15)

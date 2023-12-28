@@ -90,17 +90,15 @@ class Gui:
                     self.slide_out_finish()
 
         # EVENTS # ['517', '516', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '522', '501', '1']
-        # TODO
-        # checkin hover
         if self.is_reacting:
-            # print("im reacting")
+
             rectik2 = pygame.Rect(gui_coordinates,resource_manager.get_scope().get_size())
             any_hovered = False
             for element in self.elements:
                 element.tick()
                 
                 if element in self.subscribers[0].hold:
-                    #print("IN HOLD")
+
                     element.disable_hovers()
                     size = element.surface.get_size()
                     rectik = pygame.Rect((0,0), size)

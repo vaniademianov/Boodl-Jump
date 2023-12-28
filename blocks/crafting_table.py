@@ -5,6 +5,7 @@ from items.item import IItem
 import pygame
 from cons import *
 from items.mini_item import IIMiniItem
+from items.rarity import Rarity
 
 pygame.init()
 rm = ResourceManager()
@@ -37,7 +38,8 @@ class CraftingTable(IItem):
         self.minimized_for_inv = rm.get_crafting_table((32,32))
         self.player = None
         self.title = "Crafting Table"
-    
+        self.lore = ["","","","","Old technology", "Some people say even our grandgrandgrandgrandgrand parents used it.",]
+        self.rarity = Rarity.COMMON 
     def get_slot(self):
         return self.parent
     def on_move(self,player):

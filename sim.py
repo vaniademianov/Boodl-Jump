@@ -13,7 +13,7 @@ while True:
     x = round(arduino_map(pos[0], 0, res[0], 0, 1024))
     y = round(arduino_map(pos[1], 0, res[1], 0, 1024))
     setter((x,y), int(cp("1")), int(cp("2")), int(cp("3")), int(cp("4")), int(cp("5")), int(cp("6")), int(cp("7")))
-    print("sent")
+
     time.sleep(0.2)
     
     
