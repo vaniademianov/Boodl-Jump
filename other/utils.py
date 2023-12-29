@@ -1,6 +1,6 @@
 import pygame
 import math
-from cons import *
+from other.cons import *
 pygame.init()
 
 

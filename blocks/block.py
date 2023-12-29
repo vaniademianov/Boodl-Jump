@@ -1,7 +1,7 @@
 import pygame
 from res.resource_manager import resource_manager as rm
-from utils import *
-from cons import *
+from other.utils import *
+from other.cons import *
 
 class IBlock(pygame.sprite.Sprite):
     def __init__(self, position, image, durability) -> None:

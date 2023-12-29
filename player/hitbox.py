@@ -1,9 +1,9 @@
 import pygame
 from typing import Any
 import random
-from cons import WHITE, BLUE, GREEN
-from cons import RED
-from utils import Utilz
+from other.cons import WHITE, BLUE, GREEN
+from other.cons import RED
+from other.utils import Utilz
 class Cub(pygame.sprite.Sprite):
     def __init__(self, size, ofs, hitty,colliders):
         pygame.sprite.Sprite.__init__(self)

@@ -65,331 +65,459 @@
         "documentation": {}
     },
     {
-        "label": "*",
-        "importPath": "utils",
-        "description": "utils",
+        "label": "resource_manager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
         "isExtraImport": true,
-        "detail": "utils",
+        "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "resource_manager",
+        "importPath": "res.resource_manager",
+        "description": "res.resource_manager",
+        "isExtraImport": true,
+        "detail": "res.resource_manager",
         "documentation": {}
     },
     {
         "label": "*",
-        "importPath": "utils",
-        "description": "utils",
+        "importPath": "other.utils",
+        "description": "other.utils",
         "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Utilz",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Utilz",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Utilz",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Utilz",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Utilz",
-        "importPath": "utils",
-        "description": "utils",
-        "isExtraImport": true,
-        "detail": "utils",
+        "detail": "other.utils",
         "documentation": {}
     },
     {
         "label": "*",
-        "importPath": "utils",
-        "description": "utils",
+        "importPath": "other.utils",
+        "description": "other.utils",
         "isExtraImport": true,
-        "detail": "utils",
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
         "documentation": {}
     },
     {
         "label": "*",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.utils",
+        "description": "other.utils",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.utils",
         "documentation": {}
     },
     {
         "label": "*",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
-        "label": "FPS",
-        "importPath": "cons",
-        "description": "cons",
+        "label": "*",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "WIDTH",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "HEIGHT",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "lst",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "HOVER_ANIMATION_SPEED",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "FPS",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "HEIGHT",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "PLAYER_SIZE",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SLIDE_IN_ANIMATION_SPEED",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "TRANSPARENCY_ANIMATION_SPEED",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
-        "label": "FPS",
-        "importPath": "cons",
-        "description": "cons",
+        "label": "WIDTH",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "COUNT_COLOR",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "WIDTH",
-        "importPath": "cons",
-        "description": "cons",
-        "isExtraImport": true,
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "HEIGHT",
-        "importPath": "cons",
-        "description": "cons",
-        "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "font_txt",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
-        "label": "BLACK",
-        "importPath": "cons",
-        "description": "cons",
+        "label": "COUNT_COLOR",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "font_txt",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "FPS",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
-        "label": "HEIGHT",
-        "importPath": "cons",
-        "description": "cons",
+        "label": "COUNT_COLOR",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "RED",
-        "importPath": "cons",
-        "description": "cons",
-        "isExtraImport": true,
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "WHITE",
-        "importPath": "cons",
-        "description": "cons",
-        "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "WIDTH",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
-        "label": "*",
-        "importPath": "cons",
-        "description": "cons",
+        "label": "HEIGHT",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "font_txt",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "FIRST_INV_COLOR",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SECOND_INV_COLOR",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "WHITE",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "WIDTH",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "BLUE",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "GREEN",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "RED",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "WIDTH",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "HEIGHT",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "HEIGHT_MODIFIER",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "PLAYER_SIZE",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "RED",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "PLAYER_SIZE",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
         "label": "*",
-        "importPath": "cons",
-        "description": "cons",
+        "importPath": "other.cons",
+        "description": "other.cons",
         "isExtraImport": true,
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "*",
-        "importPath": "cons",
-        "description": "cons",
-        "isExtraImport": true,
-        "detail": "cons",
+        "detail": "other.cons",
         "documentation": {}
     },
     {
@@ -398,6 +526,14 @@
         "description": "blocks.block",
         "isExtraImport": true,
         "detail": "blocks.block",
+        "documentation": {}
+    },
+    {
+        "label": "IItem",
+        "importPath": "items.item",
+        "description": "items.item",
+        "isExtraImport": true,
+        "detail": "items.item",
         "documentation": {}
     },
     {
@@ -422,6 +558,39 @@
         "description": "items.rarity",
         "isExtraImport": true,
         "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Wall",
+        "importPath": "player.wall",
+        "description": "player.wall",
+        "isExtraImport": true,
+        "detail": "player.wall",
+        "documentation": {}
+    },
+    {
+        "label": "Wall",
+        "importPath": "player.wall",
+        "description": "player.wall",
+        "isExtraImport": true,
+        "detail": "player.wall",
+        "documentation": {}
+    },
+    {
+        "label": "random",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "random",
+        "description": "random",
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Element",
+        "importPath": "gui.gui_module.element",
+        "description": "gui.gui_module.element",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.element",
         "documentation": {}
     },
     {
@@ -481,6 +650,14 @@
         "documentation": {}
     },
     {
+        "label": "LEFT_CLICK",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.event_types",
+        "documentation": {}
+    },
+    {
         "label": "RIGHT_CLICK",
         "importPath": "gui.gui_module.event_types",
         "description": "gui.gui_module.event_types",
@@ -502,6 +679,63 @@
         "description": "gui.gui_module.gui",
         "isExtraImport": true,
         "detail": "gui.gui_module.gui",
+        "documentation": {}
+    },
+    {
+        "label": "Button",
+        "importPath": "gui.gui_module.button",
+        "description": "gui.gui_module.button",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.button",
+        "documentation": {}
+    },
+    {
+        "label": "Slot",
+        "importPath": "inventory.slot",
+        "description": "inventory.slot",
+        "isExtraImport": true,
+        "detail": "inventory.slot",
+        "documentation": {}
+    },
+    {
+        "label": "Slot",
+        "importPath": "inventory.slot",
+        "description": "inventory.slot",
+        "isExtraImport": true,
+        "detail": "inventory.slot",
+        "documentation": {}
+    },
+    {
+        "label": "copy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "copy",
+        "description": "copy",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "MiniCraftingTable",
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "isExtraImport": true,
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingTable",
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "isExtraImport": true,
+        "detail": "blocks.crafting_table",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingTable",
+        "importPath": "blocks.crafting_table",
+        "description": "blocks.crafting_table",
+        "isExtraImport": true,
+        "detail": "blocks.crafting_table",
         "documentation": {}
     },
     {
@@ -529,35 +763,51 @@
         "documentation": {}
     },
     {
-        "label": "Slot",
-        "importPath": "inventory.slot",
-        "description": "inventory.slot",
-        "isExtraImport": true,
-        "detail": "inventory.slot",
-        "documentation": {}
-    },
-    {
-        "label": "CraftingTable",
-        "importPath": "blocks.crafting_table",
-        "description": "blocks.crafting_table",
-        "isExtraImport": true,
-        "detail": "blocks.crafting_table",
-        "documentation": {}
-    },
-    {
-        "label": "CraftingTable",
-        "importPath": "blocks.crafting_table",
-        "description": "blocks.crafting_table",
-        "isExtraImport": true,
-        "detail": "blocks.crafting_table",
-        "documentation": {}
-    },
-    {
         "label": "Frame",
         "importPath": "gui.gui_module.frame",
         "description": "gui.gui_module.frame",
         "isExtraImport": true,
         "detail": "gui.gui_module.frame",
+        "documentation": {}
+    },
+    {
+        "label": "GUIslot",
+        "importPath": "gui.gui_module.gui_slot",
+        "description": "gui.gui_module.gui_slot",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.gui_slot",
+        "documentation": {}
+    },
+    {
+        "label": "o_irs",
+        "importPath": "gui.gui_module.irs",
+        "description": "gui.gui_module.irs",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.irs",
+        "documentation": {}
+    },
+    {
+        "label": "o_irs",
+        "importPath": "gui.gui_module.irs",
+        "description": "gui.gui_module.irs",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.irs",
+        "documentation": {}
+    },
+    {
+        "label": "inventory",
+        "importPath": "inventory.inventory",
+        "description": "inventory.inventory",
+        "isExtraImport": true,
+        "detail": "inventory.inventory",
+        "documentation": {}
+    },
+    {
+        "label": "inventory",
+        "importPath": "inventory.inventory",
+        "description": "inventory.inventory",
+        "isExtraImport": true,
+        "detail": "inventory.inventory",
         "documentation": {}
     },
     {
@@ -569,12 +819,12 @@
         "documentation": {}
     },
     {
-        "label": "random",
+        "label": "math",
         "kind": 6,
         "isExtraImport": true,
-        "importPath": "random",
-        "description": "random",
-        "detail": "random",
+        "importPath": "math",
+        "description": "math",
+        "detail": "math",
         "documentation": {}
     },
     {
@@ -631,21 +881,28 @@
         "documentation": {}
     },
     {
-        "label": "math",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "math",
-        "description": "math",
-        "detail": "math",
-        "documentation": {}
-    },
-    {
         "label": "pickle",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "pickle",
         "description": "pickle",
         "detail": "pickle",
+        "documentation": {}
+    },
+    {
+        "label": "Classifier",
+        "importPath": "environment.classifier",
+        "description": "environment.classifier",
+        "isExtraImport": true,
+        "detail": "environment.classifier",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "importPath": "environment.generator",
+        "description": "environment.generator",
+        "isExtraImport": true,
+        "detail": "environment.generator",
         "documentation": {}
     },
     {
@@ -682,19 +939,19 @@
         "documentation": {}
     },
     {
-        "label": "Inventory",
-        "importPath": "inventory.inventory",
-        "description": "inventory.inventory",
+        "label": "GuiGroup",
+        "importPath": "gui.gui_module.gui_holder",
+        "description": "gui.gui_module.gui_holder",
         "isExtraImport": true,
-        "detail": "inventory.inventory",
+        "detail": "gui.gui_module.gui_holder",
         "documentation": {}
     },
     {
-        "label": "Wall",
-        "importPath": "player.wall",
-        "description": "player.wall",
+        "label": "gui",
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
         "isExtraImport": true,
-        "detail": "player.wall",
+        "detail": "inventory.inventory_gui",
         "documentation": {}
     },
     {
@@ -747,7 +1004,7 @@
         "kind": 6,
         "importPath": "blocks.crafting_table",
         "description": "blocks.crafting_table",
-        "peekOfCode": "class CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.minimized_for_inv = rm.get_crafting_table((32,32))\n        self.player = None\n        self.title = \"Crafting Table\"\n        self.lore = [\"\",\"\",\"\",\"\",\"Old technology\", \"Some people say even our grandgrandgrandgrandgrand parents used it.\",]\n        self.rarity = Rarity.COMMON \n    def get_slot(self):",
+        "peekOfCode": "class CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.minimized_for_inv = rm.get_crafting_table((32,32))\n        self.player = None\n        self.mini = MiniCraftingTable\n        self.title = \"Crafting Table\"\n        self.lore = [\"\",\"\",\"\",\"\",\"Old technology\", \"Some people say even our grandgrandgrandgrandgrand parents used it.\",]\n        self.rarity = Rarity.COMMON ",
         "detail": "blocks.crafting_table",
         "documentation": {}
     },
@@ -761,11 +1018,29 @@
         "documentation": {}
     },
     {
+        "label": "Classifier",
+        "kind": 6,
+        "importPath": "environment.classifier",
+        "description": "environment.classifier",
+        "peekOfCode": "class Classifier:\n    def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r, cent_t):\n        self.top_left = top_l\n        self.top_right = top_r\n        self.bottom_left = btm_l\n        self.bottom_right = btm_r\n        self.center = cent\n        self.center_left = cent_l\n        self.center_right = cent_r\n        self.center_top = cent_t",
+        "detail": "environment.classifier",
+        "documentation": {}
+    },
+    {
+        "label": "Generator",
+        "kind": 6,
+        "importPath": "environment.generator",
+        "description": "environment.generator",
+        "peekOfCode": "class Generator:\n    def __init__(self, player, wall_0) -> None:\n        self.wall_0 = wall_0\n        self.last_wall = wall_0\n        self.player = player\n        self.count = 1\n        self.hardness = 0\n        self.color_n = 1\n    def generate(self,walls,colliders):\n        y = self.wall_0.rect.y",
+        "detail": "environment.generator",
+        "documentation": {}
+    },
+    {
         "label": "Button",
         "kind": 6,
         "importPath": "gui.gui_module.button",
         "description": "gui.gui_module.button",
-        "peekOfCode": "class Button(Element):\n    def __init__(self,color, borders, size, center: tuple, boh) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        super().__init__(srf, center, boh)",
+        "peekOfCode": "class Button(Element):\n    def __init__(self,color, borders, size, center: tuple, boh) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        super().__init__(srf, center, boh)\n    def get_srf(self):\n        return self.surface\n    def set_srf(self,r):\n        self.surface = r",
         "detail": "gui.gui_module.button",
         "documentation": {}
     },
@@ -810,7 +1085,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.frame",
         "description": "gui.gui_module.frame",
-        "peekOfCode": "class Frame(Element):\n    def __init__(self,color, borders, size, center: tuple, boh) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        super().__init__(srf, center, boh)",
+        "peekOfCode": "class Frame(Element):\n    def __init__(self,color, borders, size, center: tuple, boh,sep_borders = None) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        if sep_borders == None:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        else:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,border_top_left_radius=sep_borders[0], border_top_right_radius=sep_borders[1], border_bottom_left_radius=sep_borders[2], border_bottom_right_radius=sep_borders[3])\n        super().__init__(srf, center, boh)",
         "detail": "gui.gui_module.frame",
         "documentation": {}
     },
@@ -821,6 +1096,60 @@
         "description": "gui.gui_module.gui",
         "peekOfCode": "class Gui: \n    def __init__(self, active=False) -> None:\n        # Requirements: set visible/invisible, is reacting to events, open, close, draw (calls element's draw), events, global hover & click events\n        self.is_visible = active\n        self.is_reacting = active\n        self.elements = []\n        self.global_events = [HOVER([]),RIGHT_CLICK([]),LEFT_CLICK([])]\n        self.transparency = 0\n        self.transparency_anim_progress = 0\n        self.tp_anim_active = False",
         "detail": "gui.gui_module.gui",
+        "documentation": {}
+    },
+    {
+        "label": "GuiGroup",
+        "kind": 6,
+        "importPath": "gui.gui_module.gui_holder",
+        "description": "gui.gui_module.gui_holder",
+        "peekOfCode": "class GuiGroup:\n    def __init__(self) -> None:\n        self.guis = []\n    def update(self,gui_coordinates, splt_val, *args):\n        for gei in self.guis:\n            gei[0].tick(gui_coordinates, splt_val)\n            if gei[1] != None:\n                gei[1](gui_coordinates, splt_val,*args)\n    def draw(self, screen):\n        for gei in self.guis:",
+        "detail": "gui.gui_module.gui_holder",
+        "documentation": {}
+    },
+    {
+        "label": "GUIslot",
+        "kind": 6,
+        "importPath": "gui.gui_module.gui_slot",
+        "description": "gui.gui_module.gui_slot",
+        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot) -> None:\n        self.parent_slot = parent\n        self.size = size \n        self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh)\n        self.ore_surf = self.or_surf.copy()\n    def change_parent_surfaces(self, new_srf):",
+        "detail": "gui.gui_module.gui_slot",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "kind": 6,
+        "importPath": "gui.gui_module.image",
+        "description": "gui.gui_module.image",
+        "peekOfCode": "class Image(Element):\n    def __init__(self,image, center: tuple, boh) -> None:\n        super().__init__(image, center, boh)",
+        "detail": "gui.gui_module.image",
+        "documentation": {}
+    },
+    {
+        "label": "IRS",
+        "kind": 6,
+        "importPath": "gui.gui_module.irs",
+        "description": "gui.gui_module.irs",
+        "peekOfCode": "class IRS:\n    # crs obj should have item, count, and closed to close\n    def __init__(self) -> None:\n        self.item = None\n        self.count = 0\n    def draw(self, screen, gui_coordinates):\n        # print(f\"item is {self.item}\")\n        screen.blit(scope, tuple(gui_coordinates))\n        if self.item != None:\n            item_crd = Utilz.w(tuple(gui_coordinates),Utilz.wd(resource_manager.get_scope().get_size(),4))",
+        "detail": "gui.gui_module.irs",
+        "documentation": {}
+    },
+    {
+        "label": "scope",
+        "kind": 5,
+        "importPath": "gui.gui_module.irs",
+        "description": "gui.gui_module.irs",
+        "peekOfCode": "scope = resource_manager.get_scope()\nclass IRS:\n    # crs obj should have item, count, and closed to close\n    def __init__(self) -> None:\n        self.item = None\n        self.count = 0\n    def draw(self, screen, gui_coordinates):\n        # print(f\"item is {self.item}\")\n        screen.blit(scope, tuple(gui_coordinates))\n        if self.item != None:",
+        "detail": "gui.gui_module.irs",
+        "documentation": {}
+    },
+    {
+        "label": "o_irs",
+        "kind": 5,
+        "importPath": "gui.gui_module.irs",
+        "description": "gui.gui_module.irs",
+        "peekOfCode": "o_irs = IRS()",
+        "detail": "gui.gui_module.irs",
         "documentation": {}
     },
     {
@@ -842,11 +1171,20 @@
         "documentation": {}
     },
     {
+        "label": "inventory",
+        "kind": 5,
+        "importPath": "inventory.inventory",
+        "description": "inventory.inventory",
+        "peekOfCode": "inventory = Inventory()",
+        "detail": "inventory.inventory",
+        "documentation": {}
+    },
+    {
         "label": "tick",
         "kind": 2,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "def tick(gui_coordinates, splt_val):\n    global delay, is_button_left\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:\n            gui.open()\n            gui.transparency_anim()",
+        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:\n            gui.open()",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -855,7 +1193,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "gui = Gui(False)\nframe1 = Frame(WHITE, 5, (WIDTH/2, HEIGHT/2), (WIDTH/2, HEIGHT/2), True)\nframe1.pack(gui, 0)\ndelay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val):\n    global delay, is_button_left\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"1\":",
+        "peekOfCode": "gui = Gui(False)\nframe1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))\nframe1.pack(gui, 0)\nslotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -864,7 +1202,25 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "frame1 = Frame(WHITE, 5, (WIDTH/2, HEIGHT/2), (WIDTH/2, HEIGHT/2), True)\nframe1.pack(gui, 0)\ndelay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val):\n    global delay, is_button_left\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"1\":\n        is_button_left = True",
+        "peekOfCode": "frame1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))\nframe1.pack(gui, 0)\nslotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "slotovii_hotbar",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "slotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "x",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "x = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0\nis_button_left = True",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -873,7 +1229,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "delay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val):\n    global delay, is_button_left\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:",
+        "peekOfCode": "delay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -882,7 +1238,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "is_button_left = True\ndef tick(gui_coordinates, splt_val):\n    global delay, is_button_left\n    gui.tick(gui_coordinates, splt_val)\n    delay -= 1\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:\n            gui.open()",
+        "peekOfCode": "is_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -920,6 +1276,267 @@
         "description": "items.rarity",
         "peekOfCode": "class Rarity:\n    COMMON = \"Common\"\n    UNCOMMON = \"Uncommon\"\n    RARE = \"Rare\"\n    EPIC = \"Epic\"\n    LEGENDARY = \"Legendary\"\n    MYTHIC = \"Mythic\"\n    SPECIAL = \"Special\"\n    X = \"No one knows about it.\"",
         "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "INTERACTION_DISTANCE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLACK",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "RED",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "GREEN",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLUE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "BLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "GRAY",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "GRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "FIRST_INV_COLOR",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "FIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SECOND_INV_COLOR",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "SECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_HEIGHT",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT_MODIFIER",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "WIDTH",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "HEIGHT",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "BASE_BLOCK_SIZE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "PLAYER_SIZE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "GUI_SENSA",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "FPS",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "INTERACTION_DISTANCE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "TRANSPARENCY_ANIMATION_SPEED",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SLIDE_IN_ANIMATION_SPEED",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "SLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "HOVER_ANIMATION_SPEED",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "HOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "lst",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "font_txt",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "font_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "COUNT_COLOR",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "COUNT_COLOR = (244, 230, 15)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "rc",
+        "kind": 6,
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "peekOfCode": "class rc:\n    def __init__(self,rect) -> None:\n        self.rect = rect\nclass Holder:\n    def __init__(self, w, h, rct_size=50) -> None:\n        self.rizz = 0\n        self.grid = [[pygame.Rect(x, y, rct_size, rct_size) for x in range(0, w, rct_size)] for y in range(-10025, h, rct_size)]\n    def get_nearest(self, coordinates):\n        min_distance = float('inf')  # Start with a large distance\n        nearest_rect = None",
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Holder",
+        "kind": 6,
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "peekOfCode": "class Holder:\n    def __init__(self, w, h, rct_size=50) -> None:\n        self.rizz = 0\n        self.grid = [[pygame.Rect(x, y, rct_size, rct_size) for x in range(0, w, rct_size)] for y in range(-10025, h, rct_size)]\n    def get_nearest(self, coordinates):\n        min_distance = float('inf')  # Start with a large distance\n        nearest_rect = None\n        for row in self.grid:\n            for rect in row:\n                distance = pygame.math.Vector2(coordinates) - pygame.math.Vector2(rect.topleft)",
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "Utilz",
+        "kind": 6,
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "peekOfCode": "class Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = grd.get_nearest(cords)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False\n        rect_2 = pygame.Rect((0,0), PLAYER_SIZE)",
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "DataClass_Transporter",
+        "kind": 6,
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "peekOfCode": "class DataClass_Transporter:\n    def __init__(self,val) -> None:\n        self.val = val\n    def get_val(self):\n        return self.val\n    def set_val(self, val):\n        self.val = val",
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
+        "label": "grd",
+        "kind": 5,
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "peekOfCode": "grd = Holder(WIDTH, HEIGHT)\nclass Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = grd.get_nearest(cords)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False",
+        "detail": "other.utils",
         "documentation": {}
     },
     {
@@ -963,7 +1580,7 @@
         "kind": 6,
         "importPath": "res.resource_manager",
         "description": "res.resource_manager",
-        "peekOfCode": "class ResourceManager:\n    def __init__(self, res_name = \"\") -> None:\n        self.player = pygame.image.load(\"res/player.png\")\n        self.player = pygame.transform.scale(self.player, PLAYER_SIZE)\n        self.slot_active = pygame.image.load(\"res/active.png\")\n        self.slot_active = pygame.transform.scale(self.slot_active, (70,70))\n        self.slot_unactive = pygame.image.load(\"res/unactive.png\")\n        self.slot_unactive = pygame.transform.scale(self.slot_unactive, (70,70))\n        # load breaking states\n        filenames = [f for f in os.listdir(\"res/destroy_stages\")]",
+        "peekOfCode": "class ResourceManager:\n    def __init__(self, res_name = \"\") -> None:\n        self.player = pygame.image.load(\"res/images/player.png\")\n        self.player = pygame.transform.scale(self.player, PLAYER_SIZE)\n        self.slot_active = pygame.image.load(\"res/images/active.png\")\n        self.slot_active = pygame.transform.scale(self.slot_active, (70,70))\n        self.slot_unactive = pygame.image.load(\"res/images/unactive.png\")\n        self.slot_unactive = pygame.transform.scale(self.slot_unactive, (70,70))\n        # load breaking states\n        filenames = [f for f in os.listdir(\"res/images/destroy_stages\")]",
         "detail": "res.resource_manager",
         "documentation": {}
     },
@@ -977,218 +1594,11 @@
         "documentation": {}
     },
     {
-        "label": "INTERACTION_DISTANCE",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "WHITE",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "BLACK",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "RED",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "GREEN",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "BLUE",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "BLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "GRAY",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "GRAY = (128, 128, 128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_HEIGHT",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "HEIGHT_MODIFIER",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "WIDTH",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "HEIGHT",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "BASE_BLOCK_SIZE",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "PLAYER_SIZE",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "GUI_SENSA",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "FPS",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "INTERACTION_DISTANCE",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "TRANSPARENCY_ANIMATION_SPEED",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "SLIDE_IN_ANIMATION_SPEED",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "SLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "HOVER_ANIMATION_SPEED",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "HOVER_ANIMATION_SPEED = 0.2\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "font_txt",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "font_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
-        "label": "COUNT_COLOR",
-        "kind": 5,
-        "importPath": "cons",
-        "description": "cons",
-        "peekOfCode": "COUNT_COLOR = (244, 230, 15)",
-        "detail": "cons",
-        "documentation": {}
-    },
-    {
         "label": "Informator",
         "kind": 6,
         "importPath": "main",
         "description": "main",
         "peekOfCode": "class Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()\n    def do_thing(self):\n        while True:\n            with print_lock:",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "Generator",
-        "kind": 6,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "class Generator:\n    def __init__(self, player, wall_0) -> None:\n        self.wall_0 = wall_0\n        self.last_wall = wall_0\n        self.player = player\n        self.count = 1\n        self.hardness = 0\n        self.color_n = 1\n    def generate(self):\n        y = self.wall_0.rect.y",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "Classifier",
-        "kind": 6,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "class Classifier:\n    def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r, cent_t):\n        self.top_left = top_l\n        self.top_right = top_r\n        self.bottom_left = btm_l\n        self.bottom_right = btm_r\n        self.center = cent\n        self.center_left = cent_l\n        self.center_right = cent_r\n        self.center_top = cent_t",
         "detail": "main",
         "documentation": {}
     },
@@ -1206,7 +1616,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "scope = rm.get_scope()\nproc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"sim.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()\ninf_q = queue.Queue()",
+        "peekOfCode": "scope = rm.get_scope()\nproc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"simulator.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()\ninf_q = queue.Queue()",
         "detail": "main",
         "documentation": {}
     },
@@ -1215,7 +1625,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "proc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"sim.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()\ninf_q = queue.Queue()\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]",
+        "peekOfCode": "proc = None\ntry:\n    serial = sm.Serial(\"COM6\")\nexcept Exception as e:\n    proc = subprocess.Popen([\"python\", \"simulator.py\"])\n    time.sleep(1)\n    serial = sm.Serial(\"COM9\")\nprint_lock = threading.Lock()\ninf_q = queue.Queue()\npygame.font.init()",
         "detail": "main",
         "documentation": {}
     },
@@ -1224,7 +1634,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "print_lock = threading.Lock()\ninf_q = queue.Queue()\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\npygame.font.init()\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):",
+        "peekOfCode": "print_lock = threading.Lock()\ninf_q = queue.Queue()\npygame.font.init()\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()",
         "detail": "main",
         "documentation": {}
     },
@@ -1233,16 +1643,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "inf_q = queue.Queue()\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\npygame.font.init()\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "lst",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\npygame.font.init()\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()\n    def do_thing(self):",
+        "peekOfCode": "inf_q = queue.Queue()\npygame.font.init()\nclass Informator(threading.Thread):\n    def __init__(self, queue, args=(), kwargs=None):\n        threading.Thread.__init__(self, args=(), kwargs=None)\n        self.queue = queue\n        self.daemon = True\n    def run(self):\n        self.do_thing()\n    def do_thing(self):",
         "detail": "main",
         "documentation": {}
     },
@@ -1422,7 +1823,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()",
+        "peekOfCode": "calib_top_j_left = None\ncalib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()",
         "detail": "main",
         "documentation": {}
     },
@@ -1431,7 +1832,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory",
+        "peekOfCode": "calib_top_j_right = None\ncalib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory",
         "detail": "main",
         "documentation": {}
     },
@@ -1440,7 +1841,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)",
+        "peekOfCode": "calib_bottom_j_left = None\ncalib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)",
         "detail": "main",
         "documentation": {}
     },
@@ -1449,7 +1850,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)",
+        "peekOfCode": "calib_bottom_j_right = None\ncalib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)",
         "detail": "main",
         "documentation": {}
     },
@@ -1458,7 +1859,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]",
+        "peekOfCode": "calib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]",
         "detail": "main",
         "documentation": {}
     },
@@ -1467,7 +1868,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\n# def blit_l(l, screen):",
+        "peekOfCode": "calib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()",
         "detail": "main",
         "documentation": {}
     },
@@ -1476,7 +1877,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\n# def blit_l(l, screen):\n#     for obj in l:",
+        "peekOfCode": "calib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)",
         "detail": "main",
         "documentation": {}
     },
@@ -1485,16 +1886,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\ninventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "inventory",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:",
+        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\n# def blit_l(l, screen):",
         "detail": "main",
         "documentation": {}
     },
@@ -1503,7 +1895,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "player.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    if cd > 0:",
+        "peekOfCode": "player.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)",
         "detail": "main",
         "documentation": {}
     },
@@ -1512,7 +1904,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    if cd > 0:\n        cd -= 1\n    clock.tick(FPS)",
+        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    if cd > 0:",
         "detail": "main",
         "documentation": {}
     },
@@ -1521,98 +1913,62 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gui_coordinates = [0, 0]\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    if cd > 0:\n        cd -= 1\n    clock.tick(FPS)\n    if ticky != 0:",
+        "peekOfCode": "gui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    if cd > 0:\n        cd -= 1",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "gui_group",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "gui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\npygame.mouse.set_visible(False)\nwhile running:\n    if cd > 0:\n        cd -= 1\n    clock.tick(FPS)",
         "detail": "main",
         "documentation": {}
     },
     {
         "label": "arduino_map",
         "kind": 2,
-        "importPath": "sim",
-        "description": "sim",
+        "importPath": "simulator",
+        "description": "simulator",
         "peekOfCode": "def arduino_map(x, in_min, in_max, out_min, out_max):\n    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min\ndef setter(cords, jb, b1, b2,b3,b4,b5,b6):\n    ser.write(bytes(f\"{cords[0]} {cords[1]} {jb} 1: {b1} 2: {b2} 3: {b3} 4: {b4} 5: {b5} 6: {b6}\\n\", encoding=\"utf-8\"))\ndef cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))",
-        "detail": "sim",
+        "detail": "simulator",
         "documentation": {}
     },
     {
         "label": "setter",
         "kind": 2,
-        "importPath": "sim",
-        "description": "sim",
+        "importPath": "simulator",
+        "description": "simulator",
         "peekOfCode": "def setter(cords, jb, b1, b2,b3,b4,b5,b6):\n    ser.write(bytes(f\"{cords[0]} {cords[1]} {jb} 1: {b1} 2: {b2} 3: {b3} 4: {b4} 5: {b5} 6: {b6}\\n\", encoding=\"utf-8\"))\ndef cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))",
-        "detail": "sim",
+        "detail": "simulator",
         "documentation": {}
     },
     {
         "label": "cp",
         "kind": 2,
-        "importPath": "sim",
-        "description": "sim",
+        "importPath": "simulator",
+        "description": "simulator",
         "peekOfCode": "def cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))\n    time.sleep(0.2)",
-        "detail": "sim",
+        "detail": "simulator",
         "documentation": {}
     },
     {
         "label": "ser",
         "kind": 5,
-        "importPath": "sim",
-        "description": "sim",
+        "importPath": "simulator",
+        "description": "simulator",
         "peekOfCode": "ser = serial.Serial(\"COM8\")\ndef arduino_map(x, in_min, in_max, out_min, out_max):\n    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min\ndef setter(cords, jb, b1, b2,b3,b4,b5,b6):\n    ser.write(bytes(f\"{cords[0]} {cords[1]} {jb} 1: {b1} 2: {b2} 3: {b3} 4: {b4} 5: {b5} 6: {b6}\\n\", encoding=\"utf-8\"))\ndef cp(key):\n    return not keyboard.is_pressed(key)\nres = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()",
-        "detail": "sim",
+        "detail": "simulator",
         "documentation": {}
     },
     {
         "label": "res",
         "kind": 5,
-        "importPath": "sim",
-        "description": "sim",
+        "importPath": "simulator",
+        "description": "simulator",
         "peekOfCode": "res = pyautogui.size()\nwhile True:\n    pos = pyautogui.position()\n    x = round(arduino_map(pos[0], 0, res[0], 0, 1024))\n    y = round(arduino_map(pos[1], 0, res[1], 0, 1024))\n    setter((x,y), int(cp(\"1\")), int(cp(\"2\")), int(cp(\"3\")), int(cp(\"4\")), int(cp(\"5\")), int(cp(\"6\")), int(cp(\"7\")))\n    time.sleep(0.2)",
-        "detail": "sim",
-        "documentation": {}
-    },
-    {
-        "label": "rc",
-        "kind": 6,
-        "importPath": "utils",
-        "description": "utils",
-        "peekOfCode": "class rc:\n    def __init__(self,rect) -> None:\n        self.rect = rect\nclass Holder:\n    def __init__(self, w, h, rct_size=50) -> None:\n        self.rizz = 0\n        self.grid = [[pygame.Rect(x, y, rct_size, rct_size) for x in range(0, w, rct_size)] for y in range(-10025, h, rct_size)]\n    def get_nearest(self, coordinates):\n        min_distance = float('inf')  # Start with a large distance\n        nearest_rect = None",
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Holder",
-        "kind": 6,
-        "importPath": "utils",
-        "description": "utils",
-        "peekOfCode": "class Holder:\n    def __init__(self, w, h, rct_size=50) -> None:\n        self.rizz = 0\n        self.grid = [[pygame.Rect(x, y, rct_size, rct_size) for x in range(0, w, rct_size)] for y in range(-10025, h, rct_size)]\n    def get_nearest(self, coordinates):\n        min_distance = float('inf')  # Start with a large distance\n        nearest_rect = None\n        for row in self.grid:\n            for rect in row:\n                distance = pygame.math.Vector2(coordinates) - pygame.math.Vector2(rect.topleft)",
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "Utilz",
-        "kind": 6,
-        "importPath": "utils",
-        "description": "utils",
-        "peekOfCode": "class Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = grd.get_nearest(cords)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False\n        rect_2 = pygame.Rect((0,0), PLAYER_SIZE)",
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "DataClass_Transporter",
-        "kind": 6,
-        "importPath": "utils",
-        "description": "utils",
-        "peekOfCode": "class DataClass_Transporter:\n    def __init__(self,val) -> None:\n        self.val = val\n    def get_val(self):\n        return self.val\n    def set_val(self, val):\n        self.val = val",
-        "detail": "utils",
-        "documentation": {}
-    },
-    {
-        "label": "grd",
-        "kind": 5,
-        "importPath": "utils",
-        "description": "utils",
-        "peekOfCode": "grd = Holder(WIDTH, HEIGHT)\nclass Utilz:\n    @staticmethod\n    def good_location(cords,colliders:pygame.sprite.Group,player_loc):\n        rect = grd.get_nearest(cords)\n        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:\n            return False\n        for collider in colliders.sprites():\n            if pygame.sprite.collide_rect(collider, rc(rect)):\n                return False",
-        "detail": "utils",
+        "detail": "simulator",
         "documentation": {}
     }
 ]

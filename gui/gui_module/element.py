@@ -1,7 +1,7 @@
 import pygame
-from utils import Utilz
+from other.utils import Utilz
 from gui.gui_module.event_types import HOVER
-from cons import FPS, HEIGHT, HOVER_ANIMATION_SPEED
+from other.cons import FPS, HEIGHT, HOVER_ANIMATION_SPEED
 from gui.gui_module.gui import Gui
 pygame.display.set_mode()
 class Element:

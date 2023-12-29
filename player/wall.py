@@ -1,5 +1,5 @@
 import pygame
-from cons import RED
+from other.cons import RED
 class Wall(pygame.sprite.Sprite):
     def __init__(self, coords, size,player, mov=False, color=RED,topik = None,):
         pygame.sprite.Sprite.__init__(self)

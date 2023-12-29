@@ -1,6 +1,6 @@
 from inventory.slot import Slot
-from cons import FPS
-from cons import COUNT_COLOR, WIDTH, HEIGHT,font_txt
+from other.cons import FPS
+from other.cons import COUNT_COLOR, WIDTH, HEIGHT,font_txt
 from blocks.crafting_table import CraftingTable as crafting_table_item
 
 class Inventory:
@@ -167,3 +167,4 @@ class Inventory:
 
             screen.blit(self.item_name, (text_x, HEIGHT - 110))
 
+inventory = Inventory()

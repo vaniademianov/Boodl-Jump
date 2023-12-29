@@ -8,16 +8,21 @@ import time
 import os
 import math
 import pickle
+from environment.classifier import Classifier
+from environment.generator import Generator
 import subprocess
 from blocks.crafting_table import CraftingTable as crafting_table_item
 from pathlib import Path
 from player.player import Player
 from res.resource_manager import resource_manager as rm
 from inventory import inventory_gui as inv
-from inventory.inventory import Inventory
-from utils import *
-from cons import *
+from inventory.inventory import inventory
+from other.utils import *
+from other.cons import *
 from player.wall import Wall
+from gui.gui_module.gui_holder import GuiGroup
+from inventory.inventory_gui import gui
+from gui.gui_module.irs import o_irs
 
 
 
@@ -26,7 +31,7 @@ proc = None
 try:
     serial = sm.Serial("COM6")
 except Exception as e:
-    proc = subprocess.Popen(["python", "sim.py"])
+    proc = subprocess.Popen(["python", "simulator.py"])
     time.sleep(1)
     serial = sm.Serial("COM9")
 
@@ -34,7 +39,7 @@ print_lock = threading.Lock()
 inf_q = queue.Queue()
 
 
-lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]
+
 pygame.font.init()
 
 
@@ -62,122 +67,6 @@ class Informator(threading.Thread):
 
 
 
-
-
-
-class Generator:
-    def __init__(self, player, wall_0) -> None:
-        self.wall_0 = wall_0
-        self.last_wall = wall_0
-        self.player = player
-        self.count = 1
-        self.hardness = 0
-        self.color_n = 1
-
-    def generate(self):
-        y = self.wall_0.rect.y
-        c = y // 120
-
-        for i in range(self.count, c + 1):
-            j = random.randint(2, 3)
-            self.last_y = walls.sprites()[-1].rect.y
-
-            jump_h = sum(range(self.player.jumper + 1)) - player.rect.h - 25
-            jump_h -= 35
-            y = (self.last_wall.rect.top - round(jump_h* 1.5)) 
-
-
-            pw = list(range(250, 100 - 1, -25))
-            while j > 0:
-                w = random.choice(
-                    pw[
-                        min(int(self.hardness / 5), len(pw) - 2) : min(
-                            int(self.hardness / 5), len(pw) - 2
-                        )
-                        + 3
-                    ]
-                )
-                x = random.choice([ii for ii in range(0, WIDTH - w, 50)])
-
-                new_wall = Wall((x - 26, y), (w + 52, 50),topik=y,player=self.player)
-                tries = 0
-                while (
-                    pygame.sprite.spritecollideany(new_wall, colliders) is not None
-                ):  # or rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
-                    if tries > 50:
-                        # left or right side:
-                        if x < WIDTH / 2:  # left
-                            x -= 75
-                        else:
-                            x += 75
-                    else:
-                        x = random.choice([ii for ii in range(0, WIDTH - w, 50)])
-
-                    if tries == 70:
-                        # while rect_group_collide(Wall((x, y+70), (w, 50)).rect, walls):
-
-                        #     x = random.choice([ii for ii in range(0, WIDTH-w, 50)])
-                        new_wall = Wall((x - 26, y), (w + 52, 50),topik=y,player=self.player)
-                        break
-
-                    tries += 1
-                    # 0,06
-                    new_wall = Wall((x - 26, y), (w + 52, 50), color=lst[self.color_n],topik=y,player=self.player)
-                    # new_wall_1 = Wall((x+75, self.last_wall.rect.y), (w-125, 50))
-                j -= 1
-                new_wall = Wall((x, y), (w, 50), color=lst[self.color_n],topik=y,player=self.player)
-                # walls_to_add.append(new_wall)
-                walls.add(new_wall)
-                colliders.add(new_wall)
-            self.hardness += 1
-            self.color_n += 1
-
-            # last wall format: last_x, last_y_ last_w
-            self.last_wall = new_wall
-            self.count += 1
-
-
-
-
-class Classifier:
-    def __init__(self, top_l, top_r, btm_l, btm_r, cent, cent_l, cent_r, cent_t):
-        self.top_left = top_l
-        self.top_right = top_r
-        self.bottom_left = btm_l
-        self.bottom_right = btm_r
-        self.center = cent
-        self.center_left = cent_l
-        self.center_right = cent_r
-        self.center_top = cent_t
-
-    def classify(self, coords):
-        x, y = coords
-        if self.center is not None and self.in_range(coords, self.center):
-            return "CENTER", None
-        elif self.center_left is not None and self.in_range(coords, self.center_left):
-            return "CENTER", "LEFT"
-        elif self.center_right is not None and self.in_range(coords, self.center_right):
-            return "CENTER", "RIGHT"
-        elif self.center_top is not None and self.in_range(coords, self.center_top):
-            return "TOP", "CENTER"
-        elif self.top_left is not None and self.in_range(coords, self.top_left):
-            return "TOP", "LEFT"
-        elif self.top_right is not None and self.in_range(coords, self.top_right):
-            return "TOP", "RIGHT"
-        elif self.bottom_left is not None and self.in_range(coords, self.bottom_left):
-            return "BOTTOM", "LEFT"
-        elif self.bottom_right is not None and self.in_range(coords, self.bottom_right):
-            return "BOTTOM", "RIGHT"
-        else:
-            return None, None
-
-    def in_range(self, coords, target_coords, margin=350):
-        target_x, target_y = target_coords
-        x, y = coords
-        return abs(x - target_x) <= margin and abs(y - target_y) <= margin
-
-
-
 def run_calibration(splt_val, last_val):
     global cd, ticky, calib, classi, calib_top_j_left, calib_top_j_right, calib_bottom_j_left, calib_bottom_j_right, calib_j_center, calib_center_left, calib_center_right, calib_center_top
     if calib == 0 and last_val != "":
@@ -191,7 +80,7 @@ def run_calibration(splt_val, last_val):
         ticky = 0
         calib = -1
         print("Okay, you left the Calibration process, loading from the file...")
-        with open("classi.bin", "rb") as f:
+        with open("environment/classi.bin", "rb") as f:
             classi = pickle.load(
                 f,
             )
@@ -259,7 +148,7 @@ def run_calibration(splt_val, last_val):
             calib_center_right,
             calib_center_top,
         )
-        with open("classi.bin", "wb") as f:
+        with open("environment/classi.bin", "wb") as f:
             pickle.dump(classi, f)
 
 
@@ -313,13 +202,14 @@ calib_center_top = None
 calib_center_left = None
 calib_center_right = None
 classi: Classifier = None
-inventory = Inventory()
+# inventory = Inventory()
 player.inv = inventory
 player_group.add(player)
 gen = Generator(player, wall_0)
 gui_coordinates = [0, 0]
 
-
+gui_group = GuiGroup()
+gui_group.add(inv.gui, inv.tick)
 
 # def blit_l(l, screen):
 #     for obj in l:
@@ -372,7 +262,7 @@ while running:
       
             blocked = True
         updatik = DataClass_Transporter(splt_val[10] == "0")
-        inv.tick(gui_coordinates, splt_val)
+        gui_group.update(gui_coordinates, splt_val)
         blocks.update(updatik, player, gui_coordinates)
         second_joystick_classified = classi.classify(
             (int(splt_val[-3]), int(splt_val[-2]))
@@ -406,25 +296,25 @@ while running:
     breaked_stuff.update(player, colliders)
     walls.update()
     
+    
 
-    gen.generate()
+    gen.generate(walls, colliders)
     grd.greedy(player)
     walls.draw(screen)
     blocks.draw(screen)
-
+    
 
     screen.blit(player.image, (player.rect.topleft[0],player.rect.topleft[1]+player.game_changer*2))
     if rim_added != None:
         screen.blit(srf, rim_added.topleft)
-
+    gui_group.draw(screen)
     # screen.blit(scope, convert_top_left_to_center(gui_coordinates[0], gui_coordinates[1], scope.get_width(), scope.get_height()))
 
     breaked_stuff.draw(screen)
-    inv.gui.draw(screen)
+
     # walls, breaked_stuff, blocks, colliders
     inventory.tick(splt_val, screen,player,gui_coordinates,walls, breaked_stuff, blocks, colliders)
-
-    screen.blit(scope, tuple(gui_coordinates))
+    o_irs.draw(screen, gui_coordinates)
     # blit_l([player.hitbox.topl, player.hitbox.topr, player.hitbox.btml, player.hitbox.btml], screen)
     pygame.display.flip()
 if proc != None:

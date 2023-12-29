@@ -1,6 +1,6 @@
 import pygame
-from cons import *
-from utils import Utilz
+from other.cons import *
+from other.utils import Utilz
 pygame.init()
 
 class IIMiniItem(pygame.sprite.Sprite):

@@ -1,9 +1,9 @@
 from blocks.block import IBlock
 from res.resource_manager import ResourceManager
-from utils import *
+from other.utils import *
 from items.item import IItem
 import pygame
-from cons import *
+from other.cons import *
 from items.mini_item import IIMiniItem
 from items.rarity import Rarity
 
@@ -37,6 +37,7 @@ class CraftingTable(IItem):
         self.parent = parent_slot
         self.minimized_for_inv = rm.get_crafting_table((32,32))
         self.player = None
+        self.mini = MiniCraftingTable
         self.title = "Crafting Table"
         self.lore = ["","","","","Old technology", "Some people say even our grandgrandgrandgrandgrand parents used it.",]
         self.rarity = Rarity.COMMON 

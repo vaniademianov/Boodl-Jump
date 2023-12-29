@@ -1,5 +1,5 @@
 import pygame
-from cons import WIDTH, HEIGHT, HEIGHT_MODIFIER, PLAYER_SIZE
+from other.cons import WIDTH, HEIGHT, HEIGHT_MODIFIER, PLAYER_SIZE
 from player.hitbox import Hitty
 from res.resource_manager import resource_manager as rm
 class Player(pygame.sprite.Sprite):
