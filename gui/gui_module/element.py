@@ -63,7 +63,7 @@ class Element:
         l = pygame.transform.smoothscale(surf, (surf.get_width()+valx, surf.get_height()+valy)).copy()
         return l
     def tick(self):
-
+        # print(self.x, self.y)
         if self.back_hover_anim_active:
 
             self.hovering_animation_progress-= self.hovering_animation_spd

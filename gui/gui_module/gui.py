@@ -187,7 +187,7 @@ class Gui:
                     rectik.center = (element.x, element.y)
                     
                     if rectik.colliderect(rectik2):
-                        print(element)
+                       
                         self.right_click_delay = FPS/5
                         element.on_right_click()
                         any_r_clicked = True
@@ -198,7 +198,7 @@ class Gui:
                     rectik.center = (element.x, element.y)
                     
                     if rectik.colliderect(rectik2):
-                        print(element)
+        
                         self.left_click_delay = FPS/5
                         element.on_left_click()
                         any_l_clicked = True
@@ -208,6 +208,7 @@ class Gui:
                 self.global_events[2].call()
     def update_ys(self, value):
         for element in self.elements:
+            print(element, element.y, value)
             element.y+= value
 
     def slide_in_anim(self):
