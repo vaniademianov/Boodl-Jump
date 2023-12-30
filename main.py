@@ -2,6 +2,7 @@ from typing import Any
 import pygame
 import random
 import serial as sm
+# import keyboard
 import threading
 import queue
 import time
@@ -65,6 +66,63 @@ class Informator(threading.Thread):
                         pass
 
 
+# class Informator(threading.Thread):
+#     def __init__(self, queue, args=(), kwargs=None):
+#         threading.Thread.__init__(self, args=(), kwargs=None)
+#         self.queue = queue
+#         self.daemon = True
+
+#     def run(self):
+#         self.do_thing()
+
+#     def do_thing(self):
+#         global running
+#         while True:
+#             pos1 = "520 518"
+#             try:
+#                 if keyboard.is_pressed('w'):
+#                     pos1 = "520 0"
+#                 elif keyboard.is_pressed('a'):
+#                     pos1 = "0 518"
+#                 elif keyboard.is_pressed('s'):
+#                     pos1 = "520 1023"
+#                 elif keyboard.is_pressed('d'):
+#                     pos1 = "1023 518"
+#                 if keyboard.is_pressed('left shift'):
+#                     pos1 += " 0"
+#                 else:
+#                     pos1 += " 1"
+#             except:
+#                 pass
+
+#             pos2 = "520 518"
+#             try:
+#                 if keyboard.is_pressed('up'):
+#                     pos2 = "520 0"
+#                 elif keyboard.is_pressed('left'):
+#                     pos2 = "0 518"
+#                 elif keyboard.is_pressed('down'):
+#                     pos2 = "520 1023"
+#                 elif keyboard.is_pressed('right'):
+#                     pos2 = "1023 518"
+#                 if keyboard.is_pressed('right shift'):
+#                     pos2 += " 0"
+#                 else:
+#                     pos2 += " 1"
+#             except:
+#                 pass
+#             btns = ''
+#             try:
+#                 btns += '1: 0 ' if keyboard.is_pressed('z') else '1: 1 '
+#                 btns += '2: 0 ' if keyboard.is_pressed('x') else '2: 1 '
+#                 btns += '3: 0 ' if keyboard.is_pressed('c') else '3: 1 '
+#                 btns += '4: 0 ' if keyboard.is_pressed('v') else '4: 1 '
+#                 btns += '5: 0 ' if keyboard.is_pressed('b') else '5: 1 '
+#                 btns += '6: 0' if keyboard.is_pressed('n') else '6: 1'
+#             except:
+#                 pass
+#             inf_q.put(' '.join([pos1, btns, pos2]))
+#             time.sleep(0.2)
 
 
 def run_calibration(splt_val, last_val):
