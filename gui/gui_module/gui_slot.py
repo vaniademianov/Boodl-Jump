@@ -63,7 +63,7 @@ class GUIslot(Button,):
     
         srf = self.ore_surf.copy()
         srf.blit(item_mini, Utilz.wd(self.size,4))
-        pygame.image.save(srf, "sus.png")
+
         self.change_parent_surfaces(srf)
     def sync(self):
         # sync with slotik 

@@ -8,6 +8,12 @@ class Classifier:
         self.center_left = cent_l
         self.center_right = cent_r
         self.center_top = cent_t
+        # calculate bottom center
+        if self.bottom_left is not None and self.bottom_right is not None:
+            self.bottom_center = ((self.bottom_left[0] + self.bottom_right[0]) // 2,
+                                  (self.bottom_left[1] + self.bottom_right[1]) // 2)
+        else:
+            self.bottom_center = None
 
     def classify(self, coords):
         x, y = coords
@@ -27,6 +33,8 @@ class Classifier:
             return "BOTTOM", "LEFT"
         elif self.bottom_right is not None and self.in_range(coords, self.bottom_right):
             return "BOTTOM", "RIGHT"
+        elif self.bottom_center is not None and self.in_range(coords, self.bottom_center):
+            return "BOTTOM", "CENTER"
         else:
             return None, None
 
