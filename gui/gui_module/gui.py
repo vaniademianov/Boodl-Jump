@@ -69,7 +69,7 @@ class Gui:
             element.alpha(val)
     def update_xs(self, value):
         for element in self.elements:
-            element.x+= int(value)
+            element.coordinates.x+= int(value)
     def left_to_right_slide_anim(self, on_end=None):
         if not self.left_to_right_slide_anim_active:
             self.left_to_right_slide_anim_progress =0
@@ -164,7 +164,7 @@ class Gui:
                     element.disable_hovers()
                     size = element.surface.get_size()
                     rectik = pygame.Rect((0,0), size)
-                    rectik.center = (element.x, element.y)
+                    rectik.center = (element.coordinates.x, element.coordinates.y)
                     
                     if rectik.colliderect(rectik2):
                         element.on_hover()
@@ -185,7 +185,7 @@ class Gui:
                     
                     size = element.surface.get_size()
                     rectik = pygame.Rect((0,0), size)
-                    rectik.center = (element.x, element.y)
+                    rectik.center = (element.coordinates.x, element.coordinates.y)
                     
                     if rectik.colliderect(rectik2):
                        
@@ -197,7 +197,7 @@ class Gui:
                     
                     size = element.surface.get_size()
                     rectik = pygame.Rect((0,0), size)
-                    rectik.center = (element.x, element.y)
+                    rectik.center = (element.coordinates.x, element.coordinates.y)
                     
                     if rectik.colliderect(rectik2):
                         
@@ -212,7 +212,7 @@ class Gui:
     def update_ys(self, value):
         for element in self.elements:
  
-            element.y+= int(value)
+            element.coordinates.y+= int(value)
 
     def slide_in_anim(self):
         if not self.slide_in_anim_active:

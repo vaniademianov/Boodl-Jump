@@ -6,11 +6,12 @@ from res.resource_manager import resource_manager as rm
 from other.cons import COUNT_COLOR, font_txt, FPS, GUI_SLOT_COLOR_II
 from items.item import IItem
 import copy
+from gui.gui_module.element import Element
 class GUIslot(Button,):
     def __init__(self,size,color, borders, center,boh,crs, parent:Slot) -> None:
         self.parent_slot = parent
         self.size = size 
-        self.coords = center
+        # self.coords = center
 
         self.crs_obj = crs
         self.last_remembered_item = ""
@@ -50,9 +51,14 @@ class GUIslot(Button,):
             crs_item = copy.copy(self.crs_obj.item)
             
             self.crs_obj.count = self.parent_slot.count
+
             self.crs_obj.item = copy.copy(self.parent_slot.item)
             self.parent_slot.item = copy.copy(crs_item)
             self.parent_slot.count = crs_count 
+            if self.crs_obj.item == None:
+                self.crs_obj.count = 0
+            if self.parent_slot.item == None:
+                self.parent_slot.count = 0
         else:
             self.parent_slot.count += self.crs_obj.count
             self.crs_obj.item = None
@@ -71,18 +77,18 @@ class GUIslot(Button,):
                     self.parent_slot.update_activity(None)
                 
     def draw(self, screen):
-        screen.blit(self.surface,Utilz.convert_center_to_top_left(self.coords[0], self.coords[1], self.size[0], self.size[1]))
+        screen.blit(self.surface,Utilz.convert_center_to_top_left(self.coordinates.x, self.coordinates.y, self.size[0], self.size[1]))
         if self.parent_slot.count > 1:
             # render count
             
             txt_srf = font_txt.render(str(self.parent_slot.count), False, COUNT_COLOR)
-            coords = Utilz.w(self.coords, Utilz.wd(self.size,2))
-            coords = Utilz.w(self.coords, (20,5))
+            coords = Utilz.w(self.coordinates.to_tuple(), Utilz.wd(self.size,2))
+            coords = Utilz.w(self.coordinates.to_tuple(), (20,5))
             screen.blit(txt_srf,coords)
     def blit_item(self, item_mini):
         # rect = item.minimized_for_inv.get_rect()
         rect = item_mini.get_rect()
-        rect.center = self.coords
+        rect.center = self.coordinates.to_tuple()
     
         srf = self.ore_surf.copy()
         srf.blit(item_mini, Utilz.wd(self.size,4))
@@ -96,7 +102,8 @@ class GUIslot(Button,):
         if self.parent_slot.item != None:
             self.blit_item(self.parent_slot.item.minimized_for_inv)
     def sync(self):
-        self.yes_y(self.y)
+        
+        # self.yes_y(self.y)
         # sync with slotik 
         # print(self.x, self.y)
         if self.last_remembered_item != self.parent_slot.item:

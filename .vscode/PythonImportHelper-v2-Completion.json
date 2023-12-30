@@ -634,6 +634,14 @@
         "documentation": {}
     },
     {
+        "label": "Element",
+        "importPath": "gui.gui_module.element",
+        "description": "gui.gui_module.element",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.element",
+        "documentation": {}
+    },
+    {
         "label": "HOVER",
         "importPath": "gui.gui_module.event_types",
         "description": "gui.gui_module.event_types",
@@ -695,6 +703,14 @@
         "description": "gui.gui_module.gui",
         "isExtraImport": true,
         "detail": "gui.gui_module.gui",
+        "documentation": {}
+    },
+    {
+        "label": "Coordinates",
+        "importPath": "other.coordinates",
+        "description": "other.coordinates",
+        "isExtraImport": true,
+        "detail": "other.coordinates",
         "documentation": {}
     },
     {
@@ -1065,7 +1081,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.element",
         "description": "gui.gui_module.element",
-        "peekOfCode": "class Element:\n    def __init__(self,srf, coordinates:tuple,boh) -> None:\n        # do studff\n        self.surface:pygame.Surface = srf\n        self.surface.convert_alpha()\n        self.or_surf = self.surface.copy()\n        self.x, self.y = coordinates\n        self.base_y = self.y\n        self.hover = False\n        self.hovering_animation_active = False",
+        "peekOfCode": "class Element:\n    def __init__(self,srf, coordinates:tuple,boh) -> None:\n        # do studff\n        self.surface:pygame.Surface = srf\n        self.surface.convert_alpha()\n        self.or_surf = self.surface.copy()\n        self.coordinates = Coordinates(coordinates[0], coordinates[1])\n        self.base_y = self.coordinates.y\n        self.hover = False\n        self.hovering_animation_active = False",
         "detail": "gui.gui_module.element",
         "documentation": {}
     },
@@ -1128,7 +1144,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.gui_slot",
         "description": "gui.gui_module.gui_slot",
-        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot) -> None:\n        self.parent_slot = parent\n        self.size = size \n        self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
+        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
         "detail": "gui.gui_module.gui_slot",
         "documentation": {}
     },
@@ -1146,7 +1162,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.irs",
         "description": "gui.gui_module.irs",
-        "peekOfCode": "class IRS:\n    # crs obj should have item, count, and closed to close\n    def __init__(self) -> None:\n        self.item = None\n        self.count = 0\n    def draw(self, screen, gui_coordinates):\n        # print(f\"item is {self.item}\")\n        screen.blit(scope, tuple(gui_coordinates))\n        if self.item != None:\n            item_crd = Utilz.w(tuple(gui_coordinates),Utilz.wd(resource_manager.get_scope().get_size(),4))",
+        "peekOfCode": "class IRS:\n    # crs obj should have item, count, and closed to close\n    def __init__(self) -> None:\n        self.item = None\n        self.count = 0\n    def draw(self, screen, gui_coordinates):\n        # print(f\"item is {self.item}\")\n        # print(self.count,self.item)\n        screen.blit(scope, tuple(gui_coordinates))\n        if self.item != None:",
         "detail": "gui.gui_module.irs",
         "documentation": {}
     },
@@ -1155,7 +1171,7 @@
         "kind": 5,
         "importPath": "gui.gui_module.irs",
         "description": "gui.gui_module.irs",
-        "peekOfCode": "scope = resource_manager.get_scope()\nclass IRS:\n    # crs obj should have item, count, and closed to close\n    def __init__(self) -> None:\n        self.item = None\n        self.count = 0\n    def draw(self, screen, gui_coordinates):\n        # print(f\"item is {self.item}\")\n        screen.blit(scope, tuple(gui_coordinates))\n        if self.item != None:",
+        "peekOfCode": "scope = resource_manager.get_scope()\nclass IRS:\n    # crs obj should have item, count, and closed to close\n    def __init__(self) -> None:\n        self.item = None\n        self.count = 0\n    def draw(self, screen, gui_coordinates):\n        # print(f\"item is {self.item}\")\n        # print(self.count,self.item)\n        screen.blit(scope, tuple(gui_coordinates))",
         "detail": "gui.gui_module.irs",
         "documentation": {}
     },
@@ -1209,7 +1225,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "gui = Gui(False)\nframe1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))\nframe1.pack(gui, 0)\nslotovii_hotbar = []\nx = 154\n# TODO PUT 9\nfor i in range(1):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)",
+        "peekOfCode": "gui = Gui(False)\nframe1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))\nframe1.pack(gui, 0)\nslotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1218,7 +1234,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "frame1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))\nframe1.pack(gui, 0)\nslotovii_hotbar = []\nx = 154\n# TODO PUT 9\nfor i in range(1):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)",
+        "peekOfCode": "frame1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))\nframe1.pack(gui, 0)\nslotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1227,7 +1243,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "slotovii_hotbar = []\nx = 154\n# TODO PUT 9\nfor i in range(1):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87",
+        "peekOfCode": "slotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1236,7 +1252,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "x = 154\n# TODO PUT 9\nfor i in range(1):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0",
+        "peekOfCode": "x = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0\nis_button_left = True",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1263,7 +1279,7 @@
         "kind": 6,
         "importPath": "inventory.slot",
         "description": "inventory.slot",
-        "peekOfCode": "class Slot:\n    def __init__(self, item, act=False) -> None:\n        self.item = item\n        self.image_act = rm.get_active_slot().copy()\n        self.image_unact = rm.get_unactive_slot().copy()\n        self.og_image_act = rm.get_active_slot().copy()\n        self.og_image_unact = rm.get_unactive_slot().copy()\n        self.is_active = act\n        self.count = 1\n        if item is not None:",
+        "peekOfCode": "class Slot:\n    def __init__(self, item, act=False) -> None:\n        self.item = item\n        self.image_act = rm.get_active_slot().copy()\n        self.image_unact = rm.get_unactive_slot().copy()\n        self.og_image_act = rm.get_active_slot().copy()\n        self.og_image_unact = rm.get_unactive_slot().copy()\n        self.is_active = act\n        self.count = 0\n        if item is not None:",
         "detail": "inventory.slot",
         "documentation": {}
     },
@@ -1517,6 +1533,15 @@
         "description": "other.cons",
         "peekOfCode": "GUI_SLOT_COLOR_II = (30,30,30)",
         "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "Coordinates",
+        "kind": 6,
+        "importPath": "other.coordinates",
+        "description": "other.coordinates",
+        "peekOfCode": "class Coordinates:\n    def __init__(self,x,y) -> None:\n        self.x = x\n        self.y = y    \n    def to_tuple(self):\n        return (self.x, self.y)",
+        "detail": "other.coordinates",
         "documentation": {}
     },
     {

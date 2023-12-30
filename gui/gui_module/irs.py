@@ -12,6 +12,7 @@ class IRS:
         self.count = 0
     def draw(self, screen, gui_coordinates):
         # print(f"item is {self.item}")
+        # print(self.count,self.item)
         screen.blit(scope, tuple(gui_coordinates))
         if self.item != None:
             item_crd = Utilz.w(tuple(gui_coordinates),Utilz.wd(resource_manager.get_scope().get_size(),4))

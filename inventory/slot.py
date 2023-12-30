@@ -9,7 +9,7 @@ class Slot:
         self.og_image_act = rm.get_active_slot().copy()
         self.og_image_unact = rm.get_unactive_slot().copy()
         self.is_active = act
-        self.count = 1
+        self.count = 0
   
 
         if item is not None:

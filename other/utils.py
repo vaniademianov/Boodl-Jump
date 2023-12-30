@@ -118,7 +118,7 @@ class Utilz:
         step_r = (rgb_color2[0] - rgb_color1[0]) // time
         step_g = (rgb_color2[1] - rgb_color1[1]) // time
         step_b = (rgb_color2[2] - rgb_color1[2]) // time
-        print(time)
+
         # Generate the list of colors
         color_transition = [
             (
