@@ -13,7 +13,8 @@ frame1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), Fals
 frame1.pack(gui, 0)
 slotovii_hotbar = []
 x = 154
-for i in range(9):
+# TODO PUT 9
+for i in range(1):
     new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])
     gui.subscribe(new_slotiks, RIGHT_CLICK)
     gui.subscribe(new_slotiks, LEFT_CLICK)

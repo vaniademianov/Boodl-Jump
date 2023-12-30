@@ -31,3 +31,4 @@ lst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]
 
 font_txt = pygame.font.SysFont("Comic Sans MS", 25)
 COUNT_COLOR = (244, 230, 15)
+GUI_SLOT_COLOR_II = (30,30,30)

@@ -108,6 +108,27 @@ class Utilz:
     @staticmethod
     def i_fals(v):
         return v != None
+    @staticmethod
+    def generate_color_transition(color1, color2, time):
+    # Convert color strings to RGB tuples
+        rgb_color1 = color1
+        rgb_color2 = color2 
+        time = int(time)
+        # Calculate the step size for each color component
+        step_r = (rgb_color2[0] - rgb_color1[0]) // time
+        step_g = (rgb_color2[1] - rgb_color1[1]) // time
+        step_b = (rgb_color2[2] - rgb_color1[2]) // time
+        print(time)
+        # Generate the list of colors
+        color_transition = [
+            (
+                rgb_color1[0] + step_r * i,
+                rgb_color1[1] + step_g * i,
+                rgb_color1[2] + step_b * i
+            ) for i in range(int(time) + 1)
+        ]
+
+        return color_transition
     # @staticmethod
     # def draw_line_with_size(surface: pygame.Surface, start, end, size,color):
     #     angle = math.atan2(end[1] - start[1], end[0] - start[0])

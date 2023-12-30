@@ -234,6 +234,8 @@ while running:
     last_val = last_val.strip()
     splt_val = last_val.split(" ")
     screen.fill(BLACK)
+    # if last_val != "":
+    #     print(splt_val[2])
     if calib != -1:
         run_calibration(
             splt_val, last_val

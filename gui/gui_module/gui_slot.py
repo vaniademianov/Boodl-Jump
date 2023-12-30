@@ -3,7 +3,7 @@ from inventory.slot import Slot
 from other.utils import Utilz
 import pygame
 from res.resource_manager import resource_manager as rm
-from other.cons import COUNT_COLOR, font_txt
+from other.cons import COUNT_COLOR, font_txt, FPS, GUI_SLOT_COLOR_II
 from items.item import IItem
 import copy
 class GUIslot(Button,):
@@ -15,8 +15,31 @@ class GUIslot(Button,):
         self.crs_obj = crs
         self.last_remembered_item = ""
         super().__init__(color, borders,size,center,boh)
-        
+        self.mover_time = int(FPS/2)
         self.ore_surf = self.or_surf.copy()
+        self.mover = Utilz.generate_color_transition(color, GUI_SLOT_COLOR_II,self.mover_time)
+        self.moving_anim_active = False
+        self.moving_anim_bck = False
+        self.moving_anim_progress = 0
+        self.hovered_last_time = False
+        self.hovering = False
+        self.moving_anim_ready = False
+    def on_hover(self):
+        self.hovered_last_time = True
+    def disable_hovers(self):
+        if self.hovered_last_time: 
+            self.hovering = True
+            if not self.moving_anim_active and not self.moving_anim_ready:
+                self.moving_anim_active = True
+                self.moving_anim_bck = False
+                self.moving_anim_progress = 0
+                self.moving_anim_ready = False
+        else:
+            self.hovering = False
+        self.hovered_last_time = False
+        
+
+
     def change_parent_surfaces(self, new_srf):
         self.or_surf = new_srf.copy()
         self.surface = new_srf.copy()
@@ -65,12 +88,52 @@ class GUIslot(Button,):
         srf.blit(item_mini, Utilz.wd(self.size,4))
 
         self.change_parent_surfaces(srf)
+    def update_color(self, color):
+        # things
+
+        self.neat_init(color)
+        self.ore_surf = self.or_surf
+        if self.parent_slot.item != None:
+            self.blit_item(self.parent_slot.item.minimized_for_inv)
     def sync(self):
+        self.yes_y(self.y)
         # sync with slotik 
+        # print(self.x, self.y)
         if self.last_remembered_item != self.parent_slot.item:
             if self.parent_slot.item != None:
                 self.blit_item(self.parent_slot.item.minimized_for_inv)
             else:
                 self.change_parent_surfaces(self.ore_surf.copy())
             self.last_remembered_item = self.parent_slot.item 
-        
+        # update animations
+        self.moving_anim_progress = int(self.moving_anim_progress)
+        if self.moving_anim_active:
+            self.moving_anim_progress += 1
+            
+            self.update_color(self.mover[self.moving_anim_progress-1])
+            if self.moving_anim_progress >= self.mover_time:
+                self.moving_anim_active = False
+                self.moving_anim_ready = True
+                self.moving_anim_progress = self.mover_time
+                self.moving_anim_progress = int(self.moving_anim_progress)
+
+                self.update_color(self.mover[self.moving_anim_progress-1])
+        if not self.hovering:
+            
+            if self.moving_anim_ready:
+
+                self.moving_anim_ready = False
+                self.moving_anim_bck = True
+                self.moving_anim_progress = self.mover_time
+                self.update_color(self.mover[self.moving_anim_progress-1])
+            if self.moving_anim_bck:
+                self.moving_anim_progress -= 1
+                self.update_color(self.mover[self.moving_anim_progress])
+                if self.moving_anim_progress <= 0:
+                    self.moving_anim_active = False
+                    self.moving_anim_ready = False
+                    self.moving_anim_active = False
+                    self.moving_anim_progress = 0
+                    self.moving_anim_bck = False
+                    
+                    self.update_color(self.mover[0])

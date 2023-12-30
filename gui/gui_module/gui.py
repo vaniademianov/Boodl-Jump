@@ -69,7 +69,7 @@ class Gui:
             element.alpha(val)
     def update_xs(self, value):
         for element in self.elements:
-            element.x+= value
+            element.x+= int(value)
     def left_to_right_slide_anim(self, on_end=None):
         if not self.left_to_right_slide_anim_active:
             self.left_to_right_slide_anim_progress =0
@@ -169,6 +169,7 @@ class Gui:
                     if rectik.colliderect(rectik2):
                         element.on_hover()
                         any_hovered = True
+                        
                     else:
                         element.hovers_disabled()
             if any_hovered:
@@ -191,6 +192,7 @@ class Gui:
                         self.right_click_delay = FPS/5
                         element.on_right_click()
                         any_r_clicked = True
+                        break
                 if element in self.subscribers[2].hold and left_button and int(self.left_click_delay) <= 0:
                     
                     size = element.surface.get_size()
@@ -198,18 +200,19 @@ class Gui:
                     rectik.center = (element.x, element.y)
                     
                     if rectik.colliderect(rectik2):
-        
+                        
                         self.left_click_delay = FPS/5
                         element.on_left_click()
                         any_l_clicked = True
+                        break
             if any_r_clicked: 
                 self.global_events[1].call()
             if any_l_clicked:
                 self.global_events[2].call()
     def update_ys(self, value):
         for element in self.elements:
-            print(element, element.y, value)
-            element.y+= value
+ 
+            element.y+= int(value)
 
     def slide_in_anim(self):
         if not self.slide_in_anim_active:

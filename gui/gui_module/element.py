@@ -11,6 +11,7 @@ class Element:
         self.surface.convert_alpha()
         self.or_surf = self.surface.copy()
         self.x, self.y = coordinates
+        self.base_y = self.y
         self.hover = False
         self.hovering_animation_active = False
         self.hovering_animation_progress = 0
@@ -19,6 +20,7 @@ class Element:
         self.hovering_animation_spd = HOVER_ANIMATION_SPEED*6
         self.slod = False
         self.back_hover_anim_active = False
+        self.coors = [0,0]
     def pack(self,master:Gui,level):
         master.stick_element(self,level) 
         
@@ -85,7 +87,12 @@ class Element:
                 self.hovering_animation_active = False
 
                 self.slod = True
-
+    def yes_y(self, new_y):
+        self.coors[0] = self.x
+        self.coors[1] = self.y
+        print("SLOT ID", id(self.coors))
     def draw(self, screen:pygame.Surface):
-        
+        # if self.y != self.base_y:
+        #     print(f" MY Y: {self.y}")
+        print("ELEMENT ID", id(self.coors))
         screen.blit(self.surface, pygame.Rect(Utilz.convert_center_to_top_left(self.x,self.y, self.surface.get_width(),self.surface.get_height()), self.surface.get_size()))
