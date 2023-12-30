@@ -243,7 +243,7 @@ while running:
     rim_added = None
     if classi != None:
         player_group.update(classi.classify((int(splt_val[0]), int(splt_val[1]))), splt_val)
-
+        # print(classi.center)
         wrek = pygame.Rect(gui_coordinates[0], gui_coordinates[1], rm.get_scope().get_width(), rm.get_scope().get_height())
         blocked = False
         for block in blocks.sprites():

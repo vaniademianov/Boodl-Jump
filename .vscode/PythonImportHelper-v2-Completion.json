@@ -417,6 +417,14 @@
         "documentation": {}
     },
     {
+        "label": "THIRD_INV_COLOR",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
         "label": "WHITE",
         "importPath": "other.cons",
         "description": "other.cons",
@@ -1072,7 +1080,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.button",
         "description": "gui.gui_module.button",
-        "peekOfCode": "class Button(Element):\n    def __init__(self,color, borders, size, center: tuple, boh) -> None:\n        srf = pygame.Surface(size)\n        self.borders = borders\n        self.size = size\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        super().__init__(srf, center, boh)\n    def get_srf(self):\n        return self.surface",
+        "peekOfCode": "class Button(Element):\n    def __init__(self,color, borders, size, center: tuple, boh,custom_borders = None) -> None:\n        srf = pygame.Surface(size,pygame.SRCALPHA)\n        self.borders = borders\n        self.custom_borders = custom_borders\n        self.size = size\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        if custom_borders != None:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,-1, custom_borders[0], custom_borders[1], custom_borders[2],custom_borders[3])\n        else:",
         "detail": "gui.gui_module.button",
         "documentation": {}
     },
@@ -1117,7 +1125,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.frame",
         "description": "gui.gui_module.frame",
-        "peekOfCode": "class Frame(Element):\n    def __init__(self,color, borders, size, center: tuple, boh,sep_borders = None) -> None:\n        srf = pygame.Surface(size)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        if sep_borders == None:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        else:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,border_top_left_radius=sep_borders[0], border_top_right_radius=sep_borders[1], border_bottom_left_radius=sep_borders[2], border_bottom_right_radius=sep_borders[3])\n        super().__init__(srf, center, boh)",
+        "peekOfCode": "class Frame(Element):\n    def __init__(self,color, borders, size, center: tuple, boh,sep_borders = None) -> None:\n        srf = pygame.Surface(size,pygame.SRCALPHA)\n        # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])\n        if sep_borders == None:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)\n        else:\n            pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,border_top_left_radius=sep_borders[0], border_top_right_radius=sep_borders[1], border_bottom_left_radius=sep_borders[2], border_bottom_right_radius=sep_borders[3])\n        super().__init__(srf, center, boh)",
         "detail": "gui.gui_module.frame",
         "documentation": {}
     },
@@ -1144,7 +1152,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.gui_slot",
         "description": "gui.gui_module.gui_slot",
-        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
+        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh,custom_borders)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
         "detail": "gui.gui_module.gui_slot",
         "documentation": {}
     },
@@ -1216,7 +1224,7 @@
         "kind": 2,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:\n            gui.open()",
+        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1243,7 +1251,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "slotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0",
+        "peekOfCode": "slotovii_hotbar = []\nx = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\nframe2 = Frame(THIRD_INV_COLOR, 15, (798,15), (WIDTH/2, 561), False)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1252,7 +1260,25 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "x = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\ndelay = 0\nis_button_left = True",
+        "peekOfCode": "x = 154\nfor i in range(9):\n    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])\n    gui.subscribe(new_slotiks, RIGHT_CLICK)\n    gui.subscribe(new_slotiks, LEFT_CLICK)\n    new_slotiks.pack(gui, 1)\n    slotovii_hotbar.append(new_slotiks)\n    x += 87\nframe2 = Frame(THIRD_INV_COLOR, 15, (798,15), (WIDTH/2, 561), False)\nframe2.pack(gui, -1)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "frame2",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "frame2 = Frame(THIRD_INV_COLOR, 15, (798,15), (WIDTH/2, 561), False)\nframe2.pack(gui, -1)\nslotovii_inventar = [GUIslot((88,88), SECOND_INV_COLOR, 0, (200,200),False, o_irs, inventory.inventory[0], (16,0,0,0))]\nslotovii_inventar[0].pack(gui, -1)\ngui.subscribe(slotovii_inventar[0], RIGHT_CLICK)\ngui.subscribe(slotovii_inventar[0], LEFT_CLICK)\ndelay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "slotovii_inventar",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "slotovii_inventar = [GUIslot((88,88), SECOND_INV_COLOR, 0, (200,200),False, o_irs, inventory.inventory[0], (16,0,0,0))]\nslotovii_inventar[0].pack(gui, -1)\ngui.subscribe(slotovii_inventar[0], RIGHT_CLICK)\ngui.subscribe(slotovii_inventar[0], LEFT_CLICK)\ndelay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1261,7 +1287,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "delay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:",
+        "peekOfCode": "delay = 0\nis_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:\n        slt.sync()\n    if splt_val[-1] == \"1\":",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1270,7 +1296,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "is_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True\n    if splt_val[-1] == \"0\" and delay <= 0 and is_button_left == True:\n        if gui.is_visible == False:",
+        "peekOfCode": "is_button_left = True\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1315,7 +1341,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1324,7 +1350,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
+        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1333,7 +1359,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
+        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1342,7 +1368,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
+        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1351,7 +1377,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
+        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1360,7 +1386,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "BLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
+        "peekOfCode": "BLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1369,7 +1395,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "GRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
+        "peekOfCode": "GRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1378,7 +1404,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "FIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
+        "peekOfCode": "FIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1387,7 +1413,16 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "SECOND_INV_COLOR = (128,128,128)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "SECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "THIRD_INV_COLOR",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "THIRD_INV_COLOR = (22,22,22)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
         "detail": "other.cons",
         "documentation": {}
     },

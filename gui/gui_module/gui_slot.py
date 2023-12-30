@@ -8,14 +8,14 @@ from items.item import IItem
 import copy
 from gui.gui_module.element import Element
 class GUIslot(Button,):
-    def __init__(self,size,color, borders, center,boh,crs, parent:Slot) -> None:
+    def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None) -> None:
         self.parent_slot = parent
         self.size = size 
         # self.coords = center
 
         self.crs_obj = crs
         self.last_remembered_item = ""
-        super().__init__(color, borders,size,center,boh)
+        super().__init__(color, borders,size,center,boh,custom_borders)
         self.mover_time = int(FPS/2)
         self.ore_surf = self.or_surf.copy()
         self.mover = Utilz.generate_color_transition(color, GUI_SLOT_COLOR_II,self.mover_time)

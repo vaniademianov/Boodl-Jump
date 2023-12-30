@@ -1,6 +1,7 @@
 from gui.gui_module.gui import Gui
 from gui.gui_module.frame import Frame
-from other.cons import BLACK, FIRST_INV_COLOR, FPS, HEIGHT, RED, SECOND_INV_COLOR, WHITE, WIDTH
+from other.cons import (BLACK, FIRST_INV_COLOR, FPS, HEIGHT, RED, SECOND_INV_COLOR,
+    THIRD_INV_COLOR, WHITE, WIDTH)
 from gui.gui_module.event_types import LEFT_CLICK, RIGHT_CLICK
 from gui.gui_module.gui_slot import GUIslot
 from gui.gui_module.irs import o_irs
@@ -23,6 +24,13 @@ for i in range(9):
     slotovii_hotbar.append(new_slotiks)
     x += 87
 
+frame2 = Frame(THIRD_INV_COLOR, 15, (798,15), (WIDTH/2, 561), False)
+frame2.pack(gui, -1)
+
+slotovii_inventar = [GUIslot((88,88), SECOND_INV_COLOR, 0, (200,200),False, o_irs, inventory.inventory[0], (16,0,0,0))]
+slotovii_inventar[0].pack(gui, -1)
+gui.subscribe(slotovii_inventar[0], RIGHT_CLICK)
+gui.subscribe(slotovii_inventar[0], LEFT_CLICK)
 
 delay = 0
 is_button_left = True
@@ -30,6 +38,8 @@ def tick(gui_coordinates, splt_val, *args):
     global delay, is_button_left
     delay -= 1
     for slt in slotovii_hotbar:
+        slt.sync()
+    for slt in slotovii_inventar:
         slt.sync()
     if splt_val[-1] == "1":
         is_button_left = True

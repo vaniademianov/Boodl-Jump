@@ -5,7 +5,7 @@ from other.utils import Utilz
 
 class Frame(Element):
     def __init__(self,color, borders, size, center: tuple, boh,sep_borders = None) -> None:
-        srf = pygame.Surface(size)
+        srf = pygame.Surface(size,pygame.SRCALPHA)
         # top_l = Utilz.convert_center_to_top_left(center[0], center[1], size[0], size[1])
         if sep_borders == None:
             pygame.draw.rect(srf, color, pygame.Rect((0,0), size),0,borders)
