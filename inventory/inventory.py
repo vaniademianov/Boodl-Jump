@@ -11,7 +11,8 @@ class Inventory:
             Slot(None, True),
             *[Slot(None) for i in range(self.SLOT_NUMBER - 1)],
         ]
-        self.inventory = [Slot(None) for i in range(self.INV_NUMBER - 1)]
+        self.inventory = [Slot(None) for i in range(self.INV_NUMBER +0)]
+        self.shield = Slot(None, False)
         self.selected = self.hotbar[0]
         self.selected_n = 0
         self.change_cd = 0.5 * FPS

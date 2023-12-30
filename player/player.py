@@ -27,6 +27,7 @@ class Player(pygame.sprite.Sprite):
         self.change_angle = 0
         self.jumper = 20
         self.inv = inv
+        self.controls_locked = False
         self.shifting = False
         self.game_changer = 0
         self.playerz = rm.get_players()
@@ -69,7 +70,8 @@ class Player(pygame.sprite.Sprite):
             # touchedd the gras
             self.y_vel = 0
             self.jump = False
-
+        if self.controls_locked:
+            return
         if classified[0] == "TOP" and not self.jump and self.move_up:
             self.y_vel -= self.jumper
             self.jump = True

@@ -1,62 +1,49 @@
 from gui.gui_module.gui import Gui
 from gui.gui_module.frame import Frame
-from other.cons import (BLACK, FIRST_INV_COLOR, FPS, HEIGHT, RED, SECOND_INV_COLOR,
-    THIRD_INV_COLOR, WHITE, WIDTH)
-from gui.gui_module.event_types import LEFT_CLICK, RIGHT_CLICK
+from inventory.inventory import inventory
+from other.cons import (BLACK, FIRST_INV_COLOR, FOURTH_INV_COLOR, HEIGHT, THIRD_INV_COLOR, WHITE,
+    WIDTH)
+from gui.gui_module.label import Label
 from gui.gui_module.gui_slot import GUIslot
 from gui.gui_module.irs import o_irs
-from inventory.inventory import inventory
-
+from gui.gui_module.button import Button
+from gui.gui_module.image import Image
+from res.resource_manager import resource_manager
 
 
 gui = Gui(False)
-frame1 = Frame(FIRST_INV_COLOR, 0, (800, 434), (WIDTH/2, HEIGHT/2-150+217), False,(0,0,16,16))
+frame1 = Frame(
+    FIRST_INV_COLOR,
+    0,
+    (800, 235),
+    (WIDTH / 2, HEIGHT / 2 -117- 150),
+    False,
+    (16, 16, 0, 0),
+)
 frame1.pack(gui, 0)
-slotovii_hotbar = []
-x = 154
+inventory_label = Label("Inventory", WHITE, 32, "Brownie", (200, 40),False)
+inventory_label.pack(gui, 1)
 
-for i in range(9):
-    new_slotiks = GUIslot((65,65), SECOND_INV_COLOR, 0, (x, 633), False, o_irs, inventory.hotbar[i])
-    gui.subscribe(new_slotiks, RIGHT_CLICK)
-    gui.subscribe(new_slotiks, LEFT_CLICK)
-    new_slotiks.pack(gui, 1)
-    
-    slotovii_hotbar.append(new_slotiks)
-    x += 87
-
-frame2 = Frame(THIRD_INV_COLOR, 15, (798,15), (WIDTH/2, 561), False)
+frame2 = Frame(THIRD_INV_COLOR, 15, (798, 15), (WIDTH / 2, 250), False)
 frame2.pack(gui, -1)
-
-slotovii_inventar = [GUIslot((88,88), SECOND_INV_COLOR, 0, (200,200),False, o_irs, inventory.inventory[0], (16,0,0,0))]
-slotovii_inventar[0].pack(gui, -1)
-gui.subscribe(slotovii_inventar[0], RIGHT_CLICK)
-gui.subscribe(slotovii_inventar[0], LEFT_CLICK)
-
-delay = 0
-is_button_left = True
+frame3  = Frame(WHITE, 15, (264, 178), (255, 150), False)
+frame3.pack(gui, -1)
+shield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)
+shield_slot.pack(gui, -1) 
+dress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)
+dress_button.pack(gui, -1)
+arch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)
+arch_button.pack(gui, -1)
+shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)
+shield_img.pack(gui, -1)
+arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)
+arch_img.pack(gui, -1)
+dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)
+dress_img.pack(gui, -1)
+crafting_label = Label("Crafting", WHITE, 32, "Brownie", (580, 40),False)
+crafting_label.pack(gui, -1)
 def tick(gui_coordinates, splt_val, *args):
-    global delay, is_button_left
-    delay -= 1
-    for slt in slotovii_hotbar:
-        slt.sync()
-    for slt in slotovii_inventar:
-        slt.sync()
-    if splt_val[-1] == "1":
-        is_button_left = True
-    if splt_val[-1] == "0" and delay <= 0 and is_button_left == True:
-        if gui.is_visible == False:
-
-            gui.open()
-            gui.transparency_anim()
-            gui.slide_in_anim()
-            delay = FPS*0.4
-            is_button_left = False
-        else:
-            # o_irs.closed(inventory.player)
-            # gui.transparency_anim()
-            gui.backward_transparency_anim()
-            gui.close_animated()
-            delay = FPS*0.4
-            is_button_left=False
-# example_frame.on_right_click = tick
-# example_gui.subscribe(example_frame, RIGHT_CLICK)
+    shield_slot.sync()
+    dress_img.sync()
+    arch_img.sync()
+    shield_img.sync()

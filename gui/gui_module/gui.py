@@ -167,6 +167,7 @@ class Gui:
                     rectik.center = (element.coordinates.x, element.coordinates.y)
                     
                     if rectik.colliderect(rectik2):
+                        # print("HOVERER", element)
                         element.on_hover()
                         any_hovered = True
                         

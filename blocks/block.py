@@ -23,7 +23,7 @@ class IBlock(pygame.sprite.Sprite):
     def spawn(daughter,cords,walls,player,breaked_group,blocks,colliders):
         new_coordinates = Utilz.round_coordinates(cords,player.Y_CHANGE,colliders)
 
-        if Utilz.good_location( new_coordinates,colliders,player.rect.center):
+        if Utilz.good_location( new_coordinates,colliders,player.rect.center,player):
             new_block = daughter(new_coordinates,breaked_group)
             blocks.add(new_block)
 
@@ -35,7 +35,7 @@ class IBlock(pygame.sprite.Sprite):
     def update(self,updatik, player,gui_coordinates):
         is_holding_l_button = updatik.val
         self.rect.y -= player.y_vel
-        if not is_holding_l_button or not self.rect.colliderect(grd.get_nearest(gui_coordinates)):
+        if not is_holding_l_button or not self.rect.colliderect(grd.get_nearest(gui_coordinates)) or player.controls_locked:
             # reset
             self.state = 0
             self.tiki = 0

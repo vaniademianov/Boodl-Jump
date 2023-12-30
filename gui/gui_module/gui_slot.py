@@ -7,15 +7,17 @@ from other.cons import COUNT_COLOR, font_txt, FPS, GUI_SLOT_COLOR_II
 from items.item import IItem
 import copy
 from gui.gui_module.element import Element
+from gui.gui_module.event_types import HOVER, LEFT_CLICK, RIGHT_CLICK
+from gui.gui_module.gui import Gui
 class GUIslot(Button,):
-    def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None) -> None:
+    def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None,stroke_w=None, stroke_color=None) -> None:
         self.parent_slot = parent
         self.size = size 
         # self.coords = center
 
         self.crs_obj = crs
         self.last_remembered_item = ""
-        super().__init__(color, borders,size,center,boh,custom_borders)
+        super().__init__(color, borders,size,center,boh,custom_borders,stroke_color, stroke_w)
         self.mover_time = int(FPS/2)
         self.ore_surf = self.or_surf.copy()
         self.mover = Utilz.generate_color_transition(color, GUI_SLOT_COLOR_II,self.mover_time)
@@ -86,14 +88,24 @@ class GUIslot(Button,):
             coords = Utilz.w(self.coordinates.to_tuple(), (20,5))
             screen.blit(txt_srf,coords)
     def blit_item(self, item_mini):
-        # rect = item.minimized_for_inv.get_rect()
-        rect = item_mini.get_rect()
-        rect.center = self.coordinates.to_tuple()
-    
+        # coords = Utilz.wd(self.size, 2)
+        # coords = Utilz.convert_center_to_top_left(coords[0], coords[1], self.size[0]/2, self.size[1]/2)
+
+        item_rect = item_mini.get_rect()
+
+
+        item_rect.center = Utilz.wd(self.size, 2)
+
+
         srf = self.ore_surf.copy()
-        srf.blit(item_mini, Utilz.wd(self.size,4))
+        srf.blit(item_mini, item_rect.topleft)
 
         self.change_parent_surfaces(srf)
+    def pack(self,master:Gui,level):
+        master.stick_element(self,level) 
+        master.subscribe(self,HOVER)
+        master.subscribe(self, RIGHT_CLICK)
+        master.subscribe(self,LEFT_CLICK)
     def update_color(self, color):
         # things
 

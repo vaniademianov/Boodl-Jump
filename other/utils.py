@@ -38,10 +38,10 @@ grd = Holder(WIDTH, HEIGHT)
 
 class Utilz:
     @staticmethod
-    def good_location(cords,colliders:pygame.sprite.Group,player_loc):
+    def good_location(cords,colliders:pygame.sprite.Group,player_loc,player):
         rect = grd.get_nearest(cords)
  
-        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE:
+        if Utilz.calc_dist_cord(rect.center, player_loc) > INTERACTION_DISTANCE or player.controls_locked:
  
             return False
         for collider in colliders.sprites():
@@ -93,7 +93,9 @@ class Utilz:
     @staticmethod
     def wd(a: tuple, b: int):
         return (a[0] / b, a[1] / b)
-
+    @staticmethod
+    def rd(a: tuple):
+        return (round(a[0]), round(a[1]))
     @staticmethod
     def rect_group_collide(r: pygame.Rect, g: pygame.sprite.Group):
         for sprite in g.sprites():

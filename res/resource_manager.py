@@ -1,6 +1,7 @@
 import pygame
 import os
 from other.cons import PLAYER_SIZE
+
 class ResourceManager:
     def __init__(self, res_name = "") -> None:
         
@@ -27,10 +28,22 @@ class ResourceManager:
         self.scope_on_good_location = pygame.transform.scale(self.scope_on_good_location, (50,50))
 
 
+        self.achievement_icon = pygame.image.load("res/images/achievement.svg")
+        self.achievement_icon = pygame.transform.scale(self.achievement_icon, (36,51))
 
+        self.hanger_icon = pygame.image.load("res/images/hanger.svg")
+        self.hanger_icon = pygame.transform.scale(self.hanger_icon, (46,36))
+        self.shield_icon = pygame.image.load("res/images/shield.svg")
+        self.shield_icon = pygame.transform.scale(self.shield_icon, (44,46))
         self.players = []
         for i in range(72):
             self.players.append(pygame.transform.rotate(self.player, 360/72*i))
+    def get_shield(self):
+        return self.shield_icon
+    def get_hanger(self):
+        return self.hanger_icon
+    def get_achievement(self):
+        return self.achievement_icon
     def get_brownie_s(self, size):
         self.brownie_stencil = pygame.font.Font("res/fonts/BrownieStencil.ttf",size)
         return self.brownie_stencil

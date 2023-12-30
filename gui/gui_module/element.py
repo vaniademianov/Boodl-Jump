@@ -25,8 +25,6 @@ class Element:
         # self.coors = [0,0]
     def pack(self,master:Gui,level):
         master.stick_element(self,level) 
-        
-
         master.subscribe(self,HOVER)
         
     def alpha(self,value):
@@ -37,6 +35,7 @@ class Element:
         if self.big_on_hover and not self.slod:
             self.hover = True
             self.hovering_animation_active = True
+
             # self.hovering_animation_progress = 0
     def back_hover_anim(self):
         self.back_hover_anim_active = True
@@ -60,11 +59,15 @@ class Element:
         self.coordinates.x += valuex / 4
         self.coordinates.y += valuey / 4
 
-        self.surface = self.resizik(self.surface,valuex, valuey)
+        self.surface = self.resizik(self.surface,round(valuex), round(valuey))
         
     def resizik(self,surf:pygame.Surface, valx, valy):
 
-        l = pygame.transform.smoothscale(surf, (surf.get_width()+valx, surf.get_height()+valy)).copy()
+        
+        if "neat_init" in dir(self):
+            l = self.neat_init(None, (surf.get_width()+valx, surf.get_height()+valy))
+        else:
+            l = pygame.transform.smoothscale(surf, (surf.get_width()+valx, surf.get_height()+valy)).copy()
         return l
     def tick(self):
         # print(self.x, self.y)
@@ -72,7 +75,7 @@ class Element:
 
             self.hovering_animation_progress-= self.hovering_animation_spd
             
-            self.make_bigger(-(self.surface.get_height()/100*self.hovering_animation_spd),-(self.surface.get_height()/100*self.hovering_animation_spd))
+            self.make_bigger(-(self.surface.get_height()/100*self.vidsotok_zb),-(self.surface.get_height()/100*self.vidsotok_zb))
             if self.hovering_animation_progress <= 0:
                 self.hovering_animation_active = False
                 self.back_hover_anim_active = False
@@ -83,7 +86,7 @@ class Element:
 
             self.hovering_animation_progress+= self.hovering_animation_spd
             
-            self.make_bigger((self.surface.get_height()/100*self.hovering_animation_spd),(self.surface.get_height()/100*self.hovering_animation_spd))
+            self.make_bigger((self.surface.get_height()/100*self.vidsotok_zb),(self.surface.get_height()/100*self.vidsotok_zb))
 
             if self.hovering_animation_progress >= FPS*HOVER_ANIMATION_SPEED:
                 self.hovering_animation_active = False

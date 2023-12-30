@@ -16,14 +16,15 @@ from blocks.crafting_table import CraftingTable as crafting_table_item
 from pathlib import Path
 from player.player import Player
 from res.resource_manager import resource_manager as rm
-from inventory import inventory_gui as inv
+from inventory import universal_inventory_gui as inv
 from inventory.inventory import inventory
 from other.utils import *
 from other.cons import *
 from player.wall import Wall
 from gui.gui_module.gui_holder import GuiGroup
-from inventory.inventory_gui import gui
+from inventory.universal_inventory_gui import gui
 from gui.gui_module.irs import o_irs
+from inventory import inventory_gui as ne_uni_gui
 
 
 
@@ -268,14 +269,18 @@ gui_coordinates = [0, 0]
 
 gui_group = GuiGroup()
 gui_group.add(inv.gui, inv.tick)
-
+gui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)
 # def blit_l(l, screen):
 #     for obj in l:
 #         screen.blit(obj.image, obj.rect)
-
+tp_anim_progress = 0
+tp_back_anim_active = False
+tp_anim_active = False
+last_remembered_activ_state = False
+tp_anim_spd = 155/(TRANSPARENCY_ANIMATION_SPEED*30) 
 
 pygame.mouse.set_visible(False)
-
+tp_anim_ready = False
 while running:
 
     if cd > 0:
@@ -315,14 +320,14 @@ while running:
                 blocked = True
         if not blocked:
             rim_added = grd.get_nearest(tuple(gui_coordinates))
-            if Utilz.good_location(rim_added.topleft, colliders, player.rect.center):
+            if Utilz.good_location(rim_added.topleft, colliders, player.rect.center,player):
                 srf = rm.get_scope_on_good_loc()
             else:
                 srf = rm.get_scope_on_bad_loc()
       
             blocked = True
         updatik = DataClass_Transporter(splt_val[10] == "0")
-        gui_group.update(gui_coordinates, splt_val)
+        gui_group.update(gui_coordinates, splt_val,player)
         blocks.update(updatik, player, gui_coordinates)
         second_joystick_classified = classi.classify(
             (int(splt_val[-3]), int(splt_val[-2]))
@@ -367,13 +372,53 @@ while running:
     screen.blit(player.image, (player.rect.topleft[0],player.rect.topleft[1]+player.game_changer*2))
     if rim_added != None:
         screen.blit(srf, rim_added.topleft)
-    gui_group.draw(screen)
+    
     # screen.blit(scope, convert_top_left_to_center(gui_coordinates[0], gui_coordinates[1], scope.get_width(), scope.get_height()))
 
     breaked_stuff.draw(screen)
 
     # walls, breaked_stuff, blocks, colliders
     inventory.tick(splt_val, screen,player,gui_coordinates,walls, breaked_stuff, blocks, colliders)
+
+    if inv.gui.is_visible != last_remembered_activ_state:
+        
+        if inv.gui.is_visible and not tp_anim_active and not tp_anim_ready:
+            tp_anim_active= True
+            tp_anim_progress = 0
+            screen.fill((255-tp_anim_progress, 255-tp_anim_progress, 255-tp_anim_progress, 100), special_flags=pygame.BLEND_MULT)
+            last_remembered_activ_state = inv.gui.is_visible
+        elif not inv.is_leaving and tp_anim_ready:
+            tp_back_anim_active = True
+
+            tp_anim_progress = 155
+            last_remembered_activ_state = inv.gui.is_visible
+            tp_anim_ready = False
+            screen.fill((255-tp_anim_progress, 255-tp_anim_progress, 255-tp_anim_progress, 100), special_flags=pygame.BLEND_MULT)
+    if tp_anim_active:
+        tp_anim_progress += round(tp_anim_spd)
+        screen.fill((255-tp_anim_progress, 255-tp_anim_progress, 255-tp_anim_progress, 100), special_flags=pygame.BLEND_MULT)
+        if tp_anim_progress >= 155:
+            
+            tp_anim_ready = True
+            tp_anim_active = False
+            tp_anim_progress = 155
+    if tp_back_anim_active:
+
+        tp_anim_progress -= round(tp_anim_spd)
+        tp_anim_progress = int(tp_anim_progress)
+       
+        
+        if tp_anim_progress <= 0:
+            tp_anim_ready = False
+            tp_anim_active = False
+            tp_anim_progress = 0
+            tp_back_anim_active = False
+
+        else:
+            screen.fill((255-tp_anim_progress, 255-tp_anim_progress, 255-tp_anim_progress, 100), special_flags=pygame.BLEND_MULT)
+    if tp_anim_ready and not tp_back_anim_active: 
+        screen.fill((255-tp_anim_progress, 255-tp_anim_progress, 255-tp_anim_progress, 100), special_flags=pygame.BLEND_MULT)
+    gui_group.draw(screen)
     o_irs.draw(screen, gui_coordinates)
     # blit_l([player.hitbox.topl, player.hitbox.topr, player.hitbox.btml, player.hitbox.btml], screen)
     pygame.display.flip()
