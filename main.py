@@ -309,14 +309,25 @@ while running:
         # print(classi.center)
         wrek = pygame.Rect(gui_coordinates[0], gui_coordinates[1], rm.get_scope().get_width(), rm.get_scope().get_height())
         blocked = False
+        miniblock = None
+        block_blocked = False
+        if inventory.selected != None and inventory.selected.item != None:
+            if inventory.selected.item.is_block:
+                miniblock:pygame.Surface = inventory.selected.item.blocky_image.copy()
+                miniblock.convert_alpha()
+                miniblock.set_alpha(100)
+
         for block in blocks.sprites():
 
             if block.rect.colliderect(wrek):
                 # got them
                 
                 rim_added =block.rect
-                srf = rm.get_scope_on_block()
-
+                if Utilz.calc_dist_rec(block.rect, player.rect) < INTERACTION_DISTANCE:
+                    srf = rm.get_scope_on_block()
+                else:
+                    srf = rm.get_scope_on_isnt_breakable()
+                block_blocked = True
                 blocked = True
         if not blocked:
             rim_added = grd.get_nearest(tuple(gui_coordinates))
@@ -326,6 +337,7 @@ while running:
                 srf = rm.get_scope_on_bad_loc()
       
             blocked = True
+            block_blocked = False
         updatik = DataClass_Transporter(splt_val[10] == "0")
         gui_group.update(gui_coordinates, splt_val,player)
         blocks.update(updatik, player, gui_coordinates)
@@ -371,8 +383,12 @@ while running:
 
     screen.blit(player.image, (player.rect.topleft[0],player.rect.topleft[1]+player.game_changer*2))
     if rim_added != None:
-        screen.blit(srf, rim_added.topleft)
-    
+        if block_blocked:
+            screen.blit(srf, Utilz.wm(rim_added.topleft, (4,4)))
+        else:
+            if miniblock != None:
+                screen.blit(miniblock, rim_added.topleft)
+            screen.blit(srf, rim_added.topleft)
     # screen.blit(scope, convert_top_left_to_center(gui_coordinates[0], gui_coordinates[1], scope.get_width(), scope.get_height()))
 
     breaked_stuff.draw(screen)

@@ -35,6 +35,8 @@ class CraftingTable(IItem):
     def __init__(self, parent_slot) -> None:
         super().__init__()
         self.parent = parent_slot
+        self.is_block = True
+        self.blocky_image = rm.get_crafting_table((50,50))
         self.minimized_for_inv = rm.get_crafting_table((32,32))
         self.player = None
         self.mini = MiniCraftingTable

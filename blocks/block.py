@@ -35,7 +35,7 @@ class IBlock(pygame.sprite.Sprite):
     def update(self,updatik, player,gui_coordinates):
         is_holding_l_button = updatik.val
         self.rect.y -= player.y_vel
-        if not is_holding_l_button or not self.rect.colliderect(grd.get_nearest(gui_coordinates)) or player.controls_locked:
+        if not is_holding_l_button or not self.rect.colliderect(grd.get_nearest(gui_coordinates)) or player.controls_locked or Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centery) > INTERACTION_DISTANCE:
             # reset
             self.state = 0
             self.tiki = 0
@@ -44,7 +44,7 @@ class IBlock(pygame.sprite.Sprite):
             
             return
  
-        elif Utilz.calc_dist(player.rect.centerx,player.rect.centery,self.rect.centerx, self.rect.centerx) < INTERACTION_DISTANCE:
+        else:
             self.tiki += 1
             updatik.val = False
             if self.tiki > self.dur/len(self.STATES):

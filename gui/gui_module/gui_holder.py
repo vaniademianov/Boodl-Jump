@@ -11,5 +11,6 @@ class GuiGroup:
     def draw(self, screen):
         for gei in self.guis:
             gei[0].draw(screen)
+            
     def add(self, new_gui, update_func=None):
         self.guis.append((new_gui, update_func))

@@ -170,9 +170,9 @@ def tick(gui_coordinates, splt_val, *args):
     player = args[0]
     delay -= 1
     for slt in slotovii_hotbar:
-        slt.sync()
+        slt.sync(gui_coordinates, splt_val)
     for slt in slotovii_inventar:
-        slt.sync()
+        slt.sync(gui_coordinates, splt_val)
     if splt_val[-1] == "1":
         is_button_left = True
     if splt_val[-1] == "0" and delay <= 0 and is_button_left == True:

@@ -58,6 +58,8 @@ class Gui:
         if self.is_visible:
             for element in self.elements:
                 element.draw(screen)
+            for element in self.elements:
+                element.after_draw(screen) 
     def set_visible(self, visible):
         self.is_visible = visible
     def set_reacting(self, react):
@@ -91,11 +93,12 @@ class Gui:
             self.tp_anim_active = True
             if not self.is_visible:
                 self.open()
-    def backward_transparency_anim(self):
+    def backward_transparency_anim(self,on_f=None):
         if not self.backward_transparency_anim_active:
             self.update_transparency(255)
             self.backward_transparency_anim_progress = 255
             self.backward_transparency_anim_active = True
+            self.bw_on_finish = on_f
             if not self.is_visible:
                 self.open()
     def tick(self, gui_coordinates:tuple, splt_val):
@@ -129,7 +132,8 @@ class Gui:
                 self.backward_transparency_anim_active = False
                 self.update_transparency(0)
                 self.backward_transparency_anim_progress = 0
-        
+                if self.bw_on_finish != None:
+                    self.bw_on_finish()
         if self.slide_in_anim_active: 
             self.slide_in_anim_progress += self.sli_anim_spd
             self.update_ys(-self.sli_anim_spd)
@@ -168,7 +172,9 @@ class Gui:
                     
                     if rectik.colliderect(rectik2):
                         # print("HOVERER", element)
-                        element.on_hover()
+                        # check is super
+                        tochno = rectik.collidepoint(gui_coordinates)
+                        element.on_hover(tochno,gui_coordinates)
                         any_hovered = True
                         
                     else:

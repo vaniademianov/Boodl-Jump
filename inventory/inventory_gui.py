@@ -43,7 +43,7 @@ dress_img.pack(gui, -1)
 crafting_label = Label("Crafting", WHITE, 32, "Brownie", (580, 40),False)
 crafting_label.pack(gui, -1)
 def tick(gui_coordinates, splt_val, *args):
-    shield_slot.sync()
+    shield_slot.sync(gui_coordinates, splt_val)
     dress_img.sync()
     arch_img.sync()
     shield_img.sync()

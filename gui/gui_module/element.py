@@ -29,7 +29,9 @@ class Element:
         
     def alpha(self,value):
         self.surface.set_alpha(value)
-    def on_hover(self):
+    def after_draw(self, screen):
+        pass
+    def on_hover(self, tochno,coords):
 
         # activate animation
         if self.big_on_hover and not self.slod:

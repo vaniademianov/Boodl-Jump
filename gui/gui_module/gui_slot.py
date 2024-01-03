@@ -3,12 +3,15 @@ from inventory.slot import Slot
 from other.utils import Utilz
 import pygame
 from res.resource_manager import resource_manager as rm
-from other.cons import COUNT_COLOR, font_txt, FPS, GUI_SLOT_COLOR_II
+from other.cons import BLACK, COUNT_COLOR, font_txt, FPS, GUI_SLOT_COLOR_II, SECOND_INV_COLOR
 from items.item import IItem
 import copy
 from gui.gui_module.element import Element
 from gui.gui_module.event_types import HOVER, LEFT_CLICK, RIGHT_CLICK
 from gui.gui_module.gui import Gui
+from gui.gui_module.frame import Frame
+from gui.gui_module.label import Label
+
 class GUIslot(Button,):
     def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None,stroke_w=None, stroke_color=None) -> None:
         self.parent_slot = parent
@@ -27,9 +30,37 @@ class GUIslot(Button,):
         self.hovered_last_time = False
         self.hovering = False
         self.moving_anim_ready = False
-    def on_hover(self):
+        self.toch_h_last_time = False
+
+        # SETUP TIP GUI
+        self.tip_gui = Gui(False)
+        self.tip_frame= Frame(SECOND_INV_COLOR,16,(200, 120), center, False)
+        self.tip_frame.pack(self.tip_gui, 0)
+        self.title_label = Label("NULL", BLACK, 28, "Brownie", (200,120), False)
+        
+    def update_tip_coords(self, coords):
+        self.tip_frame.coordinates.x = coords[0]
+        self.tip_frame.coordinates.y = coords[1]
+        self.tip_frame.coordinates.x, self.tip_frame.coordinates.y = Utilz.convert_top_left_to_center(self.tip_frame.coordinates.x, self.tip_frame.coordinates.y, *self.tip_frame.surface.get_size())
+    def on_hover(self, tochno, coords):
         self.hovered_last_time = True
+        self.toch_h_last_time = True
+        print(tochno)
+        if tochno and self.parent_slot.item != None:
+            self.update_tip_coords(coords)
+            if not self.tip_gui.is_visible:
+
+                self.tip_gui.open()
+                self.tip_gui.transparency_anim()
+            
     def disable_hovers(self):
+        if self.toch_h_last_time:
+            self.toch_h = True
+
+        else:
+            self.toch_h = False
+         
+        self.toch_h_last_time = False
         if self.hovered_last_time: 
             self.hovering = True
             if not self.moving_anim_active and not self.moving_anim_ready:
@@ -39,6 +70,9 @@ class GUIslot(Button,):
                 self.moving_anim_ready = False
         else:
             self.hovering = False
+            if self.tip_gui.is_visible:
+                self.tip_gui.backward_transparency_anim(self.tip_gui.close)
+    
         self.hovered_last_time = False
         
 
@@ -87,6 +121,8 @@ class GUIslot(Button,):
             coords = Utilz.w(self.coordinates.to_tuple(), Utilz.wd(self.size,2))
             coords = Utilz.w(self.coordinates.to_tuple(), (20,5))
             screen.blit(txt_srf,coords)
+    def after_draw(self, screen):
+        self.tip_gui.draw(screen)
     def blit_item(self, item_mini):
         # coords = Utilz.wd(self.size, 2)
         # coords = Utilz.convert_center_to_top_left(coords[0], coords[1], self.size[0]/2, self.size[1]/2)
@@ -113,8 +149,8 @@ class GUIslot(Button,):
         self.ore_surf = self.or_surf
         if self.parent_slot.item != None:
             self.blit_item(self.parent_slot.item.minimized_for_inv)
-    def sync(self):
-        
+    def sync(self,gui_coordinates, splt_val,):
+        self.tip_gui.tick(gui_coordinates, splt_val)
         # self.yes_y(self.y)
         # sync with slotik 
         # print(self.x, self.y)

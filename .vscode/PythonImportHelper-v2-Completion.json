@@ -289,6 +289,14 @@
         "documentation": {}
     },
     {
+        "label": "BLACK",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
         "label": "COUNT_COLOR",
         "importPath": "other.cons",
         "description": "other.cons",
@@ -314,6 +322,14 @@
     },
     {
         "label": "GUI_SLOT_COLOR_II",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SECOND_INV_COLOR",
         "importPath": "other.cons",
         "description": "other.cons",
         "isExtraImport": true,
@@ -506,6 +522,62 @@
     },
     {
         "label": "*",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "BLUE",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "DARK_RED",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "GREEN",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "ORANGE",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "PURPLE",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "WHITE",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "YELLOW",
         "importPath": "other.cons",
         "description": "other.cons",
         "isExtraImport": true,
@@ -875,6 +947,46 @@
         "documentation": {}
     },
     {
+        "label": "Frame",
+        "importPath": "gui.gui_module.frame",
+        "description": "gui.gui_module.frame",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.frame",
+        "documentation": {}
+    },
+    {
+        "label": "Frame",
+        "importPath": "gui.gui_module.frame",
+        "description": "gui.gui_module.frame",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.frame",
+        "documentation": {}
+    },
+    {
+        "label": "Frame",
+        "importPath": "gui.gui_module.frame",
+        "description": "gui.gui_module.frame",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.frame",
+        "documentation": {}
+    },
+    {
+        "label": "Label",
+        "importPath": "gui.gui_module.label",
+        "description": "gui.gui_module.label",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.label",
+        "documentation": {}
+    },
+    {
+        "label": "Label",
+        "importPath": "gui.gui_module.label",
+        "description": "gui.gui_module.label",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.label",
+        "documentation": {}
+    },
+    {
         "label": "MiniCraftingTable",
         "importPath": "blocks.crafting_table",
         "description": "blocks.crafting_table",
@@ -923,22 +1035,6 @@
         "documentation": {}
     },
     {
-        "label": "Frame",
-        "importPath": "gui.gui_module.frame",
-        "description": "gui.gui_module.frame",
-        "isExtraImport": true,
-        "detail": "gui.gui_module.frame",
-        "documentation": {}
-    },
-    {
-        "label": "Frame",
-        "importPath": "gui.gui_module.frame",
-        "description": "gui.gui_module.frame",
-        "isExtraImport": true,
-        "detail": "gui.gui_module.frame",
-        "documentation": {}
-    },
-    {
         "label": "inventory",
         "importPath": "inventory.inventory",
         "description": "inventory.inventory",
@@ -960,14 +1056,6 @@
         "description": "inventory.inventory",
         "isExtraImport": true,
         "detail": "inventory.inventory",
-        "documentation": {}
-    },
-    {
-        "label": "Label",
-        "importPath": "gui.gui_module.label",
-        "description": "gui.gui_module.label",
-        "isExtraImport": true,
-        "detail": "gui.gui_module.label",
         "documentation": {}
     },
     {
@@ -1058,6 +1146,15 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
         "documentation": {}
     },
     {
@@ -1219,7 +1316,7 @@
         "kind": 6,
         "importPath": "blocks.crafting_table",
         "description": "blocks.crafting_table",
-        "peekOfCode": "class MiniCraftingTable(IIMiniItem):\n    def __init__(self,cords) -> None:\n        self.parent = CraftingTable\n        self.image = rm.get_crafting_table((16,16))\n        super().__init__(cords, self.image, self.parent)\nclass CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.minimized_for_inv = rm.get_crafting_table((32,32))",
+        "peekOfCode": "class MiniCraftingTable(IIMiniItem):\n    def __init__(self,cords) -> None:\n        self.parent = CraftingTable\n        self.image = rm.get_crafting_table((16,16))\n        super().__init__(cords, self.image, self.parent)\nclass CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.is_block = True",
         "detail": "blocks.crafting_table",
         "documentation": {}
     },
@@ -1228,7 +1325,7 @@
         "kind": 6,
         "importPath": "blocks.crafting_table",
         "description": "blocks.crafting_table",
-        "peekOfCode": "class CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.minimized_for_inv = rm.get_crafting_table((32,32))\n        self.player = None\n        self.mini = MiniCraftingTable\n        self.title = \"Crafting Table\"\n        self.lore = [\"\",\"\",\"\",\"\",\"Old technology\", \"Some people say even our grandgrandgrandgrandgrand parents used it.\",]\n        self.rarity = Rarity.COMMON ",
+        "peekOfCode": "class CraftingTable(IItem):\n    def __init__(self, parent_slot) -> None:\n        super().__init__()\n        self.parent = parent_slot\n        self.is_block = True\n        self.blocky_image = rm.get_crafting_table((50,50))\n        self.minimized_for_inv = rm.get_crafting_table((32,32))\n        self.player = None\n        self.mini = MiniCraftingTable\n        self.title = \"Crafting Table\"",
         "detail": "blocks.crafting_table",
         "documentation": {}
     },
@@ -1381,7 +1478,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.label",
         "description": "gui.gui_module.label",
-        "peekOfCode": "class Label(Element):\n    def __init__(self, text, color, font_size, font: Literal[\"Brownie\", \"Freedom\"], coordinates: tuple, boh) -> None:\n        if font == \"Brownie\":\n            self.font = resource_manager.get_brownie_s(font_size)\n        elif font == \"Freedom\":\n            self.font = resource_manager.get_freedom(font_size)\n        srf = self.font.render(text, False,color)\n        super().__init__(srf, coordinates, boh)",
+        "peekOfCode": "class Label(Element):\n    def __init__(self, text, color, font_size, font: Literal[\"Brownie\", \"Freedom\"], coordinates: tuple, boh) -> None:\n        if font == \"Brownie\":\n            self.font = resource_manager.get_brownie_s(font_size)\n        elif font == \"Freedom\":\n            self.font = resource_manager.get_freedom(font_size)\n        self.text = text \n        self.color = color \n        srf = self.font.render(text, False,color)\n        super().__init__(srf, coordinates, boh)",
         "detail": "gui.gui_module.label",
         "documentation": {}
     },
@@ -1408,7 +1505,7 @@
         "kind": 2,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync()\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1480,7 +1577,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync()",
+        "peekOfCode": "shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1489,7 +1586,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync()\n    dress_img.sync()\n    arch_img.sync()",
+        "peekOfCode": "arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1498,7 +1595,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync()\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1507,7 +1604,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "crafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync()\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "crafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1534,7 +1631,7 @@
         "kind": 2,
         "importPath": "inventory.universal_inventory_gui",
         "description": "inventory.universal_inventory_gui",
-        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:\n        slt.sync()\n    if splt_val[-1] == \"1\":\n        is_button_left = True",
+        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync(gui_coordinates, splt_val)\n    for slt in slotovii_inventar:\n        slt.sync(gui_coordinates, splt_val)\n    if splt_val[-1] == \"1\":\n        is_button_left = True",
         "detail": "inventory.universal_inventory_gui",
         "documentation": {}
     },
@@ -1642,7 +1739,7 @@
         "kind": 5,
         "importPath": "inventory.universal_inventory_gui",
         "description": "inventory.universal_inventory_gui",
-        "peekOfCode": "delay = 0\nis_button_left = True\nis_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:",
+        "peekOfCode": "delay = 0\nis_button_left = True\nis_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync(gui_coordinates, splt_val)\n    for slt in slotovii_inventar:",
         "detail": "inventory.universal_inventory_gui",
         "documentation": {}
     },
@@ -1651,7 +1748,7 @@
         "kind": 5,
         "importPath": "inventory.universal_inventory_gui",
         "description": "inventory.universal_inventory_gui",
-        "peekOfCode": "is_button_left = True\nis_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:\n        slt.sync()",
+        "peekOfCode": "is_button_left = True\nis_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync(gui_coordinates, splt_val)\n    for slt in slotovii_inventar:\n        slt.sync(gui_coordinates, splt_val)",
         "detail": "inventory.universal_inventory_gui",
         "documentation": {}
     },
@@ -1660,7 +1757,7 @@
         "kind": 5,
         "importPath": "inventory.universal_inventory_gui",
         "description": "inventory.universal_inventory_gui",
-        "peekOfCode": "is_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync()\n    for slt in slotovii_inventar:\n        slt.sync()\n    if splt_val[-1] == \"1\":",
+        "peekOfCode": "is_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync(gui_coordinates, splt_val)\n    for slt in slotovii_inventar:\n        slt.sync(gui_coordinates, splt_val)\n    if splt_val[-1] == \"1\":",
         "detail": "inventory.universal_inventory_gui",
         "documentation": {}
     },
@@ -1669,7 +1766,7 @@
         "kind": 6,
         "importPath": "items.item",
         "description": "items.item",
-        "peekOfCode": "class IItem:\n    def __init__(self) -> None:\n        self.title = \"undefined\"\n    def get_slot(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_move(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_right_click(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_left_click(self,*args,**kwargs):",
+        "peekOfCode": "class IItem:\n    def __init__(self) -> None:\n        self.title = \"undefined\"\n        self.is_block = False\n    def get_slot(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_move(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_right_click(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")",
         "detail": "items.item",
         "documentation": {}
     },
@@ -1678,8 +1775,89 @@
         "kind": 6,
         "importPath": "items.mini_item",
         "description": "items.mini_item",
-        "peekOfCode": "class IIMiniItem(pygame.sprite.Sprite):\n    def __init__(self,cords,image,parent) -> None:\n        super().__init__()\n        self.rect = image.get_rect()\n        self.rect.center = cords \n        self.or_rect_center = list(cords)\n        self.delay = 0\n        self.parent = parent\n        self.pickup_time =  0.60\n        self.path = None",
+        "peekOfCode": "class IIMiniItem(pygame.sprite.Sprite):\n    def __init__(self, cords, image, parent) -> None:\n        super().__init__()\n        self.rect = image.get_rect()\n        self.rect.center = cords\n        self.or_rect_center = list(cords)\n        self.delay = 0\n        self.parent = parent\n        self.pickup_time = 0.60\n        self.path = None",
         "detail": "items.mini_item",
+        "documentation": {}
+    },
+    {
+        "label": "RarityBase",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class RarityBase:\n    name: str\n    level: int\n    color: tuple\n    def __eq__(self, other):\n        return self.level == other.level if isinstance(other, RarityBase) else NotImplemented\n    def __lt__(self, other):\n        return self.level < other.level if isinstance(other, RarityBase) else NotImplemented\n    def __str__(self):\n        return f\"{self.name}\"",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Common",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Common(RarityBase):\n    name: str = \"Common\"\n    level: int = 0\n    color: tuple = WHITE\n@dataclass\nclass Uncommon(RarityBase):\n    name: str = \"Uncommon\"\n    level: int = 1\n    color: tuple = GREEN\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Uncommon",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Uncommon(RarityBase):\n    name: str = \"Uncommon\"\n    level: int = 1\n    color: tuple = GREEN\n@dataclass\nclass Rare(RarityBase):\n    name: str = \"Rare\"\n    level: int = 2\n    color: tuple = BLUE\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Rare",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Rare(RarityBase):\n    name: str = \"Rare\"\n    level: int = 2\n    color: tuple = BLUE\n@dataclass\nclass Epic(RarityBase):\n    name: str = \"Epic\"\n    level: int = 3\n    color: tuple = PURPLE\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Epic",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Epic(RarityBase):\n    name: str = \"Epic\"\n    level: int = 3\n    color: tuple = PURPLE\n@dataclass\nclass Legendary(RarityBase):\n    name: str = \"Legendary\"\n    level: int = 4\n    color: tuple = YELLOW\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Legendary",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Legendary(RarityBase):\n    name: str = \"Legendary\"\n    level: int = 4\n    color: tuple = YELLOW\n@dataclass\nclass Mythic(RarityBase):\n    name: str = \"Mythic\"\n    level: int = 5\n    color: tuple = ORANGE\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Mythic",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Mythic(RarityBase):\n    name: str = \"Mythic\"\n    level: int = 5\n    color: tuple = ORANGE\n@dataclass\nclass Special(RarityBase):\n    name: str = \"Special\"\n    level: int = 6\n    color: tuple = DARK_RED\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "Special",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class Special(RarityBase):\n    name: str = \"Special\"\n    level: int = 6\n    color: tuple = DARK_RED\n@dataclass\nclass X(RarityBase):\n    name: str = \"No one knows about it.\"\n    level: int = 7\n    color: tuple = WHITE\n@dataclass",
+        "detail": "items.rarity",
+        "documentation": {}
+    },
+    {
+        "label": "X",
+        "kind": 6,
+        "importPath": "items.rarity",
+        "description": "items.rarity",
+        "peekOfCode": "class X(RarityBase):\n    name: str = \"No one knows about it.\"\n    level: int = 7\n    color: tuple = WHITE\n@dataclass\nclass Rarity:\n    COMMON = Common\n    UNCOMMMON = Uncommon\n    RARE = Rare \n    EPIC = Epic ",
+        "detail": "items.rarity",
         "documentation": {}
     },
     {
@@ -1687,7 +1865,7 @@
         "kind": 6,
         "importPath": "items.rarity",
         "description": "items.rarity",
-        "peekOfCode": "class Rarity:\n    COMMON = \"Common\"\n    UNCOMMON = \"Uncommon\"\n    RARE = \"Rare\"\n    EPIC = \"Epic\"\n    LEGENDARY = \"Legendary\"\n    MYTHIC = \"Mythic\"\n    SPECIAL = \"Special\"\n    X = \"No one knows about it.\"",
+        "peekOfCode": "class Rarity:\n    COMMON = Common\n    UNCOMMMON = Uncommon\n    RARE = Rare \n    EPIC = Epic \n    LEGENDARY = Legendary\n    MYTHIC = Mythic\n    SPECIAL = Special\n    X = X",
         "detail": "items.rarity",
         "documentation": {}
     },
@@ -1696,7 +1874,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nWHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nPURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1705,7 +1883,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)",
+        "peekOfCode": "WHITE = (255, 255, 255)\nBLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nPURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1714,7 +1892,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200",
+        "peekOfCode": "BLACK = (0, 0, 0)\nRED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nPURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1723,7 +1901,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
+        "peekOfCode": "RED = (255, 0, 0)\nGREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nPURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1732,7 +1910,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
+        "peekOfCode": "GREEN = (0, 255, 0)\nBLUE = (0, 0, 255)\nPURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1741,7 +1919,16 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "BLUE = (0, 0, 255)\nGRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
+        "peekOfCode": "BLUE = (0, 0, 255)\nPURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "PURPLE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "PURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1750,7 +1937,25 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "GRAY = (128, 128, 128)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
+        "peekOfCode": "GRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "YELLOW",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "YELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "ORANGE",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "ORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2040,6 +2245,69 @@
         "description": "res.resource_manager",
         "peekOfCode": "resource_manager = ResourceManager()",
         "detail": "res.resource_manager",
+        "documentation": {}
+    },
+    {
+        "label": "screen",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "screen = pygame.display.set_mode((width, height))\npygame.display.set_caption(\"Rotating Coin\")\n# Set up the coin surface\ncoin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\n# Initial angle and rotation speed\nangle = 0\nrotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()",
+        "detail": "a",
+        "documentation": {}
+    },
+    {
+        "label": "coin_image",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "coin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\n# Initial angle and rotation speed\nangle = 0\nrotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():",
+        "detail": "a",
+        "documentation": {}
+    },
+    {
+        "label": "angle",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "angle = 0\nrotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()",
+        "detail": "a",
+        "documentation": {}
+    },
+    {
+        "label": "rotation_speed",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "rotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface",
+        "detail": "a",
+        "documentation": {}
+    },
+    {
+        "label": "original_i",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "original_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface\n    ang = int(((90 - angle)/90) * coin_image.get_size()[0])",
+        "detail": "a",
+        "documentation": {}
+    },
+    {
+        "label": "clock",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "clock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface\n    ang = int(((90 - angle)/90) * coin_image.get_size()[0])\n    if ang < 0:",
+        "detail": "a",
+        "documentation": {}
+    },
+    {
+        "label": "mini",
+        "kind": 5,
+        "importPath": "a",
+        "description": "a",
+        "peekOfCode": "mini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface\n    ang = int(((90 - angle)/90) * coin_image.get_size()[0])\n    if ang < 0:\n        angr = -ang",
+        "detail": "a",
         "documentation": {}
     },
     {

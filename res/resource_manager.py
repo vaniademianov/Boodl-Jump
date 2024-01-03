@@ -23,10 +23,12 @@ class ResourceManager:
         self.scope_on_bad_loc = pygame.image.load("res/images/scope_on_bad_loc.png")
         self.scope_on_bad_loc = pygame.transform.scale(self.scope_on_bad_loc, (50,50))
         self.scope_on_block = pygame.image.load("res/images/scope_on_block.png")
-        self.scope_on_block = pygame.transform.scale(self.scope_on_block, (50,50))
+        self.scope_on_block = pygame.transform.scale(self.scope_on_block, (56,56))
         self.scope_on_good_location = pygame.image.load("res/images/scope_on_good_location.png")
         self.scope_on_good_location = pygame.transform.scale(self.scope_on_good_location, (50,50))
 
+        self.scope_on_isnt_breakable = pygame.image.load("res/images/scope_on_isnt_breakable.png")
+        self.scope_on_isnt_breakable = pygame.transform.scale(self.scope_on_isnt_breakable, (56,56))
 
         self.achievement_icon = pygame.image.load("res/images/achievement.svg")
         self.achievement_icon = pygame.transform.scale(self.achievement_icon, (36,51))
@@ -74,5 +76,6 @@ class ResourceManager:
         return self.scope_on_bad_loc
     def get_scope_on_block(self):
         return self.scope_on_block
-    
+    def get_scope_on_isnt_breakable(self):
+        return self.scope_on_isnt_breakable
 resource_manager = ResourceManager()
