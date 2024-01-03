@@ -12,9 +12,9 @@ pygame.display.set_caption("Rotating Coin")
 coin_image = pygame.Surface((50, 50), pygame.SRCALPHA)
 pygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)
 
-# Initial angle and rotation speed
+
 angle = 0
-rotation_speed = 2  # You can adjust this value based on your preference
+rotation_speed = 2 
 original_i = coin_image.copy()
 clock = pygame.time.Clock()
 mini = False

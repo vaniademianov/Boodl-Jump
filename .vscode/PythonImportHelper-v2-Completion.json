@@ -2252,7 +2252,7 @@
         "kind": 5,
         "importPath": "a",
         "description": "a",
-        "peekOfCode": "screen = pygame.display.set_mode((width, height))\npygame.display.set_caption(\"Rotating Coin\")\n# Set up the coin surface\ncoin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\n# Initial angle and rotation speed\nangle = 0\nrotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()",
+        "peekOfCode": "screen = pygame.display.set_mode((width, height))\npygame.display.set_caption(\"Rotating Coin\")\n# Set up the coin surface\ncoin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\nangle = 0\nrotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False",
         "detail": "a",
         "documentation": {}
     },
@@ -2261,7 +2261,7 @@
         "kind": 5,
         "importPath": "a",
         "description": "a",
-        "peekOfCode": "coin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\n# Initial angle and rotation speed\nangle = 0\nrotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():",
+        "peekOfCode": "coin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\nangle = 0\nrotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:",
         "detail": "a",
         "documentation": {}
     },
@@ -2270,7 +2270,7 @@
         "kind": 5,
         "importPath": "a",
         "description": "a",
-        "peekOfCode": "angle = 0\nrotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()",
+        "peekOfCode": "angle = 0\nrotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()",
         "detail": "a",
         "documentation": {}
     },
@@ -2279,7 +2279,7 @@
         "kind": 5,
         "importPath": "a",
         "description": "a",
-        "peekOfCode": "rotation_speed = 2  # You can adjust this value based on your preference\noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface",
+        "peekOfCode": "rotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface",
         "detail": "a",
         "documentation": {}
     },
