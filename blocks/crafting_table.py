@@ -41,8 +41,8 @@ class CraftingTable(IItem):
         self.player = None
         self.mini = MiniCraftingTable
         self.title = "Crafting Table"
-        self.lore = ["","","","","Old technology", "Some people say even our grandgrandgrandgrandgrand parents used it.",]
-        self.rarity = Rarity.COMMON 
+        self.lore = ["Ancient technology", "Some people say even our","grandgrandgrandgrandgrand","parents used it.","o","o","o","o","o","o","o","o","o","o","o","o","o","o"]
+        self.rarity = Rarity.COMMON  
     def get_slot(self):
         return self.parent
     def on_move(self,player):

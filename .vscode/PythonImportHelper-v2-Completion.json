@@ -169,6 +169,14 @@
         "documentation": {}
     },
     {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "other.utils",
         "description": "other.utils",
@@ -401,6 +409,14 @@
         "documentation": {}
     },
     {
+        "label": "FIFTH_INV_COLOR",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
         "label": "FIRST_INV_COLOR",
         "importPath": "other.cons",
         "description": "other.cons",
@@ -418,6 +434,14 @@
     },
     {
         "label": "HEIGHT",
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "isExtraImport": true,
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SIXTH_INV_COLOR",
         "importPath": "other.cons",
         "description": "other.cons",
         "isExtraImport": true,
@@ -906,6 +930,22 @@
         "documentation": {}
     },
     {
+        "label": "Coordinates",
+        "importPath": "other.coordinates",
+        "description": "other.coordinates",
+        "isExtraImport": true,
+        "detail": "other.coordinates",
+        "documentation": {}
+    },
+    {
+        "label": "Coordinates",
+        "importPath": "other.coordinates",
+        "description": "other.coordinates",
+        "isExtraImport": true,
+        "detail": "other.coordinates",
+        "documentation": {}
+    },
+    {
         "label": "Button",
         "importPath": "gui.gui_module.button",
         "description": "gui.gui_module.button",
@@ -1146,15 +1186,6 @@
         "importPath": "os",
         "description": "os",
         "detail": "os",
-        "documentation": {}
-    },
-    {
-        "label": "sys",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sys",
-        "description": "sys",
-        "detail": "sys",
         "documentation": {}
     },
     {
@@ -1478,7 +1509,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.label",
         "description": "gui.gui_module.label",
-        "peekOfCode": "class Label(Element):\n    def __init__(self, text, color, font_size, font: Literal[\"Brownie\", \"Freedom\"], coordinates: tuple, boh) -> None:\n        if font == \"Brownie\":\n            self.font = resource_manager.get_brownie_s(font_size)\n        elif font == \"Freedom\":\n            self.font = resource_manager.get_freedom(font_size)\n        self.text = text \n        self.color = color \n        srf = self.font.render(text, False,color)\n        super().__init__(srf, coordinates, boh)",
+        "peekOfCode": "class Label(Element):\n    def __init__(self, text, color, font_size, font: Literal[\"Brownie\", \"Freedom\"], coordinates: tuple, boh,offset = None,parent_to_offset_from = None) -> None:\n        if font == \"Brownie\":\n            self.font = resource_manager.get_brownie_s(font_size)\n        elif font == \"Freedom\":\n            self.font = resource_manager.get_freedom(font_size)\n        self.text = text \n        self.color = color \n        self.offset = offset\n        self.parent_offset =parent_to_offset_from",
         "detail": "gui.gui_module.label",
         "documentation": {}
     },
@@ -1505,7 +1536,7 @@
         "kind": 2,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "def tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()\n    crafting_arrow.sync()\n    for crafting_slot in crafting_slots:\n        crafting_slot.sync(gui_coordinates, splt_val)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1577,7 +1608,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)",
+        "peekOfCode": "shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1586,7 +1617,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()",
+        "peekOfCode": "arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1595,7 +1626,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)\ncrafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)\ncrafting_slot3.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1604,7 +1635,88 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "crafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "crafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)\ncrafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)\ncrafting_slot3.pack(gui, -1)\ncrafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_slot1",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)\ncrafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)\ncrafting_slot3.pack(gui, -1)\ncrafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)\ncrafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_slot2",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)\ncrafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)\ncrafting_slot3.pack(gui, -1)\ncrafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)\ncrafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_slot3",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)\ncrafting_slot3.pack(gui, -1)\ncrafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)\ncrafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_slot4",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)\ncrafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_slots",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_arrow",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "crafting_result",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "crafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "wardrobe",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "wardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()\n    crafting_arrow.sync()\n    for crafting_slot in crafting_slots:\n        crafting_slot.sync(gui_coordinates, splt_val)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "wardrobe_frame",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "wardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()\n    crafting_arrow.sync()\n    for crafting_slot in crafting_slots:\n        crafting_slot.sync(gui_coordinates, splt_val)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1766,7 +1878,7 @@
         "kind": 6,
         "importPath": "items.item",
         "description": "items.item",
-        "peekOfCode": "class IItem:\n    def __init__(self) -> None:\n        self.title = \"undefined\"\n        self.is_block = False\n    def get_slot(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_move(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_right_click(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")",
+        "peekOfCode": "class IItem:\n    def __init__(self) -> None:\n        self.title = \"undefined\"\n        self.is_block = False\n        self.lore = []\n    def get_slot(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_move(self,*args,**kwargs):\n        raise Exception(\"NotImplemented error\")\n    def on_right_click(self,*args,**kwargs):",
         "detail": "items.item",
         "documentation": {}
     },
@@ -1928,7 +2040,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "PURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200",
+        "peekOfCode": "PURPLE = (160, 32, 240)\nGRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1937,7 +2049,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "GRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
+        "peekOfCode": "GRAY = (128, 128, 128)\nYELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1946,7 +2058,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "YELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000",
+        "peekOfCode": "YELLOW = (255,255,0)\nORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1955,7 +2067,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "ORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
+        "peekOfCode": "ORANGE = (255, 229, 180)\nDARK_RED=  (139, 0, 0)\nFIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1964,7 +2076,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "FIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
+        "peekOfCode": "FIRST_INV_COLOR = (64,64,64)\nSECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1973,7 +2085,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "SECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
+        "peekOfCode": "SECOND_INV_COLOR = (128,128,128)\nTHIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1982,7 +2094,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "THIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
+        "peekOfCode": "THIRD_INV_COLOR = (22,22,22)\nFOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -1991,7 +2103,25 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "FOURTH_INV_COLOR = (96,96,96)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
+        "peekOfCode": "FOURTH_INV_COLOR = (96,96,96)\nFIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "FIFTH_INV_COLOR",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "FIFTH_INV_COLOR = (80,80,80)\nSIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30",
+        "detail": "other.cons",
+        "documentation": {}
+    },
+    {
+        "label": "SIXTH_INV_COLOR",
+        "kind": 5,
+        "importPath": "other.cons",
+        "description": "other.cons",
+        "peekOfCode": "SIXTH_INV_COLOR = (30,30,30)\nBASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2245,69 +2375,6 @@
         "description": "res.resource_manager",
         "peekOfCode": "resource_manager = ResourceManager()",
         "detail": "res.resource_manager",
-        "documentation": {}
-    },
-    {
-        "label": "screen",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "screen = pygame.display.set_mode((width, height))\npygame.display.set_caption(\"Rotating Coin\")\n# Set up the coin surface\ncoin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\nangle = 0\nrotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False",
-        "detail": "a",
-        "documentation": {}
-    },
-    {
-        "label": "coin_image",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "coin_image = pygame.Surface((50, 50), pygame.SRCALPHA)\npygame.draw.circle(coin_image, (255, 255, 0), (25, 25), 25)\nangle = 0\nrotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:",
-        "detail": "a",
-        "documentation": {}
-    },
-    {
-        "label": "angle",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "angle = 0\nrotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()",
-        "detail": "a",
-        "documentation": {}
-    },
-    {
-        "label": "rotation_speed",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "rotation_speed = 2 \noriginal_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface",
-        "detail": "a",
-        "documentation": {}
-    },
-    {
-        "label": "original_i",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "original_i = coin_image.copy()\nclock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface\n    ang = int(((90 - angle)/90) * coin_image.get_size()[0])",
-        "detail": "a",
-        "documentation": {}
-    },
-    {
-        "label": "clock",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "clock = pygame.time.Clock()\nmini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface\n    ang = int(((90 - angle)/90) * coin_image.get_size()[0])\n    if ang < 0:",
-        "detail": "a",
-        "documentation": {}
-    },
-    {
-        "label": "mini",
-        "kind": 5,
-        "importPath": "a",
-        "description": "a",
-        "peekOfCode": "mini = False\nwhile True:\n    for event in pygame.event.get():\n        if event.type == pygame.QUIT:\n            pygame.quit()\n            sys.exit()\n    # Rotate the coin surface\n    ang = int(((90 - angle)/90) * coin_image.get_size()[0])\n    if ang < 0:\n        angr = -ang",
-        "detail": "a",
         "documentation": {}
     },
     {

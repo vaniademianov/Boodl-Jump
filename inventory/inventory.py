@@ -13,6 +13,7 @@ class Inventory:
         ]
         self.inventory = [Slot(None) for i in range(self.INV_NUMBER +0)]
         self.shield = Slot(None, False)
+        self.crafting_grid = (Slot(None,False),Slot(None,False),Slot(None,False),Slot(None,False), Slot(None, False))
         self.selected = self.hotbar[0]
         self.selected_n = 0
         self.change_cd = 0.5 * FPS
@@ -148,11 +149,11 @@ class Inventory:
         self.f_all(self.selected)
 
         if self.animation_active and self.selected.item is not None:
-            self.animation_progress += 5
+            self.animation_progress += 20
 
-            if self.animation_progress == 5:
+            if self.animation_progress == 20:
                 self.item_name = font_txt.render(
-                    self.selected.item.title, True, (255, 255, 255)
+                    self.selected.item.title, True, self.selected.item.rarity.color 
                 )
 
                 self.item_name.set_alpha(28)
@@ -163,9 +164,10 @@ class Inventory:
             if self.item_name is not None:
                 alpha_value = min(255, self.animation_progress + 28)
                 self.item_name.set_alpha(alpha_value)
+        print(self.item_name, self.selected.item)
         if self.item_name is not None and self.selected.item is not None:
             text_x = WIDTH//2 - self.item_name.get_width() // 2
-
+            print("Blitted item")
             screen.blit(self.item_name, (text_x, HEIGHT - 110))
 
 inventory = Inventory()

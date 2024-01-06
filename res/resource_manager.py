@@ -37,9 +37,13 @@ class ResourceManager:
         self.hanger_icon = pygame.transform.scale(self.hanger_icon, (46,36))
         self.shield_icon = pygame.image.load("res/images/shield.svg")
         self.shield_icon = pygame.transform.scale(self.shield_icon, (44,46))
+        self.arrow_right = pygame.image.load("res/images/arrow-right.svg")
+        self.arrow_right = pygame.transform.scale(self.arrow_right, (60,46))
         self.players = []
         for i in range(72):
             self.players.append(pygame.transform.rotate(self.player, 360/72*i))
+    def get_arrow_right(self):
+        return self.arrow_right
     def get_shield(self):
         return self.shield_icon
     def get_hanger(self):

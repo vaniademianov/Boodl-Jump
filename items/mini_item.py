@@ -27,11 +27,11 @@ class IIMiniItem(pygame.sprite.Sprite):
     def update(self, player, colliders: pygame.sprite.Group):
         self.rect.y -= player.y_vel
         self.or_rect_center[1] -= player.y_vel
-        if self.anti_down:
-            self.or_rect_center[1] -= 8
-            self.rect.centery -= 8
-        if pygame.sprite.spritecollideany(self, colliders) == None and not self.anti_down:
-            print("GOING DOWN")
+        # if self.anti_down:
+        #     self.or_rect_center[1] -= 8
+        #     self.rect.centery -= 8
+        if pygame.sprite.spritecollideany(self, colliders) == None and self.rect.width >0:
+
             self.or_rect_center[1] += 2
             self.rect.centery += 2
 
@@ -60,14 +60,12 @@ class IIMiniItem(pygame.sprite.Sprite):
                 angr = -ang
             else:
                 angr = ang
-            self.anti_down = False
+            # self.anti_down = False
             if ang < -self.original_image.get_width():
                 self.image = self.original_image.copy()
 
                 self.rect = self.image.get_rect()
                 self.rect.center= self.or_rect_center
-
-                self.anti_down = True
 
                 self.angle = 0
             

@@ -34,14 +34,19 @@ class GUIslot(Button,):
 
         # SETUP TIP GUI
         self.tip_gui = Gui(False)
+
+        self.title_label = Label("NULL", BLACK, 28, "Brownie", (200,120), False)
+        self.title_label.pack(self.tip_gui, -1)
+
+        self.tip_gui_label = [self.title_label]
+
         self.tip_frame= Frame(SECOND_INV_COLOR,16,(200, 120), center, False)
         self.tip_frame.pack(self.tip_gui, 0)
-        self.title_label = Label("NULL", BLACK, 28, "Brownie", (200,120), False)
-        
     def update_tip_coords(self, coords):
         self.tip_frame.coordinates.x = coords[0]
         self.tip_frame.coordinates.y = coords[1]
         self.tip_frame.coordinates.x, self.tip_frame.coordinates.y = Utilz.convert_top_left_to_center(self.tip_frame.coordinates.x, self.tip_frame.coordinates.y, *self.tip_frame.surface.get_size())
+        self.tip_frame.coordinates.x, self.tip_frame.coordinates.y = Utilz.w((self.tip_frame.coordinates.x, self.tip_frame.coordinates.y), (20,20))
     def on_hover(self, tochno, coords):
         self.hovered_last_time = True
         self.toch_h_last_time = True
@@ -150,12 +155,52 @@ class GUIslot(Button,):
         if self.parent_slot.item != None:
             self.blit_item(self.parent_slot.item.minimized_for_inv)
     def sync(self,gui_coordinates, splt_val,):
+        for label in self.tip_gui_label:
+            label.sync_offset()
+
+
+
         self.tip_gui.tick(gui_coordinates, splt_val)
         # self.yes_y(self.y)
         # sync with slotik 
         # print(self.x, self.y)
         if self.last_remembered_item != self.parent_slot.item:
             if self.parent_slot.item != None:
+                # UPDATE TIP GUI
+                self.tip_gui.elements = []
+
+                 
+                lbls = [self.title_label.surface.get_width()]
+                for lore_part in self.parent_slot.item.lore:
+                    lbl = Label(lore_part, BLACK, 20, "Brownie", (0,0), False,)
+                    # lbl.pack(self.tip_gui, -1)
+                    lbls.append(lbl.surface.get_width())            
+    
+                maximum_w = max(lbls) + 50
+                maximum_h = len(lbls) * 40
+
+                # , key = lambda label: label.surface.get_width()
+
+                self.tip_frame= Frame(SECOND_INV_COLOR,16,(maximum_w, maximum_h),(0,0), False)
+                self.tip_frame.pack(self.tip_gui, 0)
+                
+                self.title_label = Label(self.parent_slot.item.title, BLACK, 30, "Freedom", (0,0), False, (0,-(maximum_h/2 )+ 20), self.tip_frame)
+                self.title_label.pack(self.tip_gui, 1)
+
+
+                self.tip_gui_label = [self.title_label]
+                y = -(maximum_h/2) + 50 
+                for lore_part in self.parent_slot.item.lore:
+                    lbl = Label(lore_part, BLACK, 20, "Brownie", (0,0), False, (0, y),self.tip_frame)
+                    lbl.pack(self.tip_gui, -1)
+                    
+                    self.tip_gui_label.append(lbl)         
+                    y += 30
+                lbl = Label(self.parent_slot.item.rarity.name, self.parent_slot.item.rarity.color, 20, "Brownie", (0,0), False, (0, y),self.tip_frame)
+                lbl.pack(self.tip_gui, -1)
+                self.tip_gui_label.append(lbl) 
+
+
                 self.blit_item(self.parent_slot.item.minimized_for_inv)
             else:
                 self.change_parent_surfaces(self.ore_surf.copy())
