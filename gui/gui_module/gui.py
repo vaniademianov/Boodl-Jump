@@ -24,9 +24,11 @@ class Gui:
         self.backward_transparency_anim_active = False
         self.left_to_right_slide_anim_active = False
         self.left_to_right_slide_anim_progress = 0
-        self.left_to_right_slide_anim_speed = WIDTH/(SLIDE_IN_ANIMATION_SPEED*FPS)
+        self.left_to_right_slide_anim_speed = WIDTH//(SLIDE_IN_ANIMATION_SPEED*FPS)
         self.left_to_right_slide_anim_on_end = None 
         self.right_to_left_slide_anim_active = False
+        self.left_to_right_halfed = False
+        self.right_to_left_halfed = False
         self.right_to_left_slide_anim_progress = 0
         self.right_click_delay = 0
         self.left_click_delay = 0
@@ -72,15 +74,17 @@ class Gui:
     def update_xs(self, value):
         for element in self.elements:
             element.coordinates.x+= int(value)
-    def left_to_right_slide_anim(self, on_end=None):
+    def left_to_right_slide_anim(self, on_end=None,halfed=False):
         if not self.left_to_right_slide_anim_active:
+            self.left_to_right_halfed = halfed
             self.left_to_right_slide_anim_progress =0
             self.left_to_right_slide_anim_active = True
             self.left_to_right_slide_anim_on_end = on_end
             if not self.is_visible:
                 self.open()
-    def right_to_left_slide_anim(self):
+    def right_to_left_slide_anim(self,halfed):
         if not self.right_to_left_slide_anim_active:
+            self.right_left_to_halfed = halfed
             self.right_to_left_slide_anim_progress_slide_anim_progress = 0
             self.right_to_left_slide_anim_active = True
             self.update_xs(WIDTH)
@@ -105,7 +109,7 @@ class Gui:
         if self.left_to_right_slide_anim_active:
             self.left_to_right_slide_anim_progress += self.left_to_right_slide_anim_speed
             self.update_xs(self.left_to_right_slide_anim_speed)
-            if self.left_to_right_slide_anim_progress >= WIDTH:
+            if self.left_to_right_slide_anim_progress >= WIDTH/(2 if self.left_to_right_halfed else 1):
                 self.left_to_right_slide_anim_active = False
 
                 self.update_xs(-self.left_to_right_slide_anim_progress)
@@ -115,7 +119,9 @@ class Gui:
         if self.right_to_left_slide_anim_active:
             self.right_to_left_slide_anim_progress += self.left_to_right_slide_anim_speed
             self.update_xs(-self.left_to_right_slide_anim_speed)
-            if self.right_to_left_slide_anim_progress >= WIDTH:
+            
+            if self.right_to_left_slide_anim_progress >= WIDTH/(2 if self.right_left_to_halfed else 1):
+                self.update_xs(-self.left_to_right_slide_anim_progress)
                 self.right_to_left_slide_anim_active = False
                 self.right_to_left_slide_anim_progress = 0
         if self.tp_anim_active:
@@ -209,6 +215,7 @@ class Gui:
                     if rectik.colliderect(rectik2):
                         
                         self.left_click_delay = FPS/5
+
                         element.on_left_click()
                         any_l_clicked = True
                         break

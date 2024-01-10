@@ -874,6 +874,14 @@
         "documentation": {}
     },
     {
+        "label": "LEFT_CLICK",
+        "importPath": "gui.gui_module.event_types",
+        "description": "gui.gui_module.event_types",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.event_types",
+        "documentation": {}
+    },
+    {
         "label": "RIGHT_CLICK",
         "importPath": "gui.gui_module.event_types",
         "description": "gui.gui_module.event_types",
@@ -1027,6 +1035,14 @@
         "documentation": {}
     },
     {
+        "label": "Label",
+        "importPath": "gui.gui_module.label",
+        "description": "gui.gui_module.label",
+        "isExtraImport": true,
+        "detail": "gui.gui_module.label",
+        "documentation": {}
+    },
+    {
         "label": "MiniCraftingTable",
         "importPath": "blocks.crafting_table",
         "description": "blocks.crafting_table",
@@ -1160,6 +1176,22 @@
         "description": "dataclasses",
         "isExtraImport": true,
         "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingIngredient",
+        "importPath": "items.crafting.crafting_ingredient",
+        "description": "items.crafting.crafting_ingredient",
+        "isExtraImport": true,
+        "detail": "items.crafting.crafting_ingredient",
         "documentation": {}
     },
     {
@@ -1464,7 +1496,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.gui_slot",
         "description": "gui.gui_module.gui_slot",
-        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None,stroke_w=None, stroke_color=None) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh,custom_borders,stroke_color, stroke_w)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
+        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot=None,custom_borders = None,stroke_w=None, stroke_color=None) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh,custom_borders,stroke_color, stroke_w)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
         "detail": "gui.gui_module.gui_slot",
         "documentation": {}
     },
@@ -1532,6 +1564,15 @@
         "documentation": {}
     },
     {
+        "label": "reactivate_wardrobe",
+        "kind": 2,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "def reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable \n        wardrobe.left_to_right_slide_anim(wardrobe.close,True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH/2\n        print(wardrobe.left_to_right_slide_anim_progress, type(wardrobe.left_to_right_slide_anim_progress))\n        wardrobe.update_xs((WIDTH/2))\n        wardrobe.transparency_anim()\n    else:\n        wardrobe.open()",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
         "label": "tick",
         "kind": 2,
         "importPath": "inventory.inventory_gui",
@@ -1563,7 +1604,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "inventory_label = Label(\"Inventory\", WHITE, 32, \"Brownie\", (200, 40),False)\ninventory_label.pack(gui, 1)\nframe2 = Frame(THIRD_INV_COLOR, 15, (798, 15), (WIDTH / 2, 250), False)\nframe2.pack(gui, -1)\nframe3  = Frame(WHITE, 15, (264, 178), (255, 150), False)\nframe3.pack(gui, -1)\nshield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)\nshield_slot.pack(gui, -1) \ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)",
+        "peekOfCode": "inventory_label = Label(\"Inventory\", WHITE, 32, \"Brownie\", (200, 40),False)\ninventory_label.pack(gui, 1)\nframe2 = Frame(THIRD_INV_COLOR, 15, (798, 15), (WIDTH / 2, 250), False)\nframe2.pack(gui, -1)\nframe3  = Frame(WHITE, 15, (264, 178), (255, 150), False)\nframe3.pack(gui, -1)\nshield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)\nshield_slot.pack(gui, -1) \narch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1572,7 +1613,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "frame2 = Frame(THIRD_INV_COLOR, 15, (798, 15), (WIDTH / 2, 250), False)\nframe2.pack(gui, -1)\nframe3  = Frame(WHITE, 15, (264, 178), (255, 150), False)\nframe3.pack(gui, -1)\nshield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)\nshield_slot.pack(gui, -1) \ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\narch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)",
+        "peekOfCode": "frame2 = Frame(THIRD_INV_COLOR, 15, (798, 15), (WIDTH / 2, 250), False)\nframe2.pack(gui, -1)\nframe3  = Frame(WHITE, 15, (264, 178), (255, 150), False)\nframe3.pack(gui, -1)\nshield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)\nshield_slot.pack(gui, -1) \narch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)\nshield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1581,16 +1622,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "shield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)\nshield_slot.pack(gui, -1) \ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\narch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)\nshield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)",
-        "detail": "inventory.inventory_gui",
-        "documentation": {}
-    },
-    {
-        "label": "dress_button",
-        "kind": 5,
-        "importPath": "inventory.inventory_gui",
-        "description": "inventory.inventory_gui",
-        "peekOfCode": "dress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\narch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)\nshield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)",
+        "peekOfCode": "shield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)\nshield_slot.pack(gui, -1) \narch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)\nshield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1599,7 +1631,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "arch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)\nshield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)",
+        "peekOfCode": "arch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)\narch_button.pack(gui, -1)\nshield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1608,7 +1640,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)",
+        "peekOfCode": "shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)\nshield_img.pack(gui, -1)\narch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\nprint(id(dress_img), id(dress_button))\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1617,7 +1649,16 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)",
+        "peekOfCode": "arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)\narch_img.pack(gui, -1)\ndress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\nprint(id(dress_img), id(dress_button))\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "dress_button",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "dress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)\ndress_button.pack(gui, -1)\ndress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\nprint(id(dress_img), id(dress_button))\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1626,7 +1667,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)\ncrafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)\ncrafting_slot3.pack(gui, -1)",
+        "peekOfCode": "dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)\ndress_img.pack(gui, -1)\nprint(id(dress_img), id(dress_button))\ncrafting_label = Label(\"Crafting\", WHITE, 32, \"Brownie\", (580, 40),False)\ncrafting_label.pack(gui, -1)\ncrafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)\ncrafting_slot1.pack(gui, -1)\ncrafting_slot2 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 110), False, o_irs, inventory.crafting_grid[1], (0,16,0,0), 3, BLACK)\ncrafting_slot2.pack(gui, -1)\ncrafting_slot3 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 198 ), False, o_irs, inventory.crafting_grid[2], (0,0,16,0), 3, BLACK)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1671,7 +1712,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "crafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)\ncrafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))",
+        "peekOfCode": "crafting_slot4 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (646, 198), False, o_irs, inventory.crafting_grid[3], (0,0,0,16), 3, BLACK)\ncrafting_slot4.pack(gui, -1)\ncrafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1680,7 +1721,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "crafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)",
+        "peekOfCode": "crafting_slots = [crafting_slot1, crafting_slot2, crafting_slot3, crafting_slot4]\ncrafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1689,7 +1730,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "crafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()",
+        "peekOfCode": "crafting_arrow = Image(resource_manager.get_arrow_right(), Coordinates(735, 154), False, False)\ncrafting_arrow.pack(gui, -1)\ncrafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200\nwardrobe_lst = []",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1698,7 +1739,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "crafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()",
+        "peekOfCode": "crafting_result = GUIslot((88,88), FIFTH_INV_COLOR, 16, (830, 154), False, o_irs, inventory.crafting_grid[4],None, 3, BLACK )\ncrafting_result.pack(gui, -1)\ncrafting_slots.append(crafting_result)\nwardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1707,7 +1748,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "wardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()\n    crafting_arrow.sync()\n    for crafting_slot in crafting_slots:\n        crafting_slot.sync(gui_coordinates, splt_val)",
+        "peekOfCode": "wardrobe = Gui(False)\nwardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable \n        wardrobe.left_to_right_slide_anim(wardrobe.close,True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH/2",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1716,7 +1757,34 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "wardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()\n    crafting_arrow.sync()\n    for crafting_slot in crafting_slots:\n        crafting_slot.sync(gui_coordinates, splt_val)",
+        "peekOfCode": "wardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable \n        wardrobe.left_to_right_slide_anim(wardrobe.close,True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH/2\n        print(wardrobe.left_to_right_slide_anim_progress, type(wardrobe.left_to_right_slide_anim_progress))",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "base_y",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "base_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable \n        wardrobe.left_to_right_slide_anim(wardrobe.close,True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH/2\n        print(wardrobe.left_to_right_slide_anim_progress, type(wardrobe.left_to_right_slide_anim_progress))\n        wardrobe.update_xs((WIDTH/2))\n        wardrobe.transparency_anim()",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "wardrobe_lst",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "wardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable \n        wardrobe.left_to_right_slide_anim(wardrobe.close,True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH/2\n        print(wardrobe.left_to_right_slide_anim_progress, type(wardrobe.left_to_right_slide_anim_progress))\n        wardrobe.update_xs((WIDTH/2))\n        wardrobe.transparency_anim()\n    else:",
+        "detail": "inventory.inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "dress_button.on_left_click",
+        "kind": 5,
+        "importPath": "inventory.inventory_gui",
+        "description": "inventory.inventory_gui",
+        "peekOfCode": "dress_button.on_left_click = reactivate_wardrobe\n# dress_img.on_left_click = reactivate_wardrobe\ngui.subscribe(dress_button, LEFT_CLICK)\ndef tick(gui_coordinates, splt_val, *args):\n    shield_slot.sync(gui_coordinates, splt_val)\n    dress_img.sync()\n    arch_img.sync()\n    shield_img.sync()\n    crafting_arrow.sync()\n    for crafting_slot in crafting_slots:",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1871,6 +1939,24 @@
         "description": "inventory.universal_inventory_gui",
         "peekOfCode": "is_leaving = False\ndef tick(gui_coordinates, splt_val, *args):\n    global delay, is_button_left\n    player = args[0]\n    delay -= 1\n    for slt in slotovii_hotbar:\n        slt.sync(gui_coordinates, splt_val)\n    for slt in slotovii_inventar:\n        slt.sync(gui_coordinates, splt_val)\n    if splt_val[-1] == \"1\":",
         "detail": "inventory.universal_inventory_gui",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingIngredient",
+        "kind": 6,
+        "importPath": "items.crafting.crafting_ingredient",
+        "description": "items.crafting.crafting_ingredient",
+        "peekOfCode": "class CraftingIngredient:\n    def __init__(i, c):\n        item = i \n        count = c \n    item = None\n    count = None\n    def __eq__(self, __value: object) -> bool:\n        return __value.item == self.item and __value.count >= self.count",
+        "detail": "items.crafting.crafting_ingredient",
+        "documentation": {}
+    },
+    {
+        "label": "IICraftingRecipe",
+        "kind": 6,
+        "importPath": "items.crafting.crafting_recipe",
+        "description": "items.crafting.crafting_recipe",
+        "peekOfCode": "class IICraftingRecipe:\n    def __init__(self) -> None:\n        self.grid = {CraftingIngredient(None, 0),CraftingIngredient(None, 0),CraftingIngredient(None, 0),CraftingIngredient(None, 0)}\n        self.is_strict = False\n        self.is_very_strict = False\n    def slots_to_ingredients(self, slots):\n        return [CraftingIngredient(slot.item, slot.count) for slot in slots]\n    def eval(self,slots) -> tuple[int, bool]:\n        ing = self.slots_to_ingredients(slots)\n        if self.is_very_strict:",
+        "detail": "items.crafting.crafting_recipe",
         "documentation": {}
     },
     {
@@ -2643,7 +2729,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]",
+        "peekOfCode": "calib_j_center = None\ncalib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]",
         "detail": "main",
         "documentation": {}
     },
@@ -2652,7 +2738,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()",
+        "peekOfCode": "calib_center_top = None\ncalib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()",
         "detail": "main",
         "documentation": {}
     },
@@ -2661,7 +2747,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)",
+        "peekOfCode": "calib_center_left = None\ncalib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)",
         "detail": "main",
         "documentation": {}
     },
@@ -2670,7 +2756,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)",
+        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)",
         "detail": "main",
         "documentation": {}
     },
@@ -2679,7 +2765,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "player.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)",
+        "peekOfCode": "player.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:",
         "detail": "main",
         "documentation": {}
     },
@@ -2688,7 +2774,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False",
+        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0",
         "detail": "main",
         "documentation": {}
     },
@@ -2697,7 +2783,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gui_coordinates = [0, 0]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False\ntp_anim_active = False",
+        "peekOfCode": "gui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False",
         "detail": "main",
         "documentation": {}
     },
@@ -2706,7 +2792,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False\ntp_anim_active = False\nlast_remembered_activ_state = False",
+        "peekOfCode": "gui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False\ntp_anim_active = False",
         "detail": "main",
         "documentation": {}
     },

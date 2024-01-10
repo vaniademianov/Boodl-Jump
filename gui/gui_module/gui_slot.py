@@ -13,7 +13,7 @@ from gui.gui_module.frame import Frame
 from gui.gui_module.label import Label
 
 class GUIslot(Button,):
-    def __init__(self,size,color, borders, center,boh,crs, parent:Slot,custom_borders = None,stroke_w=None, stroke_color=None) -> None:
+    def __init__(self,size,color, borders, center,boh,crs, parent:Slot=None,custom_borders = None,stroke_w=None, stroke_color=None) -> None:
         self.parent_slot = parent
         self.size = size 
         # self.coords = center
@@ -50,7 +50,7 @@ class GUIslot(Button,):
     def on_hover(self, tochno, coords):
         self.hovered_last_time = True
         self.toch_h_last_time = True
-        print(tochno)
+
         if tochno and self.parent_slot.item != None:
             self.update_tip_coords(coords)
             if not self.tip_gui.is_visible:

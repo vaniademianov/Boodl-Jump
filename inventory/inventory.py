@@ -23,6 +23,8 @@ class Inventory:
         self.animation_active = False
         self.animation_progress = 0
         self.item_name = None
+        self.wardrobe_count = 9
+        self.wardrobe_stuff = [Slot(None) for i in range(self.wardrobe_count +0)]
         self.developer_items()
         # Active slot events
 
@@ -164,10 +166,9 @@ class Inventory:
             if self.item_name is not None:
                 alpha_value = min(255, self.animation_progress + 28)
                 self.item_name.set_alpha(alpha_value)
-        print(self.item_name, self.selected.item)
         if self.item_name is not None and self.selected.item is not None:
             text_x = WIDTH//2 - self.item_name.get_width() // 2
-            print("Blitted item")
+
             screen.blit(self.item_name, (text_x, HEIGHT - 110))
 
 inventory = Inventory()

@@ -10,6 +10,7 @@ from gui.gui_module.button import Button
 from gui.gui_module.image import Image
 from res.resource_manager import resource_manager
 from other.coordinates import Coordinates
+from gui.gui_module.event_types import LEFT_CLICK
 
 
 gui = Gui(False)
@@ -31,16 +32,18 @@ frame3  = Frame(WHITE, 15, (264, 178), (255, 150), False)
 frame3.pack(gui, -1)
 shield_slot = GUIslot((60,60), FOURTH_INV_COLOR, 16, (440, 200), False, o_irs, inventory.shield)
 shield_slot.pack(gui, -1) 
-dress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)
-dress_button.pack(gui, -1)
+
 arch_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 40), True)
 arch_button.pack(gui, -1)
 shield_img = Image(resource_manager.get_shield(), shield_slot.coordinates,True,False)
 shield_img.pack(gui, -1)
 arch_img = Image(resource_manager.get_achievement(), arch_button.coordinates,True,False)
 arch_img.pack(gui, -1)
+dress_button = Button(FOURTH_INV_COLOR, 16, (60,60) ,(440, 120), True)
+dress_button.pack(gui, -1)
 dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates,True, False)
 dress_img.pack(gui, -1)
+print(id(dress_img), id(dress_button))
 crafting_label = Label("Crafting", WHITE, 32, "Brownie", (580, 40),False)
 crafting_label.pack(gui, -1)
 crafting_slot1 = GUIslot((88,88), FIFTH_INV_COLOR, 0, (560, 110), False, o_irs, inventory.crafting_grid[0], (16,0,0,0), 3, BLACK)
@@ -64,9 +67,40 @@ crafting_slots.append(crafting_result)
 
 wardrobe = Gui(False)
 
-wardrobe_frame = Frame(SIXTH_INV_COLOR, (16,0,16,0))
+wardrobe_frame = Frame(SIXTH_INV_COLOR, 0, (90, 578), (81,HEIGHT/2), False,(16,0,16,0))
+wardrobe_frame.pack(wardrobe, 0)
 
+base_y = 200
+wardrobe_lst = []
 
+def reactivate_wardrobe():
+
+    if wardrobe.is_visible:
+        # disable 
+        
+        wardrobe.left_to_right_slide_anim(wardrobe.close,True)
+        wardrobe.left_to_right_slide_anim_progress = WIDTH/2
+        print(wardrobe.left_to_right_slide_anim_progress, type(wardrobe.left_to_right_slide_anim_progress))
+        wardrobe.update_xs((WIDTH/2))
+        wardrobe.transparency_anim()
+    else:
+        wardrobe.open()
+        wardrobe.right_to_left_slide_anim(True)
+        wardrobe.update_xs(-(WIDTH/2))
+        wardrobe.update_xs(27)
+        # wardrobe.backward_transparency_anim()
+        # wardrobe.right_to_left_slide_anim_progress = WIDTH/2
+        # wardrobe.update_xs(-(WIDTH/2))
+for parent_slot in inventory.crafting_grid:
+
+    nw_slt = GUIslot((65,65), FOURTH_INV_COLOR, 16, (43, base_y),False,o_irs,parent_slot)
+    wardrobe_lst.append(nw_slt)
+    nw_slt.pack(wardrobe, -1)
+
+    base_y += 150
+dress_button.on_left_click = reactivate_wardrobe
+# dress_img.on_left_click = reactivate_wardrobe
+gui.subscribe(dress_button, LEFT_CLICK)
 
 def tick(gui_coordinates, splt_val, *args):
     shield_slot.sync(gui_coordinates, splt_val)
