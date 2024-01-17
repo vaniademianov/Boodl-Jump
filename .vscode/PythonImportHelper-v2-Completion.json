@@ -177,6 +177,14 @@
         "documentation": {}
     },
     {
+        "label": "Utilz",
+        "importPath": "other.utils",
+        "description": "other.utils",
+        "isExtraImport": true,
+        "detail": "other.utils",
+        "documentation": {}
+    },
+    {
         "label": "*",
         "importPath": "other.utils",
         "description": "other.utils",
@@ -729,6 +737,14 @@
         "documentation": {}
     },
     {
+        "label": "IItem",
+        "importPath": "items.item",
+        "description": "items.item",
+        "isExtraImport": true,
+        "detail": "items.item",
+        "documentation": {}
+    },
+    {
         "label": "IIMiniItem",
         "importPath": "items.mini_item",
         "description": "items.mini_item",
@@ -986,6 +1002,14 @@
         "documentation": {}
     },
     {
+        "label": "Slot",
+        "importPath": "inventory.slot",
+        "description": "inventory.slot",
+        "isExtraImport": true,
+        "detail": "inventory.slot",
+        "documentation": {}
+    },
+    {
         "label": "copy",
         "kind": 6,
         "isExtraImport": true,
@@ -1192,6 +1216,22 @@
         "description": "items.crafting.crafting_ingredient",
         "isExtraImport": true,
         "detail": "items.crafting.crafting_ingredient",
+        "documentation": {}
+    },
+    {
+        "label": "CraftingIngredient",
+        "importPath": "items.crafting.crafting_ingredient",
+        "description": "items.crafting.crafting_ingredient",
+        "isExtraImport": true,
+        "detail": "items.crafting.crafting_ingredient",
+        "documentation": {}
+    },
+    {
+        "label": "grid2x2",
+        "importPath": "items.crafting.grid_types",
+        "description": "items.crafting.grid_types",
+        "isExtraImport": true,
+        "detail": "items.crafting.grid_types",
         "documentation": {}
     },
     {
@@ -1946,7 +1986,7 @@
         "kind": 6,
         "importPath": "items.crafting.crafting_ingredient",
         "description": "items.crafting.crafting_ingredient",
-        "peekOfCode": "class CraftingIngredient:\n    def __init__(i, c):\n        item = i \n        count = c \n    item = None\n    count = None\n    def __eq__(self, __value: object) -> bool:\n        return __value.item == self.item and __value.count >= self.count",
+        "peekOfCode": "class CraftingIngredient:\n    def __init__(self,i, c):\n        self.item = i \n        self.count = c \n    item = None\n    count = None\n    def __eq__(self, __value: object) -> bool:\n        return __value.item == self.item and __value.count >= self.count \n    def __floordiv__(self, __value:object) -> int: \n        return self.count//__value.count",
         "detail": "items.crafting.crafting_ingredient",
         "documentation": {}
     },
@@ -1955,8 +1995,35 @@
         "kind": 6,
         "importPath": "items.crafting.crafting_recipe",
         "description": "items.crafting.crafting_recipe",
-        "peekOfCode": "class IICraftingRecipe:\n    def __init__(self) -> None:\n        self.grid = {CraftingIngredient(None, 0),CraftingIngredient(None, 0),CraftingIngredient(None, 0),CraftingIngredient(None, 0)}\n        self.is_strict = False\n        self.is_very_strict = False\n    def slots_to_ingredients(self, slots):\n        return [CraftingIngredient(slot.item, slot.count) for slot in slots]\n    def eval(self,slots) -> tuple[int, bool]:\n        ing = self.slots_to_ingredients(slots)\n        if self.is_very_strict:",
+        "peekOfCode": "class IICraftingRecipe:\n    def __init__(self, item, grid, gridtype, strictness_level) -> None:\n        self.grid_type = gridtype\n        self.grid = grid\n        self.is_strict = strictness_level == \"strict\"\n        self.is_very_strict = strictness_level == \"very_strict\"\n        self.itm = item\n    def slots_to_ingredients(self, slots, w):\n        return list(Utilz.split_list([CraftingIngredient(slot.item, slot.count) for slot in slots], w)),list(Utilz.split_list(slots, w))\n    def eval(self, slots,width) -> CraftingIngredient:",
         "detail": "items.crafting.crafting_recipe",
+        "documentation": {}
+    },
+    {
+        "label": "gridBase",
+        "kind": 6,
+        "importPath": "items.crafting.grid_types",
+        "description": "items.crafting.grid_types",
+        "peekOfCode": "class gridBase:\n    def __eq__(self, __value: object) -> bool:\n        return self.name == __value.name\n    def get_slots(self):\n        res = []\n        for i in range(self.lines ):\n            r = []\n            for j in range(self.columns):\n                r.append(CraftingIngredient(None, 1))\n            res.append(r)",
+        "detail": "items.crafting.grid_types",
+        "documentation": {}
+    },
+    {
+        "label": "grid2x2",
+        "kind": 6,
+        "importPath": "items.crafting.grid_types",
+        "description": "items.crafting.grid_types",
+        "peekOfCode": "class grid2x2(gridBase):\n    name = \"2x2\"\n    lines = 2\n    columns = 2\n    slots_count = lines*columns\nclass grid3x3(gridBase):\n    name = \"3x3\"\n    lines = 3\n    columns = 3\n    slots_count = lines*columns",
+        "detail": "items.crafting.grid_types",
+        "documentation": {}
+    },
+    {
+        "label": "grid3x3",
+        "kind": 6,
+        "importPath": "items.crafting.grid_types",
+        "description": "items.crafting.grid_types",
+        "peekOfCode": "class grid3x3(gridBase):\n    name = \"3x3\"\n    lines = 3\n    columns = 3\n    slots_count = lines*columns",
+        "detail": "items.crafting.grid_types",
         "documentation": {}
     },
     {
