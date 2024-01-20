@@ -10,3 +10,7 @@ class CraftingIngredient:
         return __value.item == self.item and __value.count >= self.count 
     def __floordiv__(self, __value:object) -> int: 
         return self.count//__value.count 
+    def __iter__(self):
+        return self 
+    def __next__(self):
+        return self

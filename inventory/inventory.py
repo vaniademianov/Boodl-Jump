@@ -64,7 +64,7 @@ class Inventory:
         # do not cheat or ill eat you
 
         self.hotbar[0].update_activity(crafting_table_item(self.hotbar[-1]))
-        self.hotbar[0].count = 3
+        self.hotbar[0].count = 7
 
     def f_all(self, active_currently):
         for item in self.hotbar:

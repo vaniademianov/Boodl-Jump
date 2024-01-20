@@ -13,7 +13,7 @@ from gui.gui_module.frame import Frame
 from gui.gui_module.label import Label
 
 class GUIslot(Button,):
-    def __init__(self,size,color, borders, center,boh,crs, parent:Slot=None,custom_borders = None,stroke_w=None, stroke_color=None) -> None:
+    def __init__(self,size,color, borders, center,boh,crs, parent:Slot=None,custom_borders = None,stroke_w=None, stroke_color=None,afterclick = None ) -> None:
         self.parent_slot = parent
         self.size = size 
         # self.coords = center
@@ -31,7 +31,7 @@ class GUIslot(Button,):
         self.hovering = False
         self.moving_anim_ready = False
         self.toch_h_last_time = False
-
+        self.after_click = afterclick
         # SETUP TIP GUI
         self.tip_gui = Gui(False)
 
@@ -104,9 +104,12 @@ class GUIslot(Button,):
             self.parent_slot.count += self.crs_obj.count
             self.crs_obj.item = None
             self.crs_obj.count = 0
+        if self.after_click != None: 
+            self.after_click()
     def on_right_click(self):
         # get one
-
+        if self.after_click != None: 
+            return
         if self.crs_obj.item == None or self.crs_obj.item == self.parent_slot.item:
             if self.parent_slot.count > 0:
                 self.parent_slot.count -= 1

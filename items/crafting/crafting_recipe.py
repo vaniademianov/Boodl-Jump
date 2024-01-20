@@ -9,7 +9,7 @@ from other.utils import Utilz
 class IICraftingRecipe:
     def __init__(self, item, grid, gridtype, strictness_level) -> None:
         self.grid_type = gridtype
-        self.grid = grid
+        self.grid = list(Utilz.split_list(grid,gridtype.lines))
         self.is_strict = strictness_level == "strict"
         self.is_very_strict = strictness_level == "very_strict"
         self.itm = item
@@ -76,8 +76,10 @@ class IICraftingRecipe:
             counts = []
             
             creatable = True
-            for i in range(i, len(self.grid)):
+            for i in range(len(self.grid)):
+
                 for j in range(len(self.grid[i])):
+                    print(self.grid, self.grid[i][j])
                     if self.grid[i][j] in ing:
                         occur = ing.pop(ing.index(self.grid[i][j]))
 

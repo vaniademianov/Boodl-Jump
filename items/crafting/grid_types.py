@@ -1,3 +1,4 @@
+import dataclasses
 from items.crafting.crafting_ingredient import CraftingIngredient
 
 
@@ -12,12 +13,13 @@ class gridBase:
                 r.append(CraftingIngredient(None, 1))
             res.append(r)
         return res 
-
+@dataclasses.dataclass
 class grid2x2(gridBase):
     name = "2x2"
     lines = 2
     columns = 2
     slots_count = lines*columns
+@dataclasses.dataclass
 class grid3x3(gridBase):
     name = "3x3"
     lines = 3
