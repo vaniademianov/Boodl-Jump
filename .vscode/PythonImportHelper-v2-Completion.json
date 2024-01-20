@@ -713,6 +713,22 @@
         "documentation": {}
     },
     {
+        "label": "mx",
+        "importPath": "res.audio.mixer",
+        "description": "res.audio.mixer",
+        "isExtraImport": true,
+        "detail": "res.audio.mixer",
+        "documentation": {}
+    },
+    {
+        "label": "mx",
+        "importPath": "res.audio.mixer",
+        "description": "res.audio.mixer",
+        "isExtraImport": true,
+        "detail": "res.audio.mixer",
+        "documentation": {}
+    },
+    {
         "label": "IBlock",
         "importPath": "blocks.block",
         "description": "blocks.block",
@@ -2510,6 +2526,24 @@
         "description": "player.wall",
         "peekOfCode": "class Wall(pygame.sprite.Sprite):\n    def __init__(self, coords, size,player, mov=False, color=RED,topik = None,):\n        pygame.sprite.Sprite.__init__(self)\n        self.image = pygame.Surface(size)\n        self.image.fill(color)\n        self.rect = self.image.get_rect()\n        self.rect.center = coords\n        self.player = player\n        if topik != None:\n            self.rect.top = topik",
         "detail": "player.wall",
+        "documentation": {}
+    },
+    {
+        "label": "Mixer",
+        "kind": 6,
+        "importPath": "res.audio.mixer",
+        "description": "res.audio.mixer",
+        "peekOfCode": "class Mixer:\n    def __init__(self) -> None:\n        self.block1 = pygame.mixer.Sound(\"res/audio/sounds/block1.ogg\")\n        self.block2 = pygame.mixer.Sound(\"res/audio/sounds/block2.ogg\")\n        self.block3 = pygame.mixer.Sound(\"res/audio/sounds/block3.ogg\")\n        self.block4 = pygame.mixer.Sound(\"res/audio/sounds/block4.ogg\")\n        self.loot = pygame.mixer.Sound(\"res/audio/sounds/loot.ogg\")\n        self.blocks = [self.block1, self.block2,self.block3,self.block4]\n        self.current_block_playing = None\n    def play_block_breaking(self, volume):",
+        "detail": "res.audio.mixer",
+        "documentation": {}
+    },
+    {
+        "label": "mx",
+        "kind": 5,
+        "importPath": "res.audio.mixer",
+        "description": "res.audio.mixer",
+        "peekOfCode": "mx = Mixer()",
+        "detail": "res.audio.mixer",
         "documentation": {}
     },
     {

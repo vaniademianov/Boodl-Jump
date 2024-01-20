@@ -1,6 +1,7 @@
 import pygame
 from other.utils import Utilz
 from other.cons import *
+from res.audio.mixer import mx
 class IIMiniItem(pygame.sprite.Sprite):
     def __init__(self, cords, image, parent) -> None:
         super().__init__()
@@ -41,6 +42,7 @@ class IIMiniItem(pygame.sprite.Sprite):
             self.delay = FPS * self.pickup_time if self.delay <= 0 else self.delay
             if self.delay == 1:
                 ad = player.inv.add_to_inventory(self.parent(None), 1)
+                mx.play_looting(0.3)
                 if ad:
                     self.kill()
             self.path = self.calc_path(self.rect.center, player.rect.center, FPS * self.pickup_time)

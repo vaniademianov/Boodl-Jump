@@ -98,7 +98,8 @@ class IICraftingRecipe:
                 return CraftingIngredient(self.itm(), items_we_can_create), slotd, counts
     def take_it(self, slots:list[Slot,Slot, Slot, Slot],w) -> CraftingIngredient:
         result, slotd, counts = self.eval(slots, w)
+        assert len(slotd) == len(counts)
         if result.item != None:
-            # We can craft the item
-            pass
+            # can craft the item
+            for
         return result 

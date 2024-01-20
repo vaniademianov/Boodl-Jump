@@ -2,6 +2,7 @@ import pygame
 from res.resource_manager import resource_manager as rm
 from other.utils import *
 from other.cons import *
+from res.audio.mixer import mx
 
 class IBlock(pygame.sprite.Sprite):
     def __init__(self, position, image, durability) -> None:
@@ -40,12 +41,14 @@ class IBlock(pygame.sprite.Sprite):
             self.state = 0
             self.tiki = 0
             self.image = self.or_image
-            
+            mx.stop_block_breaking()
             
             return
  
         else:
             self.tiki += 1
+            if self.tiki == 1:
+                mx.play_block_breaking(0.5)
             updatik.val = False
             if self.tiki > self.dur/len(self.STATES):
                 if self.state+1 > len(self.STATES):
