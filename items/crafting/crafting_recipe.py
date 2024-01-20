@@ -101,5 +101,9 @@ class IICraftingRecipe:
         assert len(slotd) == len(counts)
         if result.item != None:
             # can craft the item
-            for
+            for i in range(len(slotd)):
+                count_we_should_take_from_slt = counts[i]
+                slot = slotd[i]
+                slot.count -= count_we_should_take_from_slt
+        
         return result 
