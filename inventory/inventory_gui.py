@@ -21,7 +21,7 @@ from res.resource_manager import resource_manager
 from other.coordinates import Coordinates
 from gui.gui_module.event_types import LEFT_CLICK
 from items.crafting.proccess_crafting import ProcessCraft
-from items.crafting.grid_types import grid3x3
+from items.crafting.grid_types import grid2x2, grid3x3
 
 
 gui = Gui(False)
@@ -58,7 +58,7 @@ dress_button = Button(FOURTH_INV_COLOR, 16, (60, 60), (440, 120), True)
 dress_button.pack(gui, -1)
 dress_img = Image(resource_manager.get_hanger(), dress_button.coordinates, True, False)
 dress_img.pack(gui, -1)
-print(id(dress_img), id(dress_button))
+
 crafting_label = Label("Crafting", WHITE, 32, "Brownie", (580, 40), False)
 crafting_label.pack(gui, -1)
 crafting_slot1 = GUIslot(
@@ -120,7 +120,7 @@ crafting_arrow = Image(
 crafting_arrow.pack(gui, -1)
 
 processor = ProcessCraft(
-    grid3x3, inventory.crafting_grid[:4], inventory.crafting_grid[-1]
+    grid2x2, inventory.crafting_grid[:4], inventory.crafting_grid[-1]
 )
 
 

@@ -119,7 +119,13 @@ class GUIslot(Button,):
                 if self.parent_slot.count <= 0:
                     self.parent_slot.count = 0
                     self.parent_slot.update_activity(None)
-                
+        elif self.crs_obj.item != None and (self.parent_slot.item == None or self.parent_slot.item == self.crs_obj.item):
+            self.parent_slot.update_activity(self.crs_obj.item, False)
+            self.parent_slot.count += 1
+            self.crs_obj.count -= 1
+            if self.crs_obj.count <= 0:
+                self.crs_obj.count = 0
+                self.crs_obj.item = None
     def draw(self, screen):
         screen.blit(self.surface,Utilz.convert_center_to_top_left(self.coordinates.x, self.coordinates.y, self.size[0], self.size[1]))
         if self.parent_slot.count > 1:

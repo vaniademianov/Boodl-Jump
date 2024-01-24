@@ -87,8 +87,11 @@ class Utilz:
         return (a[0] + b[0], a[1] + b[1])
     @staticmethod
     def split_list(a, n):
+
         k, m = divmod(len(a), n)
-        return (a[i*k+min(i, m):(i+1)*k+min(i+1, m)] for i in range(n))
+        res = (a[i*k+min(i, m):(i+1)*k+min(i+1, m)] for i in range(n))
+
+        return res
     @staticmethod
     def wm(a: tuple, b: tuple):
         return (a[0] - b[0], a[1] - b[1])

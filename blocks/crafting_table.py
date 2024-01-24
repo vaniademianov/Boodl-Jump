@@ -33,7 +33,9 @@ class MiniCraftingTable(IIMiniItem):
         super().__init__(cords, self.image, self.parent)
 class CraftingTable(IItem):
     def __init__(self, parent_slot) -> None:
+
         super().__init__()
+
         self.parent = parent_slot
         self.is_block = True
         self.blocky_image = rm.get_crafting_table((50,50))
@@ -47,6 +49,10 @@ class CraftingTable(IItem):
         return self.parent
     def on_move(self,player):
         self.player = player
+    # def __repr__(self) -> str:
+    #     return self.title
+    # def __str__(self) -> str:
+    #     return self.title
     def on_right_click(self,cordi, walls,breaked_group, blocks,colliders):
         # Place table
         new_block = CraftingTable_block.spawn(CraftingTable_block, cordi, walls,self.player,breaked_group,blocks,colliders)

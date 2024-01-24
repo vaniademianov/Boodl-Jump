@@ -8,6 +8,6 @@ class Recipe(IICraftingRecipe):
         self.strictness_level = ""
         self.grid_type = grid2x2
         self.item = CraftingTable
-        self.grid = [CraftingIngredient(CraftingTable, 1), CraftingIngredient(CraftingTable, 1), CraftingIngredient(CraftingTable, 1),CraftingIngredient(CraftingTable, 1)]
+        self.grid = [CraftingIngredient(CraftingTable(None), 1), CraftingIngredient(CraftingTable(None), 1), CraftingIngredient(CraftingTable(None), 1),CraftingIngredient(CraftingTable(None), 1)]
         super().__init__(self.item, self.grid, self.grid_type, self.strictness_level)
 

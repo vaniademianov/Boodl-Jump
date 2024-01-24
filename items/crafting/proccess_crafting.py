@@ -23,12 +23,15 @@ class ProcessCraft:
     def tick(self):
         # check slots 
         for recipe in self.recipes:
-            ev:CraftingIngredient = recipe.eval(self.input_slots, self.grid_type.lines)
-            if ev.item != None: 
+            v = recipe.eval(self.input_slots, self.grid_type.lines)
+            print(v)
+            ev, slotd, counts = None, None, None
+ 
+            if ev != None: 
                 # we found the recipe 
                 if self.result_slot.item == None: 
                     self.result_slot.count = ev.count
-                    self.result_slot.update_activity(ev.item,False)
+                    self.result_slot.update_activity(ev.item,False) 
                     self.last_r = recipe
                     return self.take 
                 break   
