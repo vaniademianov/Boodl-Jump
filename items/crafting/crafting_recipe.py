@@ -94,7 +94,7 @@ class IICraftingRecipe:
 
             for i in range(len(self.grid)):
                 for j in range(len(self.grid[i])):
-                    print(self.grid[i][j], ing_flat)
+                    # print(self.grid[i][j], ing_flat)
                     if self.grid[i][j] in ing_flat:
 
                         occur = ing_flat.pop(ing_flat.index(self.grid[i][j]))
@@ -119,16 +119,18 @@ class IICraftingRecipe:
                 print("creatable")
                 # If we can craft the object, return it
                 return (
-                    CraftingIngredient(self.itm(), items_we_can_create),
+                    CraftingIngredient(self.itm(None), items_we_can_create),
                     slotd,
                     counts,
                 )
 
     def take_it(self, slots: list[Slot, Slot, Slot, Slot], w) -> CraftingIngredient:
         result, slotd, counts = self.eval(slots, w)
+        # print(result, slotd, counts)
         # assert len(slotd) == len(counts)
         if result.item != None:
             # can craft the item
+            slotd = [j for sub in slotd for j in sub]
             for i in range(len(slotd)):
                 count_we_should_take_from_slt = counts[i]
                 slot = slotd[i]

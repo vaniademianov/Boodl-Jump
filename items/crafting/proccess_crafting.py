@@ -24,8 +24,8 @@ class ProcessCraft:
         # check slots 
         for recipe in self.recipes:
             v = recipe.eval(self.input_slots, self.grid_type.lines)
-            print(v)
-            ev, slotd, counts = None, None, None
+            # print(v)
+            ev, slotd, counts = (None, None, None) if v is None or len(v) != 3 else v
  
             if ev != None: 
                 # we found the recipe 

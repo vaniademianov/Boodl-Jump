@@ -16,7 +16,7 @@ class CraftingIngredient:
     def __floordiv__(self, __value:object) -> int: 
         return self.count//__value.count 
     def __repr__(self) -> str:
-        print(self.item)
+        # print(self.item)
         if self.item != None:
             return "CI"+self.item.title 
         return "CI"
