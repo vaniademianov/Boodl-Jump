@@ -15,11 +15,11 @@ class IRS:
         # print(self.count,self.item)
         screen.blit(scope, tuple(gui_coordinates))
         if self.item != None:
-            item_crd = Utilz.w(tuple(gui_coordinates),Utilz.wd(resource_manager.get_scope().get_size(),4))
+            item_crd = Utilz.w(Utilz.w(tuple(gui_coordinates),Utilz.wd(resource_manager.get_scope().get_size(),4)), (10,10))
             screen.blit(self.item.minimized_for_inv, item_crd)
             if self.count > 1:
                 txt_rdr = font_txt.render(str(self.count), False, COUNT_COLOR)
-                screen.blit(txt_rdr, Utilz.w(item_crd, (20,5)))
+                screen.blit(txt_rdr, Utilz.w(item_crd, (30,20)))
     def closed(self,player, breaked_stuff:pygame.sprite.Group):
         if self.item!= None:
             micr = self.item.mini(player.rect.center)

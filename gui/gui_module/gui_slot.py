@@ -21,7 +21,7 @@ class GUIslot(Button,):
         self.crs_obj = crs
         self.last_remembered_item = ""
         super().__init__(color, borders,size,center,boh,custom_borders,stroke_color, stroke_w)
-        self.mover_time = int(FPS/2)
+        self.mover_time = int(FPS/6)
         self.ore_surf = self.or_surf.copy()
         self.mover = Utilz.generate_color_transition(color, GUI_SLOT_COLOR_II,self.mover_time)
         self.moving_anim_active = False
@@ -48,7 +48,8 @@ class GUIslot(Button,):
         self.tip_frame.coordinates.x, self.tip_frame.coordinates.y = Utilz.convert_top_left_to_center(self.tip_frame.coordinates.x, self.tip_frame.coordinates.y, *self.tip_frame.surface.get_size())
         self.tip_frame.coordinates.x, self.tip_frame.coordinates.y = Utilz.w((self.tip_frame.coordinates.x, self.tip_frame.coordinates.y), (20,20))
     def on_hover(self, tochno, coords):
-        self.hovered_last_time = True
+        if tochno:
+            self.hovered_last_time = True
         self.toch_h_last_time = True
 
         if tochno and self.parent_slot.item != None:
@@ -211,6 +212,8 @@ class GUIslot(Button,):
 
 
                 self.blit_item(self.parent_slot.item.minimized_for_inv)
+                for label in self.tip_gui_label:
+                    label.sync_offset()
             else:
                 self.change_parent_surfaces(self.ore_surf.copy())
             self.last_remembered_item = self.parent_slot.item 

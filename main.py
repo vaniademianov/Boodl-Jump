@@ -268,10 +268,11 @@ gen = Generator(player, wall_0)
 gui_coordinates = [WIDTH/2, HEIGHT/2]
 
 gui_group = GuiGroup()
-gui_group.add(inv.gui, inv.tick)
-gui_group.add(ne_uni_gui.wardrobe)
-gui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)
 
+gui_group.add(inv.gui, inv.tick)
+
+gui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)
+gui_group.add(ne_uni_gui.wardrobe)
 # def blit_l(l, screen):
 #     for obj in l:
 #         screen.blit(obj.image, obj.rect)

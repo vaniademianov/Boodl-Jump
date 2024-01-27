@@ -135,5 +135,7 @@ class IICraftingRecipe:
                 count_we_should_take_from_slt = counts[i]
                 slot = slotd[i]
                 slot.count -= count_we_should_take_from_slt
-
+                if slot.count <= 0:
+                    slot.item = None
+                    slot.count = 0
         return result

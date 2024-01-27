@@ -1651,7 +1651,7 @@
         "kind": 6,
         "importPath": "gui.gui_module.gui_slot",
         "description": "gui.gui_module.gui_slot",
-        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot=None,custom_borders = None,stroke_w=None, stroke_color=None,afterclick = None ) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh,custom_borders,stroke_color, stroke_w)\n        self.mover_time = int(FPS/2)\n        self.ore_surf = self.or_surf.copy()",
+        "peekOfCode": "class GUIslot(Button,):\n    def __init__(self,size,color, borders, center,boh,crs, parent:Slot=None,custom_borders = None,stroke_w=None, stroke_color=None,afterclick = None ) -> None:\n        self.parent_slot = parent\n        self.size = size \n        # self.coords = center\n        self.crs_obj = crs\n        self.last_remembered_item = \"\"\n        super().__init__(color, borders,size,center,boh,custom_borders,stroke_color, stroke_w)\n        self.mover_time = int(FPS/6)\n        self.ore_surf = self.or_surf.copy()",
         "detail": "gui.gui_module.gui_slot",
         "documentation": {}
     },
@@ -2434,7 +2434,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5",
+        "peekOfCode": "BASE_HEIGHT = 200\nHEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2443,7 +2443,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5",
+        "peekOfCode": "HEIGHT_MODIFIER = -200\nWIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2452,7 +2452,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
+        "peekOfCode": "WIDTH = 1000\nHEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2461,7 +2461,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]",
+        "peekOfCode": "HEIGHT = 800\nBASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2470,7 +2470,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)",
+        "peekOfCode": "BASE_BLOCK_SIZE = (50,50)\nPLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2479,7 +2479,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
+        "peekOfCode": "PLAYER_SIZE = (50,50)\nGUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2488,7 +2488,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
+        "peekOfCode": "GUI_SENSA = 5\nFPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2497,7 +2497,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
+        "peekOfCode": "FPS = 30\nINTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2506,7 +2506,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
+        "peekOfCode": "INTERACTION_DISTANCE = 230\nTRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2515,7 +2515,7 @@
         "kind": 5,
         "importPath": "other.cons",
         "description": "other.cons",
-        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.5\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
+        "peekOfCode": "TRANSPARENCY_ANIMATION_SPEED = 0.2\nSLIDE_IN_ANIMATION_SPEED = 0.5\nHOVER_ANIMATION_SPEED = 0.2\nlst = [(255, g, b) for g in range(0, 256, 8) for b in range(0, 256, 8)]\nfont_txt = pygame.font.SysFont(\"Comic Sans MS\", 25)\nCOUNT_COLOR = (244, 230, 15)\nGUI_SLOT_COLOR_II = (30,30,30)",
         "detail": "other.cons",
         "documentation": {}
     },
@@ -2992,7 +2992,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)",
+        "peekOfCode": "calib_center_right = None\nclassi: Classifier = None\n# inventory = Inventory()\nplayer.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)",
         "detail": "main",
         "documentation": {}
     },
@@ -3001,7 +3001,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "player.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:",
+        "peekOfCode": "player.inv = inventory\nplayer_group.add(player)\ngen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\ngui_group.add(ne_uni_gui.wardrobe)\n# def blit_l(l, screen):\n#     for obj in l:",
         "detail": "main",
         "documentation": {}
     },
@@ -3010,7 +3010,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0",
+        "peekOfCode": "gen = Generator(player, wall_0)\ngui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\ngui_group.add(ne_uni_gui.wardrobe)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0",
         "detail": "main",
         "documentation": {}
     },
@@ -3019,7 +3019,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False",
+        "peekOfCode": "gui_coordinates = [WIDTH/2, HEIGHT/2]\ngui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\ngui_group.add(ne_uni_gui.wardrobe)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False",
         "detail": "main",
         "documentation": {}
     },
@@ -3028,7 +3028,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "gui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.wardrobe)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False\ntp_anim_active = False",
+        "peekOfCode": "gui_group = GuiGroup()\ngui_group.add(inv.gui, inv.tick)\ngui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)\ngui_group.add(ne_uni_gui.wardrobe)\n# def blit_l(l, screen):\n#     for obj in l:\n#         screen.blit(obj.image, obj.rect)\ntp_anim_progress = 0\ntp_back_anim_active = False\ntp_anim_active = False",
         "detail": "main",
         "documentation": {}
     },

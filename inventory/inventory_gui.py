@@ -173,14 +173,14 @@ def reactivate_wardrobe():
         # wardrobe.update_xs(-(WIDTH/2))
 
 
-for parent_slot in inventory.crafting_grid:
+for parent_slot in inventory.wardrobe_stuff:
     nw_slt = GUIslot(
-        (65, 65), FOURTH_INV_COLOR, 16, (43, base_y), False, o_irs, parent_slot
+        (65, 65), FOURTH_INV_COLOR, 16, (70, base_y), False, o_irs, parent_slot
     )
     wardrobe_lst.append(nw_slt)
     nw_slt.pack(wardrobe, -1)
 
-    base_y += 150
+    base_y += 100
 dress_button.on_left_click = reactivate_wardrobe
 # dress_img.on_left_click = reactivate_wardrobe
 gui.subscribe(dress_button, LEFT_CLICK)
