@@ -1723,7 +1723,7 @@
         "kind": 2,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "def reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH / 2\n        print(\n            wardrobe.left_to_right_slide_anim_progress,\n            type(wardrobe.left_to_right_slide_anim_progress),\n        )\n        wardrobe.update_xs((WIDTH / 2))",
+        "peekOfCode": "def reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, False)\n        # wardrobe.left_to_right_slide_anim_progress = WIDTH / 2\n        print(\n            wardrobe.left_to_right_slide_anim_progress,\n            type(wardrobe.left_to_right_slide_anim_progress),\n        )\n        # wardrobe.update_xs((WIDTH / 2))",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1930,7 +1930,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "wardrobe_frame = Frame(\n    SIXTH_INV_COLOR, 0, (90, 578), (81, HEIGHT / 2), False, (16, 0, 16, 0)\n)\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, True)",
+        "peekOfCode": "wardrobe_frame = Frame(\n    SIXTH_INV_COLOR, 0, (90, 578), (81, HEIGHT / 2), False, (16, 0, 16, 0)\n)\nwardrobe_frame.pack(wardrobe, 0)\nbase_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, False)",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1939,7 +1939,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "base_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH / 2\n        print(\n            wardrobe.left_to_right_slide_anim_progress,\n            type(wardrobe.left_to_right_slide_anim_progress),",
+        "peekOfCode": "base_y = 200\nwardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, False)\n        # wardrobe.left_to_right_slide_anim_progress = WIDTH / 2\n        print(\n            wardrobe.left_to_right_slide_anim_progress,\n            type(wardrobe.left_to_right_slide_anim_progress),",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },
@@ -1948,7 +1948,7 @@
         "kind": 5,
         "importPath": "inventory.inventory_gui",
         "description": "inventory.inventory_gui",
-        "peekOfCode": "wardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, True)\n        wardrobe.left_to_right_slide_anim_progress = WIDTH / 2\n        print(\n            wardrobe.left_to_right_slide_anim_progress,\n            type(wardrobe.left_to_right_slide_anim_progress),\n        )",
+        "peekOfCode": "wardrobe_lst = []\ndef reactivate_wardrobe():\n    if wardrobe.is_visible:\n        # disable\n        wardrobe.left_to_right_slide_anim(wardrobe.close, False)\n        # wardrobe.left_to_right_slide_anim_progress = WIDTH / 2\n        print(\n            wardrobe.left_to_right_slide_anim_progress,\n            type(wardrobe.left_to_right_slide_anim_progress),\n        )",
         "detail": "inventory.inventory_gui",
         "documentation": {}
     },

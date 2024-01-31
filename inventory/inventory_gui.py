@@ -155,20 +155,21 @@ def reactivate_wardrobe():
     if wardrobe.is_visible:
         # disable
 
-        wardrobe.left_to_right_slide_anim(wardrobe.close, True)
-        wardrobe.left_to_right_slide_anim_progress = WIDTH / 2
+        wardrobe.left_to_right_slide_anim(wardrobe.close, False)
+        # wardrobe.left_to_right_slide_anim_progress = WIDTH / 2
         print(
             wardrobe.left_to_right_slide_anim_progress,
             type(wardrobe.left_to_right_slide_anim_progress),
         )
-        wardrobe.update_xs((WIDTH / 2))
-        wardrobe.transparency_anim()
+        # wardrobe.update_xs((WIDTH / 2))
+        wardrobe.backward_transparency_anim()
     else:
         wardrobe.open()
-        wardrobe.right_to_left_slide_anim(True)
-        wardrobe.update_xs(-(WIDTH / 2))
-        wardrobe.update_xs(27)
-        # wardrobe.backward_transparency_anim()
+        wardrobe.right_to_left_slide_anim(False)
+        # wardrobe.update_xs(-(WIDTH / 2))
+        # wardrobe.update_xs(27)x
+
+        wardrobe.transparency_anim()
         # wardrobe.right_to_left_slide_anim_progress = WIDTH/2
         # wardrobe.update_xs(-(WIDTH/2))
 
@@ -178,7 +179,7 @@ for parent_slot in inventory.wardrobe_stuff:
         (65, 65), FOURTH_INV_COLOR, 16, (70, base_y), False, o_irs, parent_slot
     )
     wardrobe_lst.append(nw_slt)
-    nw_slt.pack(wardrobe, -1)
+    nw_slt.pack(wardrobe, 1)
 
     base_y += 100
 dress_button.on_left_click = reactivate_wardrobe

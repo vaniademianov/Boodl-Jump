@@ -72,8 +72,10 @@ class Gui:
         for element in self.elements: 
             element.alpha(val)
     def update_xs(self, value):
+        
         for element in self.elements:
             element.coordinates.x+= int(value)
+        print(self.elements[0].coordinates.x)
     def left_to_right_slide_anim(self, on_end=None,halfed=False):
         if not self.left_to_right_slide_anim_active:
             self.left_to_right_halfed = halfed
@@ -121,7 +123,7 @@ class Gui:
             self.update_xs(-self.left_to_right_slide_anim_speed)
             
             if self.right_to_left_slide_anim_progress >= WIDTH/(2 if self.right_left_to_halfed else 1):
-                self.update_xs(-self.left_to_right_slide_anim_progress)
+                self.update_xs(self.right_to_left_slide_anim_progress)
                 self.right_to_left_slide_anim_active = False
                 self.right_to_left_slide_anim_progress = 0
         if self.tp_anim_active:
