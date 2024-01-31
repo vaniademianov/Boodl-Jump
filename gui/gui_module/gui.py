@@ -89,7 +89,7 @@ class Gui:
             self.right_left_to_halfed = halfed
             self.right_to_left_slide_anim_progress_slide_anim_progress = 0
             self.right_to_left_slide_anim_active = True
-            self.update_xs(WIDTH)
+
             if not self.is_visible:
                 self.open()
     def transparency_anim(self):

@@ -23,7 +23,7 @@ class Inventory:
         self.animation_active = False
         self.animation_progress = 0
         self.item_name = None
-        self.wardrobe_count = 9
+        self.wardrobe_count = 6
         self.wardrobe_stuff = [Slot(None) for i in range(self.wardrobe_count +0)]
         self.developer_items()
         # Active slot events

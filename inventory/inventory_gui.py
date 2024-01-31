@@ -143,11 +143,11 @@ crafting_result.pack(gui, -1)
 wardrobe = Gui(False)
 
 wardrobe_frame = Frame(
-    SIXTH_INV_COLOR, 0, (90, 578), (81, HEIGHT / 2), False, (16, 0, 16, 0)
+    SIXTH_INV_COLOR, 0, (85, 578), (61, HEIGHT / 2), False, (16, 0, 16, 0)
 )
 wardrobe_frame.pack(wardrobe, 0)
 
-base_y = 200
+base_y = 150
 wardrobe_lst = []
 
 
@@ -176,12 +176,12 @@ def reactivate_wardrobe():
 
 for parent_slot in inventory.wardrobe_stuff:
     nw_slt = GUIslot(
-        (65, 65), FOURTH_INV_COLOR, 16, (70, base_y), False, o_irs, parent_slot
+        (65, 65), FOURTH_INV_COLOR, 16, (60, base_y), False, o_irs, parent_slot
     )
     wardrobe_lst.append(nw_slt)
     nw_slt.pack(wardrobe, 1)
 
-    base_y += 100
+    base_y += 92
 dress_button.on_left_click = reactivate_wardrobe
 # dress_img.on_left_click = reactivate_wardrobe
 gui.subscribe(dress_button, LEFT_CLICK)
