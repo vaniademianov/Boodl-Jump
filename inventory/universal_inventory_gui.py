@@ -14,7 +14,7 @@ from other.cons import (
 from gui.gui_module.event_types import LEFT_CLICK, RIGHT_CLICK
 from gui.gui_module.gui_slot import GUIslot
 from gui.gui_module.irs import o_irs
-from inventory.inventory_gui import gui as o_gui
+from inventory.inventory_gui import wardrobe, gui as o_gui
 from inventory.inventory import inventory
 
 BASE_INV_Y = 320
@@ -196,6 +196,8 @@ def tick(gui_coordinates, splt_val, *args):
             o_gui.close_animated()
             gui.backward_transparency_anim()
             gui.close_animated()
+            wardrobe.close_animated()
+            wardrobe.backward_transparency_anim()
             delay = FPS * 0.4
             is_button_left = False
 

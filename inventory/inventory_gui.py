@@ -143,11 +143,11 @@ crafting_result.pack(gui, -1)
 wardrobe = Gui(False)
 
 wardrobe_frame = Frame(
-    SIXTH_INV_COLOR, 0, (85, 578), (61, HEIGHT / 2), False, (16, 0, 16, 0)
+    SIXTH_INV_COLOR, 0, (85, 578), (58, HEIGHT / 2 - 50), False, (16, 0, 16, 0)
 )
 wardrobe_frame.pack(wardrobe, 0)
 
-base_y = 150
+base_y = wardrobe_frame.coordinates.y - (92*((inventory.wardrobe_count-1) /2 ))
 wardrobe_lst = []
 
 
@@ -174,9 +174,9 @@ def reactivate_wardrobe():
         # wardrobe.update_xs(-(WIDTH/2))
 
 
-for parent_slot in inventory.wardrobe_stuff:
+for parent_slot in inventory.wardrobe_stuff: # 6 slots, distance between their centers is 92px 
     nw_slt = GUIslot(
-        (65, 65), FOURTH_INV_COLOR, 16, (60, base_y), False, o_irs, parent_slot
+        (65, 65), FOURTH_INV_COLOR, 16, (58, base_y), False, o_irs, parent_slot
     )
     wardrobe_lst.append(nw_slt)
     nw_slt.pack(wardrobe, 1)
@@ -188,6 +188,9 @@ gui.subscribe(dress_button, LEFT_CLICK)
 
 
 def tick(gui_coordinates, splt_val, *args):
+    # if  not gui.is_visible: 
+    #     wardrobe.close()
+    
     shield_slot.sync(gui_coordinates, splt_val)
     dress_img.sync()
     arch_img.sync()
@@ -196,4 +199,6 @@ def tick(gui_coordinates, splt_val, *args):
     for crafting_slot in crafting_slots:
         crafting_slot.sync(gui_coordinates, splt_val)
     crafting_result.sync(gui_coordinates, splt_val)
+    for wardrobe_slot in wardrobe_lst: 
+        wardrobe_slot.sync(gui_coordinates, splt_val)
     processor.tick()
