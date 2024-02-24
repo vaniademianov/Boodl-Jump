@@ -5,10 +5,10 @@ import json
  
 
 def load(*args, **kwargs): 
-    return load(args, kwargs)
+    return pygame.image.load(*args,**kwargs)
 
 def scale(*args, **kwargs): 
-    return scale(args, kwargs)
+    return pygame.transform.scale(*args, **kwargs)
 class TextureAtlas:
     """Class for loading texture atlases""" 
     def __init__(self, path2folder):
@@ -23,8 +23,9 @@ class TextureAtlas:
         for frame_name, frame_rect  in (self.positions["frames"]).items(): 
             x, y, w, h = frame_rect["frame"].values()
             rect = pygame.Rect(x, y, w, h)
-            cropped_img = pygame.transform.chop(self.texture, rect)
+            cropped_img = self.texture.subsurface(rect)
             self.frames[frame_name] = cropped_img
+        print(self.frames)
     def get_frame(self, frame: str):    
         """Get frame with specific name"""
         return self.frames.get(frame, None)
@@ -33,15 +34,16 @@ class TextureAtlas:
         return self.frames.values()
 class ResourceManager:
     def __init__(self, res_name = "") -> None:
-        
+        self.scope_atlas = TextureAtlas("res/images/cursors")
+
         self.player = load("res/images/player.png")
         self.player = scale(self.player, PLAYER_SIZE)
-        self.slot_active = load("res/images/active.png")
+        self.slot_active = self.scope_atlas.get_frame("active.png")
         self.slot_active = scale(self.slot_active, (70,70))
-        self.slot_unactive = load("res/images/unactive.png")
+        self.slot_unactive = self.scope_atlas.get_frame("unactive.png")
         self.slot_unactive = scale(self.slot_unactive, (70,70))
 
-        self.scope_atlas = TextureAtlas("res/images/cursors")
+        
         self.blocks_atlas = TextureAtlas("res/images/blocks")
 
 
@@ -59,7 +61,7 @@ class ResourceManager:
         self.scope_on_block = scale(self.scope_on_block, (56,56))
         self.scope_on_good_location = self.scope_atlas.get_frame("scope_on_good_location.png")
 
-        self.scope_on_isnt_breakable = self.scope_atlas.get_frame("res/images/scope_on_isnt_breakable.png")
+        self.scope_on_isnt_breakable = self.scope_atlas.get_frame("scope_on_isnt_breakable.png")
         self.scope_on_isnt_breakable = scale(self.scope_on_isnt_breakable, (56,56))
 
         self.achievement_icon = load("res/images/achievement.svg")
