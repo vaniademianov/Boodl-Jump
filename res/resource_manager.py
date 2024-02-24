@@ -42,15 +42,15 @@ class ResourceManager:
         self.slot_unactive = scale(self.slot_unactive, (70,70))
 
         self.scope_atlas = TextureAtlas("res/images/cursors")
-
+        self.blocks_atlas = TextureAtlas("res/images/blocks")
 
 
         # load breaking states
         filenames = [f for f in os.listdir("res/images/destroy_stages")]
         self.breaking_states_og = [load("res/images/destroy_stages/"+surf) for surf in filenames]
 
-        self.crafting_table = load("res/images/crafting_table.png")
-        self.crafting_table = scale(self.crafting_table, (25,25))
+        self.crafting_table = self.blocks_atlas.get_frame("crafting_table.png")
+    
         self.scope = self.scope_atlas.get_frame("scope.png")
 
 
