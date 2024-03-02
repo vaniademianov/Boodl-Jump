@@ -9,10 +9,12 @@ class IRS:
     # crs obj should have item, count, and closed to close
     def __init__(self) -> None:
         self.item = None
+        self.last_pos = (0,0)
         self.count = 0
     def draw(self, screen, gui_coordinates):
         # print(f"item is {self.item}")
         # print(self.count,self.item)
+        self.last_pos = gui_coordinates 
         screen.blit(scope, tuple(gui_coordinates))
         if self.item != None:
             item_crd = Utilz.w(Utilz.w(tuple(gui_coordinates),Utilz.wd(resource_manager.get_scope().get_size(),4)), (10,10))

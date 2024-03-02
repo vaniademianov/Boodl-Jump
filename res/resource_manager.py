@@ -25,7 +25,7 @@ class TextureAtlas:
             rect = pygame.Rect(x, y, w, h)
             cropped_img = self.texture.subsurface(rect)
             self.frames[frame_name] = cropped_img
-        print(self.frames)
+
     def get_frame(self, frame: str):    
         """Get frame with specific name"""
         return self.frames.get(frame, None)

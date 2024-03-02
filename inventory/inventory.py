@@ -23,6 +23,7 @@ class Inventory:
         self.animation_active = False
         self.animation_progress = 0
         self.item_name = None
+        self.drop_cooldown = 0
         self.wardrobe_count = 6
         self.wardrobe_stuff = [Slot(None) for i in range(self.wardrobe_count +0)]
         self.developer_items()
@@ -53,6 +54,7 @@ class Inventory:
             if slot.get_item() == None:
                 # found
                 slot.update_activity(item)
+                slot.count = 1
                 item.parent = slot
                 return True
             i += 1
@@ -88,7 +90,10 @@ class Inventory:
                 self.interaction_cd = self.interaction_cd_const
 
     def tick(self, info, screen,player,gui_coordinates,walls, breaked_stuff, blocks, colliders):
+        
         # COOLDOWN
+        if self.drop_cooldown > 0: 
+            self.drop_cooldown -= 1
         if self.interaction_cd > 0:
             self.interaction_cd -= 1
         else:

@@ -151,16 +151,14 @@ base_y = wardrobe_frame.coordinates.y - (92*((inventory.wardrobe_count-1) /2 ))
 wardrobe_lst = []
 
 
+
 def reactivate_wardrobe():
     if wardrobe.is_visible:
         # disable
 
         wardrobe.left_to_right_slide_anim(wardrobe.close, False)
         # wardrobe.left_to_right_slide_anim_progress = WIDTH / 2
-        print(
-            wardrobe.left_to_right_slide_anim_progress,
-            type(wardrobe.left_to_right_slide_anim_progress),
-        )
+
         # wardrobe.update_xs((WIDTH / 2))
         wardrobe.backward_transparency_anim()
     else:

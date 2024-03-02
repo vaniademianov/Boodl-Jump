@@ -1,5 +1,6 @@
 from gui.gui_module.gui import Gui
 from gui.gui_module.frame import Frame
+from items.mini_item import IIMiniItem
 from other.cons import (
     BLACK,
     FIRST_INV_COLOR,
@@ -164,7 +165,7 @@ slotovii_inventar.append(new_slot)
 delay = 0
 is_button_left = True
 is_leaving = False
-
+dropped_items = None 
 def tick(gui_coordinates, splt_val, *args):
     global delay, is_button_left
     player = args[0]
@@ -175,7 +176,17 @@ def tick(gui_coordinates, splt_val, *args):
         slt.sync(gui_coordinates, splt_val)
     if splt_val[-1] == "1":
         is_button_left = True
+
     if splt_val[-1] == "0" and delay <= 0 and is_button_left == True:
+        if o_irs.item != None and gui.is_visible:
+            for i in range(o_irs.count):
+                new_mini: IIMiniItem = o_irs.item.mini(o_irs.last_pos)
+                new_mini.activate_override(player.rect.center,gui_coordinates)
+            dropped_items.add(new_mini)
+            print("Added")
+
+            o_irs.item = None 
+            o_irs.count = 0
         if gui.is_visible == False:
             gui.open()
             gui.transparency_anim()

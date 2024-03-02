@@ -273,6 +273,9 @@ gui_group.add(inv.gui, inv.tick)
 
 gui_group.add(ne_uni_gui.gui, ne_uni_gui.tick)
 gui_group.add(ne_uni_gui.wardrobe)
+
+inv.dropped_items = breaked_stuff
+
 # def blit_l(l, screen):
 #     for obj in l:
 #         screen.blit(obj.image, obj.rect)
@@ -368,13 +371,31 @@ while running:
             and gui_coordinates[0] - GUI_SENSA > 0
         ):
             gui_coordinates[0] -= GUI_SENSA
+        if splt_val[12] == "0" and inventory.drop_cooldown == 0: 
+            # Drop item 
+            inventory.drop_cooldown = FPS/3
+            if o_irs.item != None and o_irs.count > 0:
+                # dropping from gui then
 
+                for i in range(o_irs.count):
+                    new_mini = o_irs.item.mini(o_irs.last_pos)
+                    new_mini.activate_override(player.rect.center,gui_coordinates)
+                o_irs.item = None
+                o_irs.count = 0
+            elif inventory.selected.item != None: 
+                inventory.selected.count -= 1 
+                new_mini = inventory.selected.item.mini(gui_coordinates)
+                breaked_stuff.add(new_mini)
+                new_mini.activate_override(player.rect.center,gui_coordinates)
+                if inventory.selected.count <= 0: 
+                    inventory.selected.update_activity(None)
+                
     else:
         player_group.update((None, None),None)
         blocks.update(False, player, gui_coordinates)
-
-    breaked_stuff.update(player, colliders)
     walls.update()
+    breaked_stuff.update(player, colliders)
+
     
     
 
