@@ -5,6 +5,7 @@ import serial as sm
 # import keyboard
 import threading
 import queue
+from controller import Controller
 import time
 import os
 import math
@@ -46,84 +47,7 @@ pygame.font.init()
 
 
 
-class Informator(threading.Thread):
-    def __init__(self, queue, args=(), kwargs=None):
-        threading.Thread.__init__(self, args=(), kwargs=None)
-        self.queue = queue
-        self.daemon = True
 
-    def run(self):
-        self.do_thing()
-
-    def do_thing(self):
-        while True:
-            with print_lock:
-                rl = serial.readline()
-                sl = str(rl)
-                if "\\n" in sl:
-                    try:
-                        inf_q.put(str(rl, encoding="utf-8"))
-                    except UnicodeDecodeError:
-                        pass
-
-
-# class Informator(threading.Thread):
-#     def __init__(self, queue, args=(), kwargs=None):
-#         threading.Thread.__init__(self, args=(), kwargs=None)
-#         self.queue = queue
-#         self.daemon = True
-
-#     def run(self):
-#         self.do_thing()
-
-#     def do_thing(self):
-#         global running
-#         while True:
-#             pos1 = "520 518"
-#             try:
-#                 if keyboard.is_pressed('w'):
-#                     pos1 = "520 0"
-#                 elif keyboard.is_pressed('a'):
-#                     pos1 = "0 518"
-#                 elif keyboard.is_pressed('s'):
-#                     pos1 = "520 1023"
-#                 elif keyboard.is_pressed('d'):
-#                     pos1 = "1023 518"
-#                 if keyboard.is_pressed('left shift'):
-#                     pos1 += " 0"
-#                 else:
-#                     pos1 += " 1"
-#             except:
-#                 pass
-
-#             pos2 = "520 518"
-#             try:
-#                 if keyboard.is_pressed('up'):
-#                     pos2 = "520 0"
-#                 elif keyboard.is_pressed('left'):
-#                     pos2 = "0 518"
-#                 elif keyboard.is_pressed('down'):
-#                     pos2 = "520 1023"
-#                 elif keyboard.is_pressed('right'):
-#                     pos2 = "1023 518"
-#                 if keyboard.is_pressed('right shift'):
-#                     pos2 += " 0"
-#                 else:
-#                     pos2 += " 1"
-#             except:
-#                 pass
-#             btns = ''
-#             try:
-#                 btns += '1: 0 ' if keyboard.is_pressed('z') else '1: 1 '
-#                 btns += '2: 0 ' if keyboard.is_pressed('x') else '2: 1 '
-#                 btns += '3: 0 ' if keyboard.is_pressed('c') else '3: 1 '
-#                 btns += '4: 0 ' if keyboard.is_pressed('v') else '4: 1 '
-#                 btns += '5: 0 ' if keyboard.is_pressed('b') else '5: 1 '
-#                 btns += '6: 0' if keyboard.is_pressed('n') else '6: 1'
-#             except:
-#                 pass
-#             inf_q.put(' '.join([pos1, btns, pos2]))
-#             time.sleep(0.2)
 
 
 def run_calibration(splt_val, last_val):
@@ -213,6 +137,10 @@ def run_calibration(splt_val, last_val):
 
 # Создаем игру и окно
 os.environ['SDL_VIDEO_CENTERED'] = '1'
+controller = Controller()
+controller.controller_calibration()
+
+
 pygame.init()
 pygame.mixer.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT),)
@@ -243,8 +171,7 @@ for wall in walls.sprites():
     colliders.add(wall)
 
 # all_sprites.add(player.hitbox)
-thrd = Informator(inf_q)
-thrd.start()
+
 # Цикл игры
 running = True
 calib = 0
@@ -260,7 +187,6 @@ calib_j_center = None
 calib_center_top = None
 calib_center_left = None
 calib_center_right = None
-classi: Classifier = None
 # inventory = Inventory()
 player.inv = inventory
 player_group.add(player)
@@ -310,8 +236,8 @@ while running:
             splt_val, last_val
         )  # ['516', '514', '1', '1:', '1', '2:', '1', '3:', '1', '4:', '1', '5:', '1', '6:', '1', '\n']
     rim_added = None
-    if classi != None:
-        player_group.update(classi.classify((int(splt_val[0]), int(splt_val[1]))), splt_val)
+    if controller.is_classifier_available:
+        player_group.update(controller.classify_joystick(0), splt_val)
         # print(classi.center)
         wrek = pygame.Rect(gui_coordinates[0], gui_coordinates[1], rm.get_scope().get_width(), rm.get_scope().get_height())
         blocked = False
@@ -344,12 +270,10 @@ while running:
       
             blocked = True
             block_blocked = False
-        updatik = DataClass_Transporter(splt_val[10] == "0")
+        updatik = DataClass_Transporter(controller.read_button_state(0))
         gui_group.update(gui_coordinates, splt_val,player)
         blocks.update(updatik, player, gui_coordinates)
-        second_joystick_classified = classi.classify(
-            (int(splt_val[-3]), int(splt_val[-2]))
-        )
+        second_joystick_classified = controller.classify_joystick(1)
         if (
             second_joystick_classified[0] == "TOP"
             and gui_coordinates[1] - GUI_SENSA > 0
