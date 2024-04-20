@@ -1,5 +1,6 @@
 import websocket
 import serial 
+import warnings
 import os 
 import threading, queue 
 from res.resource_manager import resource_manager as rm 
@@ -132,20 +133,39 @@ class Controller:
         self.controller_type = ""
         self.ws = None
         self.COM_PORT = "COM6"
+        self.calibration_offsets = {}
+        self.last_message = ""
         self.state = 0
         self.time_from_start = 0
         self.COM_0_COM_PORT = "COM9"
+        self.alive = False
         self.is_classifier_available = False 
         self.can_try_to_connect_simulator = False 
         self.Informator = None 
         self.Classifier = None
     def controller_calibration(self): 
         pygame.init()
-        screen = pygame.display.set_mode((WIDTH, HEIGHT),)
+        screen_info = pygame.display.Info()
+        screen_sz = (screen_info.current_w, screen_info.current_h)
+        screen = pygame.display.set_mode(screen_sz,)
         pygame.display.set_caption("Let's calibrate your controller!")
         clock = pygame.time.Clock()
         font = rm.get_brownie_s(43)
+        
 
+        sub_state = 1
+        april_codes = rm.get_tags()
+        tags_to_show = {}
+        tag_coordinates = [
+                        (Utilz.scale_to_coordinates(Utilz.coordinates_to_scale((1920 / 2, 1080 / 2), (1920, 1080)), screen_sz), 0), # CENTER / C
+                        (Utilz.scale_to_coordinates(Utilz.coordinates_to_scale((0, 1080), (1920, 1080)), screen_sz), 1), # BOTTOM LEFT / BL
+                        (Utilz.scale_to_coordinates(Utilz.coordinates_to_scale((1920, 1080), (1920, 1080)), screen_sz), 2), # BOTTOM RIGHT  / BR
+                        (Utilz.scale_to_coordinates(Utilz.coordinates_to_scale((1920, 0), (1920, 1080)), screen_sz), 3), # TOP RIGHT / TR
+                        (Utilz.scale_to_coordinates(Utilz.coordinates_to_scale((0, 0), (1920, 1080)), screen_sz), 4), # TOP LEFT / TL
+                    ]
+        for k, v in april_codes.copy().items():
+            april_codes[k] = v
+            tags_to_show[k] = (k,True)
         run = True 
         while run: 
             clock.tick(FPS)
@@ -160,7 +180,6 @@ class Controller:
             lc = font.render("Let's calibrate your controller!", False, (255,255,255))
             screen.blit(lc,  Utilz.convert_center_to_top_left(WIDTH/2, 60, lc.get_width(), lc.get_height()))
             if self.state == 0 or self.state == 1:
-                print("Y")
                 if self.time_from_start == 1: 
                     self.switch_controller_type() 
                 text = font.render("Make sure that it's plugged in...",False, (255,255,255))
@@ -177,17 +196,69 @@ class Controller:
                     if prev_st == 0:
                         self.controller_type = ""
                         self.switch_controller_type()
+                if self.alive:
+                    self.state = 2
                 screen.blit(text, pos)
                 screen.blit(text2, pos2)
-            
+            elif self.state == 2: 
+                if self.controller_type == "rg":
+                    text = font.render("Please move your RG to all of QR codes.",False, (255,255,255))
+                    pos = Utilz.convert_center_to_top_left(WIDTH/2, 150, text.get_width(), text.get_height())
+
+
+                    
+                    for tag_id, tag in tags_to_show.items():
+                        if not tag[0]: continue
+                        tag = tag[1]
+                        tag_cords = tag_coordinates[tag_id - 1]
+                        real_tag_coordinates = (0,0)
+                        match tag_cords[1]:
+                            case 0: 
+                                r = pygame.Rect(0,0,(tag.get_width(), tag.get_height()))
+                                r.center = tag_cords[0]
+                                real_tag_coordinates = r.topleft
+                            case 1: 
+                                r = pygame.Rect(0,0,(tag.get_width(), tag.get_height()))
+                                r.bottomleft = tag_cords[0]
+                                real_tag_coordinates = r.topleft
+                            case 2:
+                                r = pygame.Rect(0,0,(tag.get_width(), tag.get_height()))
+                                r.bottomright = tag_cords[0]
+                                real_tag_coordinates = r.topleft
+                            case 3:
+                                r = pygame.Rect(0,0,(tag.get_width(), tag.get_height()))
+                                r.topright = tag_cords[0]
+                                real_tag_coordinates = r.topleft
+                            case 4:
+                                r = pygame.Rect(0,0,(tag.get_width(), tag.get_height()))
+                                r.topleft = tag_cords[0]
+                                real_tag_coordinates = r.topleft
+                            case _:
+                                warnings.warn("Didn't find tag.")
+                        screen.blit(tag, real_tag_coordinates)
+                    screen.blit(text, pos)
+                    ld = self.last_message.split(" ")
+                    if len(ld) == 3 and "x" in ld[0]:
+                        tid = Utilz.huskylens_tag_to_normal(ld[1])
+                        if  tags_to_show[tid][1] == True:
+                            tags_to_show[tid][1] = False
+                            
             pygame.display.flip()
     def tick(self): 
-        pass 
+        if self.Informator and not self.Informator.queue.empty():
+            self.q.put(self.Informator.queue.get())
+        if not self.q.empty():
+            self.alive = True
+            msg = self.q.get()
+        
+            if msg and not str(msg).startswith("b"):
+                self.last_message = msg
     def classify_joystick(self, joystick_number) -> str: 
-        pass 
+        pass
     def read_button_state(self, button_number) -> bool: 
         pass 
     def switch_controller_type(self):
+        self.alive = False
         if not self.controller_type: 
             print("Trying RG")
             self.controller_type = "rg"

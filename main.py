@@ -12,6 +12,7 @@ import math
 import pickle
 from environment.classifier import Classifier
 from environment.generator import Generator
+
 import subprocess
 from blocks.crafting_table import CraftingTable as crafting_table_item
 from pathlib import Path
@@ -20,6 +21,7 @@ from res.resource_manager import resource_manager as rm
 from inventory import universal_inventory_gui as inv
 from inventory.inventory import inventory
 from other.utils import *
+from controller import Controller
 from other.cons import *
 from player.wall import Wall
 from gui.gui_module.gui_holder import GuiGroup
@@ -31,12 +33,6 @@ from inventory import inventory_gui as ne_uni_gui
 
 scope = rm.get_scope()
 proc = None
-try:
-    serial = sm.Serial("COM6")
-except Exception as e:
-    proc = subprocess.Popen(["python", "simulator.py"])
-    time.sleep(1)
-    serial = sm.Serial("COM9")
 
 print_lock = threading.Lock()
 inf_q = queue.Queue()

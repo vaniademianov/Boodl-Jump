@@ -84,6 +84,16 @@ class Utilz:
         center_y = top_left_y - height / 2
         return center_x, center_y
     @staticmethod
+    def huskylens_tag_to_normal(tag):
+        return 95 + int(tag)
+    @staticmethod
+    def coordinates_to_scale(coords, screen_size):
+        return (coords[0] / screen_size[0], coords[1] / screen_size[1])
+    @staticmethod
+    def scale_to_coordinates(scale, screen_size): 
+        return (scale[0] * screen_size[1], scale[1] * screen_size[1])
+    
+    @staticmethod
     def w(a: tuple, b: tuple):
         return (a[0] + b[0], a[1] + b[1])
     @staticmethod

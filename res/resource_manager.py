@@ -1,5 +1,6 @@
 import pygame
 import os
+from other.utils import Utilz
 from other.cons import PLAYER_SIZE
 import json 
  
@@ -43,6 +44,10 @@ class ResourceManager:
         self.slot_unactive = self.scope_atlas.get_frame("unactive.png")
         self.slot_unactive = scale(self.slot_unactive, (70,70))
 
+        self.tags = {
+            Utilz.huskylens_tag_to_normal(int(tag.split(".")[0])): load(tag) for tag in os.listdir("res/tags")
+        }
+
         
         self.blocks_atlas = TextureAtlas("res/images/blocks")
 
@@ -84,6 +89,8 @@ class ResourceManager:
         return self.hanger_icon
     def get_achievement(self):
         return self.achievement_icon
+    def get_tags(self):
+        return self.tags
     def get_brownie_s(self, size):
         self.brownie_stencil = pygame.font.Font("res/fonts/BrownieStencil.ttf",size)
         return self.brownie_stencil
